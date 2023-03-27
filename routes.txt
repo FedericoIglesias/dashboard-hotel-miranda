@@ -1,0 +1,32 @@
+BOOKINGS{
+    create -> /create-booking
+    read -> /booking
+    read  ->  /booking/{id}
+    update  ->  /bookig/{id}/edit
+    delete -> icon
+}
+
+
+ROOM{
+    create -> /create-room
+    read -> /room
+    read  ->  /room/{id}
+    update  ->  /room/{id}/edit
+    delete -> icon
+}
+
+
+USERS{
+    create -> /create-user
+    read -> /user
+    read  ->  /user/{id}
+    update  ->  /usuario/{id}/edit
+    delete -> icon
+}
+
+CONTACT{
+    create -> /create-contact
+    read -> /contact
+    update  ->  /contact/edit
+    delete -> icon
+}
