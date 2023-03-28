@@ -15,7 +15,7 @@ export function Root() {
                 <p>Manager 3000 Hotel Miranda</p>
                 <p>Made whit love by Federico Dev</p>
             </div>
-            <div style={{ backgroundColor: 'red', width: '100%'}}>
+            <div style={{ backgroundColor: '#eee', width: '100%'}}>
                 <Outlet />
             </div>
         </div>

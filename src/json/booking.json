@@ -1,0 +1,114 @@
+{
+    "bookings": [
+        {
+            "id": "#00000001",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Refund"
+        },
+        {
+            "id": "#00000002",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Pending"
+        },
+        {
+            "id": "#00000003",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Booked"
+        },
+        {
+            "id": "#00000004",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Canceled"
+        },
+        {
+            "id": "#00000005",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Refund"
+        },
+        {
+            "id": "#00000006",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Refund"
+        },
+        {
+            "id": "#00000007",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Pending"
+        },
+        {
+            "id": "#00000008",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Booked"
+        },
+        {
+            "id": "#00000009",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Pending"
+        },
+        {
+            "id": "#00000010",
+            "nombre": "Cahyadi Purnomo",
+            "orderDate": "2022-04-17",
+            "checkIn": "2022-04-30",
+            "checkOut": "2022-05-02",
+            "specialRequest": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem sapiente neque officiis! Voluptatem recusandae voluptatum quae eum aspernatur voluptas perferendis itaque tempora aut cumque. Necessitatibus, neque. Laborum, accusamus cum.",
+            "tipoHabitacion": "Deluxe",
+            "numeroHabitacion": "A-03",
+            "status": "Canceled"
+        }
+    ]
+}

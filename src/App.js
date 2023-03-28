@@ -1,6 +1,6 @@
 import { Root } from "./components/root/root";
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
-import { Dashboard } from "./components/dashboard";
+import { Dashboard } from "./components/dashboard/dashboard";
 import { Contact } from "./components/contact";
 import { User } from "./components/user";
 import { Room } from "./components/room";
