@@ -4,7 +4,7 @@ import { Dashboard } from "./components/dashboard/dashboard";
 import { Contact } from "./components/contact";
 import { User } from "./components/user";
 import { Room } from "./components/room";
-import { Booking } from "./components/booking";
+import { Booking } from "./components/booking/booking";
 
 import { ProtectedRoutes } from "./components/protected-routes";
 

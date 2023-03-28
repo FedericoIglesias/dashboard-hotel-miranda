@@ -1,6 +1,4 @@
-{
-    "bookings": [
-        {
+[{
             "id": "#00000001",
             "nombre": "Cahyadi Purnomo",
             "orderDate": "2022-04-17",
@@ -57,7 +55,7 @@
         },
         {
             "id": "#00000006",
-            "nombre": "Cahyadi Purnomo",
+            "nombre": "Rita Purnomo",
             "orderDate": "2022-04-17",
             "checkIn": "2022-04-30",
             "checkOut": "2022-05-02",
@@ -68,7 +66,7 @@
         },
         {
             "id": "#00000007",
-            "nombre": "Cahyadi Purnomo",
+            "nombre": "Mamota Purnomo",
             "orderDate": "2022-04-17",
             "checkIn": "2022-04-30",
             "checkOut": "2022-05-02",
@@ -79,7 +77,7 @@
         },
         {
             "id": "#00000008",
-            "nombre": "Cahyadi Purnomo",
+            "nombre": "Brenda Purnomo",
             "orderDate": "2022-04-17",
             "checkIn": "2022-04-30",
             "checkOut": "2022-05-02",
@@ -90,7 +88,7 @@
         },
         {
             "id": "#00000009",
-            "nombre": "Cahyadi Purnomo",
+            "nombre": "Brandon Purnomo",
             "orderDate": "2022-04-17",
             "checkIn": "2022-04-30",
             "checkOut": "2022-05-02",
@@ -101,7 +99,7 @@
         },
         {
             "id": "#00000010",
-            "nombre": "Cahyadi Purnomo",
+            "nombre": "Carlos Purnomo",
             "orderDate": "2022-04-17",
             "checkIn": "2022-04-30",
             "checkOut": "2022-05-02",
@@ -109,6 +107,4 @@
             "tipoHabitacion": "Deluxe",
             "numeroHabitacion": "A-03",
             "status": "Canceled"
-        }
-    ]
-}
+        }]
