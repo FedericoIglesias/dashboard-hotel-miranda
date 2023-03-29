@@ -3,7 +3,6 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { NavLink } from 'react-router-dom';
 import room1 from '../../assets/room1.webp'
 
 

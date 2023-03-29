@@ -23,7 +23,7 @@ export default function BasicModal() {
 
     return (
         <div>
-            <button style={{textAlign:'left', border: 'none', backgroundColor:'white'}} onClick={handleOpen}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur ipsa, facere quis maiores esse quasi est, iusto similique voluptatem, corporis ex architecto t...</button>
+            <button style={{textAlign:'left', border: 'none', backgroundColor:'white'}} onClick={handleOpen}>Lorem ipsum dolor sit amet consectetur adipisicing elit. ...</button>
             <Modal
                 open={open}
                 onClose={handleClose}

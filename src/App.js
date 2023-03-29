@@ -1,7 +1,7 @@
 import { Root } from "./components/root/root";
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
 import { Dashboard } from "./components/dashboard/dashboard";
-import { Contact } from "./components/contact";
+import { Contact } from "./components/contact/contact";
 import { User } from "./components/user/user";
 import { Room } from "./components/room/room";
 import { Booking } from "./components/booking/booking";
