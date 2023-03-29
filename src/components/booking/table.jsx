@@ -2,6 +2,8 @@ import booking from '../../json/booking.json'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link, NavLink } from 'react-router-dom';
 
 
 export function Table() {
@@ -23,14 +25,15 @@ export function Table() {
             </div>
             {book.map((item) => {
                 return (
-                    <div id={item.id} style={{ display: 'flex', width: '1000px', backgroundColor: 'white', border: '1px solid balck' }}>
-                        <p style={{ width: '16%' }}>{item.nombre}</p>
+                    <div id={item.id} style={{ display: 'flex', width: '1000px', backgroundColor: 'white', borderBlock: '2px solid balck' }}>
+                        <NavLink to={`booking/${item.id}`}><p style={{ width: '14%' }}>{item.nombre}</p></NavLink>
                         <p style={{ width: '14%' }}>{item.orderDate}</p>
                         <p style={{ width: '14%' }}>{item.checkIn}</p>
                         <p style={{ width: '14%' }}>{item.checkOut}</p>
                         <p style={{ width: '14%' }}>lorem</p>
                         <p style={{ width: '14%' }}>{item.tipoHabitacion}</p>
                         <p style={{ width: '14%' }}>{item.status}</p>
+                        <MoreVertIcon/>
                     </div>
 
                 )

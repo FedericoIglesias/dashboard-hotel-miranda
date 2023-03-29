@@ -5,7 +5,7 @@ import { Contact } from "./components/contact";
 import { User } from "./components/user";
 import { Room } from "./components/room";
 import { Booking } from "./components/booking/booking";
-
+import { Reservation } from "./components/booking/reservation";
 import { ProtectedRoutes } from "./components/protected-routes";
 
 
@@ -19,7 +19,8 @@ function App() {
           <Route path="/" element={<Root />} >
             <Route path="/" element={<Dashboard />} />
             <Route path="room" element={<Room />} />
-            <Route path="booking" element={<Booking />} />
+            <Route path="booking" element={<Booking />}/>
+            <Route path="booking/:id" element={<Reservation/>}/>
             <Route path="user" element={<User />} />
             <Route path="contact" element={<Contact />} /> 
           </Route>
