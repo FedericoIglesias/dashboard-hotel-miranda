@@ -2,13 +2,13 @@ import { Root } from "./components/root/root";
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
 import { Dashboard } from "./components/dashboard/dashboard";
 import { Contact } from "./components/contact";
-import { User } from "./components/user";
+import { User } from "./components/user/user";
 import { Room } from "./components/room/room";
 import { Booking } from "./components/booking/booking";
 import { Reservation } from "./components/booking/reservation";
 import { ProtectedRoutes } from "./components/protected-routes";
 import { NewRoom } from "./components/room/new-room";
-
+import { NewUser } from "./components/user/new-user";
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
             <Route path="booking" element={<Booking />}/>
             <Route path="booking/:id" element={<Reservation/>}/>
             <Route path="user" element={<User />} />
+            <Route path="new-user" element={<NewUser />} />
             <Route path="contact" element={<Contact />} /> 
           </Route>
         </Route>

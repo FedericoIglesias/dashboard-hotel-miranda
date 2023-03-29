@@ -18,9 +18,7 @@ const TableRoom = () => {
 
     return (
         <>
-        <div>
-            <NavLink to={'/new-room'}>New Room</NavLink>
-        </div>
+
             <div style={{ display: 'flex', width: '1000px', backgroundColor: 'white' }}>
                 <p style={{ width: '30%' }}>Room Name</p>
                 <p style={{ width: '14%' }}>Bed Type</p>

@@ -10,9 +10,10 @@ export const ProtectedRoutes = () => {
 
     let handleLogin = () => {
         let users = user.filter(user => user.name === name)
+        console.log(users)
         console.log(users[0].password)
-        console.log(password)
-        if(users[0].password === password){
+
+        if(users[0].password == password){
             localStorage.setItem('user','1')
             
         }
