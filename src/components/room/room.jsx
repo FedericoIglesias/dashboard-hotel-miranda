@@ -10,8 +10,8 @@ export function Room (){
     return(
         <>
         <Bar page={page}/>
-        <div>
-            <NavLink to={'/new-room'}>New Room</NavLink>
+        <div >
+            <button style={{padding: '13px 51px', backgroundColor: '#135846', border:'none', borderRadius:'10px', margin: '10px'}}><NavLink to={'/new-room'} style={{color:'white', textDecoration:'none'}} >+New Room</NavLink></button>
         </div>
         <TableRoom/>
         </>

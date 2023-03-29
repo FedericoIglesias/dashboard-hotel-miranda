@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 export function Root() {
     return (
         <div style={{display: 'flex', justifyContent:'center'}}>
-            <div style={{ width: '30%', padding: '20px', backgroundColor: 'white', boxSizing: 'border-box',height: '100vh'}}>
+            <div style={{ width: '25%', padding: '20px', backgroundColor: 'white', boxSizing: 'border-box',height: '100vh'}}>
                 <p>Manager 3000</p>
                 <p>Hotel Miranda</p>
                 <NestedList />
@@ -15,7 +15,7 @@ export function Root() {
                 <p>Manager 3000 Hotel Miranda</p>
                 <p>Made whit love by Federico Dev</p>
             </div>
-            <div style={{ backgroundColor: '#eee', width: '100%'}}>
+            <div style={{ backgroundColor: '#eee', width: '80%'}}>
                 <Outlet />
             </div>
         </div>

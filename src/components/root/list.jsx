@@ -46,7 +46,7 @@ export default function NestedList() {
             </Link>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to={'/new-room'}>
+                    <Link to={'/new-room'} style={linkStyle}>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
                                 <StarBorder />
