@@ -3,14 +3,14 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 
 export function Table() {
 
     let [page, setPage] = useState(1)
     let book = booking.slice(((5*page)-5),(5*page))
-    console.log(book)
+    
 
     return (
         <>

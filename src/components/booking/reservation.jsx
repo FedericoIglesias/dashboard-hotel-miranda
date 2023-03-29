@@ -10,6 +10,7 @@ export function Reservation() {
     console.log(book[0].nombre)
 
     const params = useParams()
+    
     return (
         <section>
             <article>
