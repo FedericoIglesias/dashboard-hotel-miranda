@@ -11,11 +11,16 @@ export function TableUSer({template}) {
     let [page, setPage] = useState(1)
     let user = template.slice(((10*page)-10),(10*page))
 
-    
+    const row ={
+        display: 'flex',
+        padding:'10px',
+        borderBottom:'1px gray solid',
+        alignItems:'center'
+    }
 
     return (
-        <section style={{margin: 'auto', width: '900px', borderRadius:'10px', backgroundColor:'white'}}>
-            <div style={{ display: 'flex', borderBottom:'1px solid gray', padding: '10px' }}>
+        <section style={{boxShadow:'1px 1px 5px black', width:'900px', margin:'auto', backgroundColor: 'white', borderRadius:'10px'}}>
+            <div style={row}>
                 <p style={{ width: '20%' }}>Name</p>
                 <p style={{ width: '20%' }}>Job Desk</p>
                 <p style={{ width: '20%' }}>Schedule</p>
@@ -24,7 +29,7 @@ export function TableUSer({template}) {
             </div>
             {template.slice(((10*page)-10),(10*page)).map((item) => {
                 return (
-                    <div id={item.id} style={{ display: 'flex', padding:'10px 0', borderBottom:'1px solid gray' }}>
+                    <div key={item.id} style={row}>
                         <div style={{ width: '20%', display: 'flex', fontSize: '10px' }}>
                             <img src={founder} alt="profile" style={{width:'25px'}} />
                             <div>
