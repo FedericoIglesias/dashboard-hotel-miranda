@@ -51,7 +51,7 @@ const TableRoom = () => {
             }
             )}
             <Stack spacing={2} >
-                <Pagination count={rooms.length / 2} variant="outlined" onChange={(event, page) => { setPage(page) }} />
+                <Pagination count={Math.ceil(rooms.length / 2)} variant="outlined" onChange={(event, page) => { setPage(page) }} />
             </Stack>
         </>
     )
