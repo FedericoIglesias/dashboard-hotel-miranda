@@ -11,7 +11,7 @@ export function Bar ({page}){
 
 
     return (
-        <div style={{display: 'flex', width: '100%', backgroundColor: 'gray'}}>
+        <div style={{display: 'flex', width: '100%', backgroundColor: 'gray', marginBottom:'20px'}}>
         <MenuIcon/>
         <p>{page}</p>
         <input type="text" />

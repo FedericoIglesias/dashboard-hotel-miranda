@@ -1,32 +1,32 @@
-import users from '../../json/users.json'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import founder from '../../assets/founder.jpg'
 import CallIcon from '@mui/icons-material/Call';
 
 
-export function TableUSer() {
+export function TableUSer({template}) {
 
     let [page, setPage] = useState(1)
-    let user = users.slice(((10*page)-10),(10*page))
+    let user = template.slice(((10*page)-10),(10*page))
+
     
 
     return (
-        <>
-            <div style={{ display: 'flex', width: '1000px', backgroundColor: 'white' }}>
+        <section style={{margin: 'auto', width: '900px', borderRadius:'10px', backgroundColor:'white'}}>
+            <div style={{ display: 'flex', borderBottom:'1px solid gray', padding: '10px' }}>
                 <p style={{ width: '20%' }}>Name</p>
                 <p style={{ width: '20%' }}>Job Desk</p>
                 <p style={{ width: '20%' }}>Schedule</p>
                 <p style={{ width: '20%' }}>Contact</p>
                 <p style={{ width: '20%' }}>Status</p>
             </div>
-            {user.map((item) => {
+            {template.slice(((10*page)-10),(10*page)).map((item) => {
                 return (
-                    <div id={item.id} style={{ display: 'flex', width: '1000px', backgroundColor: 'white', borderBlock: '2px solid balck' }}>
+                    <div id={item.id} style={{ display: 'flex', padding:'10px 0', borderBottom:'1px solid gray' }}>
                         <div style={{ width: '20%', display: 'flex', fontSize: '10px' }}>
-                            <img src="" alt="profile" />
+                            <img src={founder} alt="profile" style={{width:'25px'}} />
                             <div>
                                 <p>{item.name}</p>
                                 <p>{item.id}</p>
@@ -35,8 +35,8 @@ export function TableUSer() {
                         </div>
                         <p style={{ width: '20%' }}>{item.description}</p>
                         <p style={{ width: '20%' }}>Monday</p>
-                        <p style={{ width: '20%' }}><CallIcon/>{item.contact}</p>
-                        <p style={{ width: '20%' }}>{item.status}</p>
+                        <p style={{ width: '20%' }}><CallIcon/>{item.conctac} </p>
+                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={item.status == true ? {color:'#5AD07A'}: {color: '#E23428'}}>{item.status == true? 'Active' : 'Inactive'}</span></p>
                         <MoreVertIcon/>
                     </div>
 
@@ -44,8 +44,8 @@ export function TableUSer() {
             }
             )}
             <Stack spacing={2} >
-                <Pagination count={Math.ceil(users.length/10)} variant="outlined" onChange={(event,page) =>{ setPage(page)}}/>
+                <Pagination style={{margin:'10px auto'}} count={Math.ceil(template.length/10)} variant="outlined" onChange={(event,page) =>{ setPage(page)}}/>
             </Stack>
-        </>
+        </section >
     )
 }

@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import user from '../json/users.json'
+import template from '../json/template.json'
 
 export const ProtectedRoutes = () => {
     let usuario = localStorage.getItem('user')
@@ -9,11 +9,11 @@ export const ProtectedRoutes = () => {
 
 
     let handleLogin = () => {
-        let users = user.filter(user => user.name === name)
-        console.log(users)
-        console.log(users[0].password)
+        let user = template.filter(user => user.name === name)
+        console.log(user)
+        console.log(user[0].password)
 
-        if(users[0].password == password){
+        if(user[0].password == password){
             localStorage.setItem('user','1')
             
         }
