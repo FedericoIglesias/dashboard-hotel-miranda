@@ -3,6 +3,7 @@ import { useState } from "react"
 import template from '../json/template.json'
 import styled from "styled-components"
 import backgroundLogin from '../assets/backgroungLogin.avif'
+import loginBackground from './login.css'
 
 export function Login() {
 
@@ -21,7 +22,8 @@ export function Login() {
     }
 
     const Myh1 = styled.section`
-    background-color: ;
+    loginBackground;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,19 +31,32 @@ export function Login() {
     height: 100vh;
     & div{
         width: 300px;
-        background-color: violet;
+        padding: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         padding: '30px';
-        box-shadow: 1px 1px 5px gray;
+
+        & h1{
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #f5e1ce
+        }
             & input{
             width: 200px;
-            margin-bottom: 10px
+            margin-bottom: 10px;
+            padding: 2px;
+            border: none;
+            
             }
             & button{
-            width: 100px
+            width: 100px;
+            background-color: #e8c39e;
+            border:none;
+            padding: 10px;
+            border-radius: 5px;
             }
     }
         `;
@@ -51,8 +66,9 @@ export function Login() {
 
     return (
         <>
-            <Myh1 style={{}}>
+            <Myh1 className="login" style={{}}>
                 <div>
+                    <h1>Welcome</h1>
                     <input type="text" value='Xymenes Hallas' onChange={(e) => setName(e.target.value)} />
                     <input type='password' value='100' onChange={(e) => setPassword(e.target.value)} />
                     <button onClick={handleLogin}>Login</button>
