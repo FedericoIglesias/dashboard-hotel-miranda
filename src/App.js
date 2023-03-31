@@ -3,30 +3,32 @@ import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } 
 import { Dashboard } from "./components/dashboard/dashboard";
 import { Contact } from "./components/contact/contact";
 import { User } from "./components/user/user";
-import { Room } from "./components/room/room";
+import { Room } from "./components/room/rooms";
 import { Booking } from "./components/booking/booking";
 import { Reservation } from "./components/booking/reservation";
-import { ProtectedRoutes } from "./components/protected-routes";
+import { ProtectedRoutes } from "./pages/protected-routes";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
+import { Login } from "./pages/login";
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route  path="/" element={<ProtectedRoutes />}>
-          <Route path="/" element={<Root />} >
-            <Route path="/" element={<Dashboard />} />
-            <Route path="room" element={<Room />} />
-            <Route path="new-room" element={<NewRoom />} />
-            <Route path="booking" element={<Booking />}/>
-            <Route path=":id" element={<Reservation/>}/>
-            <Route path="user" element={<User />} />
-            <Route path="new-user" element={<NewUser />} />
-            <Route path="contact" element={<Contact />} /> 
+        <Route  path="/dashboard-hotel-miranda" element={<ProtectedRoutes />}>
+          <Route path="/dashboard-hotel-miranda" element={<Root />} >
+            <Route path="/dashboard-hotel-miranda/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard-hotel-miranda/room" element={<Room />} />
+            <Route path="/dashboard-hotel-miranda/new-room" element={<NewRoom />} />
+            <Route path="/dashboard-hotel-miranda/booking" element={<Booking />}/>
+            <Route path="/dashboard-hotel-miranda/booking/:id" element={<Reservation/>}/>
+            <Route path="/dashboard-hotel-miranda/user" element={<User />} />
+            <Route path="/dashboard-hotel-miranda/new-user" element={<NewUser />} />
+            <Route path="/dashboard-hotel-miranda/contact" element={<Contact />} /> 
           </Route>
         </Route>
+        <Route path="/login" element={<Login/>} />
       </>
     )
   );

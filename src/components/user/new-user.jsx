@@ -1,17 +1,12 @@
-import { Bar } from "../nav-bar/bar"
-import styled from "styled-components"
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 export function NewUser() {
 
-    const page = 'Create User'
 
 
     return (
         <>
-            <Bar page={page} />
             <section style={{backgroundColor: 'white', width:'80%', margin:'0 auto', padding: '20px 20px 20px 40px'}}>
                 <Box sx={{ width: '100%' }}>
                     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

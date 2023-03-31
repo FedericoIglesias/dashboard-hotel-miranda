@@ -9,7 +9,7 @@ export function Reservation() {
 
 
     const params = useParams()
-    let id = params.id
+    const id = params.id
     let book = booking.filter(booking => booking.id == id)
 
 

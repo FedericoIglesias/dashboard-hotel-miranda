@@ -1,11 +1,9 @@
-import { Bar } from "../nav-bar/bar"
-import { Table } from "./table"
+import { Table } from "./table-booking"
 import booking from '../../json/booking.json'
 
 export function Booking() {
 
-    const page = 'Booking'
-    console.log(booking)
+    console.log(new Date(booking.orderDate).getTime())
 
     let handleOrder = (state) => {
         switch (state) {
@@ -32,7 +30,6 @@ export function Booking() {
 
     return (
         <>
-            <Bar page={page} />
             <section style={{display:'flex', backgroundColor: 'white', margin: '20px 10px', width: '50%', justifyContent:'space-around'}}>
                 <p onClick={() => handleOrder('book')}>All Booking</p>
                 <p onClick={() => handleOrder('in')}>Checking In</p>

@@ -1,13 +1,11 @@
-import { Bar } from "../nav-bar/bar"
 import { TableUSer } from "./table-user"
 import { Link } from "react-router-dom"
 import template from '../../json/template.json'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 export function User() {
 
-    const page = 'User'
 
     let [users, setUsers] = useState(template)
 
@@ -28,7 +26,6 @@ export function User() {
 
     return (
         <>
-            <Bar page={page} />
             <div style={{display:'flex', margin: '20px ', justifyContent:'space-between'}}>
                 <div style={{display:'flex'}}>
                     <p style={{marginRight: '20px', borderBottom: '1px solid black', fontSize: '12px', color:'gray', color: all,fontWeight: '700'} } onClick={() => {setUsers(template); colorCase(0)}} >All Employed </p>

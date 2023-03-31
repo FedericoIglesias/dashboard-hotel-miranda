@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import BasicModal from './modal'
+import styled from 'styled-components';
 
 
 
@@ -16,34 +17,40 @@ export function TableContact() {
         archive.unshift(item)
         console.log(archive)
     }
-    const row ={
-        display: 'flex',
-        padding:'10px',
-        borderBottom:'1px gray solid',
-        alignItems:'center'
-    }
+    const Row = styled.div`
+        display: flex;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px gray;
+        align-items: center;
+        margin: 5px;
+        :hover{
+            transform: Scale(1.02);
+        }
+        `;
 
 
     return (
         <>
-        <section style={{boxShadow:'1px 1px 5px black', width:'900px', margin:'auto', backgroundColor: 'white', borderRadius:'10px'}}>
+        <section style={{width:'90%', margin:'auto'}}>
 
-            <div style={row}>
+            <Row>
                 <p style={{ width: '20%' }}>Order Id</p>
                 <p style={{ width: '20%' }}>Date</p>
                 <p style={{ width: '20%' }}>Customer</p>
                 <p style={{ width: '20%' }}>Coments</p>
                 <p style={{ width: '20%' }}>Action</p>
-            </div>
+            </Row>
             {mails.map((item) => {
                 return (
-                    <div key={item.id} style={row}>
+                    <Row key={item.id} >
                         <p style={{ width: '20%' }}>{item.id}</p>
                         <p style={{ width: '20%' }}>{item.date}</p>
                         <p style={{ width: '20%' }}>{item.name}</p>
                         <p style={{ width: '20%' }}><BasicModal/></p>
                         <p style={{ width: '20%'}} onClick={()=>handleArchive(item)}><span style={{background:'#135846', color:'white',border:'none',padding:'10px', fontSize:'10px', borderRadius:'10px'}}> Archive</span></p>
-                    </div>
+                    </Row>
 )
             }
             )}

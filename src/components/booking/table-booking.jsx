@@ -4,23 +4,33 @@ import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {  NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 
 export function Table() {
 
     let [page, setPage] = useState(1)
     let book = booking.slice(((10*page)-10),(10*page))
-    const row ={
-        display: 'flex',
-        padding:'10px',
-        borderBottom:'1px gray solid'
-    }
+
+
+    const Row = styled.div`
+        display: flex;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px gray;
+        align-items: center;
+        margin: 5px;
+        :hover{
+            transform: Scale(1.02);
+        }
+        `;
 
     return (
         <>
-            <section  style={{boxShadow:'1px 1px 5px black', width:'900px', margin:'auto', backgroundColor: 'white', borderRadius:'10px'}}>
+            <section  style={{width:'90%', margin:'auto'}}>
 
-            <div style={row}>
+            <Row>
                 <p style={{ width: '16%' }}>Guest</p>
                 <p style={{ width: '14%' }}>Order Date</p>
                 <p style={{ width: '14%' }}>Check In</p>
@@ -28,12 +38,12 @@ export function Table() {
                 <p style={{ width: '14%' }}>Special Request</p>
                 <p style={{ width: '14%' }}>Room Type</p>
                 <p style={{ width: '12%' }}>Status</p>
-            </div>
+            </Row>
             {book.map((item) => {
                 return (
                     
-                    <div key={item.id} style={row}>
-                        <NavLink to={`/${item.id}`}style={{ width: '16%', color:'black', textDecoration:'none' }}><p >{item.name}</p></NavLink>
+                    <Row key={item.id} >
+                        <NavLink to={`/dashboard-hotel-miranda/booking/${item.id}`}style={{ width: '16%', color:'black', textDecoration:'none' }}><p >{item.name}</p></NavLink>
                         <p style={{ width: '14%',fontSize:'12px' }}>{item.orderDate}</p>
                         <p style={{ width: '14%',fontSize:'12px' }}>{item.checkIn}</p>
                         <p style={{ width: '14%',fontSize:'12px' }}>{item.checkOut}</p>
@@ -41,7 +51,7 @@ export function Table() {
                         <p style={{ width: '14%' }}>{item.tipoHabitacion}Deluxe</p>
                         <p style={{ width: '12%' }}>{item.status == true? 'Check In' : 'Check Out'}</p>
                         <p style={{width: '2%'}}><MoreVertIcon/></p>
-                    </div>
+                    </Row>
 
 )
             }

@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import { Bar } from "../nav-bar/bar"
-import { useStepContext } from '@mui/material';
+
 
 export function NewRoom() {
 
@@ -24,7 +21,6 @@ export function NewRoom() {
 
     return (
         <>
-            <Bar />
             <section style={{ padding: '50px', backgroundColor: 'white', boxShadow: '1px 1px 5px grey', width: '80%', margin:'auto', marginTop: '50px' }}>
                 <Box sx={{ width: '100%' }}>
                     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
