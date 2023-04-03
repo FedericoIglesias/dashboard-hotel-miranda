@@ -1,6 +1,5 @@
-import { Outlet, Navigate, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import template from '../json/template.json'
+import { Outlet, useNavigate } from "react-router-dom";
+import { Login } from "./login";
 
 export const ProtectedRoutes = () => {
 
@@ -8,7 +7,7 @@ export const ProtectedRoutes = () => {
     const navigate = useNavigate()
 
     if (!usuario) {
-        navigate('/login')
+        return <Login/>
     } else {
         return <Outlet />;
     }
