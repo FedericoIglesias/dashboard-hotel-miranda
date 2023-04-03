@@ -1,17 +1,17 @@
 import styled from "styled-components"
 import founder from '../../assets/founder.jpg'
 import { useState } from "react";
-import { useEffect } from "react";
+
 import { EditCard } from "./edit-card";
 
-export function Card (){
+export function Card() {
 
 
     const [edit, setEdit] = useState(0)
 
 
     const handelEdit = () => {
-        edit == 0 ? setEdit(1) : setEdit(0)
+        edit === 0 ? setEdit(1) : setEdit(0)
     }
 
 
@@ -20,15 +20,13 @@ export function Card (){
     width: 200px;
     background-color: #f8f8f8;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     margin: 20px auto;
-    box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px #e7e7e7;
+    border-radius: 10px;
     & img{
-        width: 80px;
-    }
-    & p{
-        font-size: 13px;
-        margin-bottom: 10px;
+        width: 70px;
+        height: 70px;
     }
     & button{
         border: none;
@@ -40,10 +38,10 @@ export function Card (){
     }
     `;
 
-    return(
+    return (
         <Card>
-            <img src={founder} alt="yourface" />
-                <EditCard edit={edit}/>
+            <img src={founder} alt="photoProfile" />
+            <EditCard edit={edit} />
             <button onClick={() => handelEdit()} >Edit</button>
         </Card>
     )

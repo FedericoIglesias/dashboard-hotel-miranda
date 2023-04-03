@@ -5,6 +5,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { Box } from '@mui/material';
 
 
 export function Bar({ setAside, setMarleft }) {
@@ -15,24 +16,25 @@ export function Bar({ setAside, setMarleft }) {
 
     let noti = {
         position: 'absolute',
-        fontSize: '10px',
+        fontSize: '8px',
         backgroundColor: '#E23428',
         borderRadius: '5px',
         fontWeight: '700',
-        top: '0',
+        top: '-3px',
         right: '-10px',
         padding: '1px 2px',
         color: 'white'
     }
+
     const handleLogout = () => {
         localStorage.removeItem('user')
         navigate('/login')
     }
 
     const handleShow = () => {
-        if (state == 1) {
+        if (state === 1) {
             setAside('none')
-            setMarleft('')
+            setMarleft('0')
             setState(0)
         } else {
             setAside('')
@@ -44,18 +46,31 @@ export function Bar({ setAside, setMarleft }) {
     const Assets = styled.div`
     display: flex;
     `;
+    const secStyle = {
+        display: 'flex',
+        width: '100%',
+        backgroundColor: 'white',
+        marginBottom: '20px',
+        justifyContent: 'space-between',
+        padding: '5px 30px'
+    }
 
+    const stylePosition = {
+        position: 'relative',
+        margin: '0 40px',
+    }
 
     return (
-        <section style={{ display: 'flex', width: '100%', backgroundColor: 'white', marginBottom: '20px', justifyContent: 'space-between', padding: '0 30px' }}>
-            <MenuIcon onClick={() => handleShow()} />
-
+        <section style={secStyle}>
+            <Box>
+                <MenuIcon onClick={() => handleShow()} />
+            </Box>
             <Assets >
-                <div style={{ position: 'relative', margin: '0 40px' }}>
+                <div style={stylePosition}>
                     <EmailOutlinedIcon />
                     <p style={noti}>000</p>
                 </div>
-                <div style={{ position: 'relative', margin: '0 40px' }}>
+                <div style={stylePosition}>
                     <ChatOutlinedIcon />
                     <p style={noti}>000</p>
                 </div>

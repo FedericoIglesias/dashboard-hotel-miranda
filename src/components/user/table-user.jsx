@@ -1,10 +1,9 @@
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import founder from '../../assets/founder.jpg'
 import CallIcon from '@mui/icons-material/Call';
 import styled from 'styled-components';
+import { SelectPage } from '../select-page';
 
 
 export function TableUSer({template}) {
@@ -17,10 +16,9 @@ export function TableUSer({template}) {
         padding: 10px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 1px 1px 5px gray;
         align-items: center;
-        margin: 5px;
         :hover{
+            box-shadow: 1px 1px 5px gray;
             transform: Scale(1.02);
         }
         `;
@@ -47,16 +45,14 @@ export function TableUSer({template}) {
                         <p style={{ width: '20%' }}>{item.description}</p>
                         <p style={{ width: '20%' }}>Monday</p>
                         <p style={{ width: '20%' }}><CallIcon/>{item.conctac} </p>
-                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={item.status == true ? {color:'#5AD07A'}: {color: '#E23428'}}>{item.status == true? 'Active' : 'Inactive'}</span></p>
+                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={item.status === true ? {color:'#5AD07A'}: {color: '#E23428'}}>{item.status === true? 'Active' : 'Inactive'}</span></p>
                         <MoreVertIcon/>
                     </Row>
 
                 )
             }
             )}
-            <Stack spacing={2} >
-                <Pagination style={{margin:'10px auto'}} count={Math.ceil(template.length/10)} variant="outlined" onChange={(event,page) =>{ setPage(page)}}/>
-            </Stack>
+            <SelectPage array={template} show={user} setNp={setPage} />
         </section >
     )
 }

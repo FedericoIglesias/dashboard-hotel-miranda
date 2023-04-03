@@ -1,16 +1,15 @@
 import booking from '../../json/booking.json'
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { SelectPage } from '../select-page';
 
 
 export function Table() {
 
     let [page, setPage] = useState(1)
-    let book = booking.slice(((10*page)-10),(10*page))
+    let book = booking.slice(((10 * page) - 10), (10 * page))
 
 
     const Row = styled.div`
@@ -18,47 +17,73 @@ export function Table() {
         padding: 10px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 1px 1px 5px gray;
         align-items: center;
-        margin: 5px;
         :hover{
+            box-shadow: 1px 1px 5px gray;
             transform: Scale(1.02);
         }
         `;
 
+    const handleDelete = () => {
+    }
+
+    const styleColumn = { width: '14%' }
+
+    const styleIn = {
+        backgroundColor: '#5AD07A50',
+        borderRadius: '10px',
+        paddingLeft: '12px',
+        color: '#5AD07A',
+        textAlign: 'center',
+        padding: '10px 10px',
+        width: '125px',
+        fontWeight: 700
+    }
+    const styleOut = {
+        backgroundColor: '#E2342850',
+        borderRadius: '10px',
+        paddingLeft: '12px',
+        color: '#E23428',
+        textAlign: 'center',
+        padding: '10px 10px',
+        width: '125px',
+        fontWeight: 700
+    }
+
     return (
         <>
-            <section  style={{width:'90%', margin:'auto'}}>
+            <section style={{ width: '90%', margin: 'auto' }}>
 
-            <Row>
-                <p style={{ width: '16%' }}>Guest</p>
-                <p style={{ width: '14%' }}>Order Date</p>
-                <p style={{ width: '14%' }}>Check In</p>
-                <p style={{ width: '14%' }}>Check Out</p>
-                <p style={{ width: '14%' }}>Special Request</p>
-                <p style={{ width: '14%' }}>Room Type</p>
-                <p style={{ width: '12%' }}>Status</p>
-            </Row>
-            {book.map((item) => {
-                return (
-                    
-                    <Row key={item.id} >
-                        <NavLink to={`/dashboard-hotel-miranda/booking/${item.id}`}style={{ width: '16%', color:'black', textDecoration:'none' }}><p >{item.name}</p></NavLink>
-                        <p style={{ width: '14%',fontSize:'12px' }}>{item.orderDate}</p>
-                        <p style={{ width: '14%',fontSize:'12px' }}>{item.checkIn}</p>
-                        <p style={{ width: '14%',fontSize:'12px' }}>{item.checkOut}</p>
-                        <p style={{ width: '14%' }}>lorem</p>
-                        <p style={{ width: '14%' }}>{item.tipoHabitacion}Deluxe</p>
-                        <p style={{ width: '12%' }}>{item.status == true? 'Check In' : 'Check Out'}</p>
-                        <p style={{width: '2%'}}><MoreVertIcon/></p>
-                    </Row>
+                <Row>
+                    <p style={{ width: '16%' }}>Guest</p>
+                    <p style={styleColumn}>Order Date</p>
+                    <p style={styleColumn}>Check In</p>
+                    <p style={styleColumn}>Check Out</p>
+                    <p style={styleColumn}>Special Request</p>
+                    <p style={styleColumn}>Room Type</p>
+                    <p style={styleColumn}>Status</p>
+                </Row>
+                {book.map((item) => {
+                    return (
+                        <Row key={item.id} >
+                            <NavLink to={`/dashboard-hotel-miranda/booking/${item.id}`} style={{ width: '16%', color: 'black', textDecoration: 'none' }}>
+                                <p >{item.name}</p>
+                            </NavLink>
+                            <p style={styleColumn}>{item.orderDate}</p>
+                            <p style={styleColumn}>{item.checkIn}</p>
+                            <p style={styleColumn}>{item.checkOut}</p>
+                            <p style={styleColumn}>lorem</p>
+                            <p style={styleColumn}>{item.tipoHabitacion}Deluxe</p>
+                            <p style={item.status === true ? styleIn : styleOut}>
+                                {item.status === true ? 'Check In' : 'Check Out'}
+                            </p>
+                            <div onClick={() => handleDelete()} ><MoreVertIcon /></div>
+                        </Row>
 
-)
-            }
-            )}
-            <Stack spacing={2}  >
-                <Pagination style={{margin:'10px auto'}} count={Math.ceil(booking.length/10)} variant="outlined" onChange={(event,page) =>{ setPage(page); console.log(book)}}/>
-            </Stack>
+                    )
+                }
+                )}
+                <SelectPage array={booking} setNp={setPage} show={book} />
             </section>
         </>
     )

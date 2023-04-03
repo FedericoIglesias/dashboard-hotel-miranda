@@ -1,21 +1,22 @@
 import rooms from '../../json/rooms.json'
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import room1 from '../../assets/room1.webp'
 import styled from 'styled-components';
+import { SelectPage } from '../select-page';
+
+
 
 
 
 
 const TableRoom = () => {
 
-    let [page, setPage] = useState(1)
+    const [np, setNp] = useState(1)
 
-    let room = rooms.slice(((2 * page) - 2), (2 * page))
+    let room = rooms.slice(((10 * np) - 10), (10 * np))
 
-    let handleDelete = () => {
+    const handleDelete = () => {
         console.log('i will delete you')
     }
     const Row = styled.div`
@@ -23,54 +24,77 @@ const TableRoom = () => {
         padding: 10px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 1px 1px 5px gray;
         align-items: center;
-        margin: 5px;
         :hover{
             transform: Scale(1.02);
+            box-shadow: 1px 1px 5px gray;
         }
         `;
-    
+
+    const styleAvai = {
+        backgroundColor: '#5AD07A',
+        borderRadius: '10px',
+        paddingLeft: '12px',
+        color: 'white',
+        textAlign: 'center',
+        padding: '10px 10px',
+        width: '125px',
+    }
+    const styleBooked = {
+        borderRadius: '10px',
+        paddingLeft: '12px',
+        color: 'white',
+        textAlign: 'center',
+        padding: '10px 10px',
+        width: '125px',
+        backgroundColor: '#E23428'
+    }
+
+    const styleImg = {
+        width: '100px',
+        height: '70px',
+        borderRadius: '5px',
+        marginRight: '10px'
+    }
+
+    const styleColumn = { width: '12%' }
 
 
 
     return (
         <>
-            <section style={{width:'90%', margin:'auto'}}>
+            <section style={{ width: '90%', margin: 'auto' }}>
 
                 <Row>
-                    <p style={{ width: '300px' }}>Room Name</p>
-                    <p style={{ width: '140px' }}>Bed Type</p>
-                    <p style={{ width: '140px' }}>Room Floor</p>
-                    <p style={{ width: '140px' }}>Facilities</p>
-                    <p style={{ width: '140px' }}>Rate</p>
-                    <p style={{ width: '140px', padding: '0 30px' }}>Status</p>
+                    <p style={{ width: '26%' }}>Room Name</p>
+                    <p style={styleColumn}>Bed Type</p>
+                    <p style={styleColumn}>Room Floor</p>
+                    <p style={styleColumn}>Facilities</p>
+                    <p style={styleColumn}>Rate</p>
+                    <p style={styleColumn}>Status</p>
                 </Row>
 
                 {room.map((item) => {
                     return (
                         <Row key={item.idHabitacion} >
-                            <div style={{ width: '300px', display: 'flex', alignItems: 'center', margin:'3px 0' }}>
-                                <img src={room1} alt="" style={{ width: '100px', height: '70px', borderRadius: '5px', marginRight: '10px' }} />
+                            <div style={{ width: '26%', display: 'flex', alignItems: 'center', margin: '3px 0' }}>
+                                <img src={room1} alt="" style={styleImg} />
                                 <p>{item.idHabitacion}</p>
                             </div>
-                            <p style={{ width: '140px', paddingLeft: '12px' }}>{item.roomType}</p>
-                            <p style={{ width: '140px', paddingLeft: '12px' }}>Floor A1</p>
-                            <p style={{ width: '140px', fontSize: '10px', paddingLeft: '12px' }}>{item.amenities}</p>
-                            <p style={{ width: '140px', paddingLeft: '12px' }}>${item.price}</p>
-                            <p style={item.status == 'Available' ? { backgroundColor: '#0af248', borderRadius: '10px', height: '23px' } : { backgroundColor: '#fa0202', borderRadius: '10px', height: '23px' }} >
-                                <span style={{paddingLeft: '12px', color: 'white', textAlign: 'center', padding: '30px 10px', width: '125px' }}>{item.status}</span>
-                            </p>
+                            <p style={styleColumn}>{item.roomType}</p>
+                            <p style={styleColumn}>Floor A1</p>
+                            <p style={{ width: '13%', fontSize: '10px' }}>{item.amenities}</p>
+                            <p style={styleColumn}>${item.price}</p>
+                            <p style={item.status === 'Available' ? styleAvai : styleBooked} >{item.status}</p>
                             <div onClick={() => handleDelete()} ><MoreVertIcon /></div>
                         </Row>
 
                     )
                 }
                 )}
-                <Stack spacing={2} >
-                    <Pagination style={{margin:' 10px auto'}} count={Math.ceil(rooms.length / 2)} variant="outlined" onChange={(event, page) => { setPage(page) }} />
-                </Stack>
-            </section>
+
+                <SelectPage array={rooms} setNp={setNp} show={room} />
+            </section >
         </>
     )
 }

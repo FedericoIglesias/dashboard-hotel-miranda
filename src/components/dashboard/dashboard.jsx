@@ -14,10 +14,10 @@ export function Dashboard() {
 
     return (
         <>
-            <Stats/>
+            <Stats />
             <section>
                 <p>calendario</p>
-                <p>stats</p>
+                <p>graphic</p>
             </section>
             <Proof />
         </>

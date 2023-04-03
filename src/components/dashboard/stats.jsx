@@ -7,7 +7,7 @@ import check from '../../json/check.json'
 import styled from 'styled-components';
 
 
-export function Stats () {
+export function Stats() {
 
 
     const reservation = room.filter(room => room.booking)
@@ -19,48 +19,68 @@ export function Stats () {
     background-color: white;
     display: flex;
     align-items: center;
-    padding: 20px 80px 20px 20px;
-    box-shadow: 1px 1px 5px gray;
+    padding: 20px 20px 20px 20px;
+    width: 23%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #eee;
     :hover{
         box-shadow: 1px 1px 5px red;
         transform: Scale(1.08)
     }
     `;
 
+    const Number = styled.p`
+    font-weight: 700;
+    font-size: 30px;
+    `;
 
+    const Category = styled.p`
+    color: gray;
+    font-size: 14px;
+    `;
 
-    return(
-        <section style={{display: 'flex', marginTop: '30px', justifyContent: 'space-around'}}>
-                
-                <Card>
-                    <CalendarMonthIcon style={{backgroundColor: '#FFEDEC', padding: '2px', marginRight: '22px', color: '#E23428'}} />
-                    <div>
-                        <p style={{fontWeight: '700'}}>{reservation.length}</p>
-                        <p style={{color: 'gray', fontSize: '10px'}}>Reservation</p>
-                    </div>
-                </Card>
-            
-                <Card>
-                    <BedIcon style={{backgroundColor: '#FFEDEC', padding: '2px', marginRight: '22px', color: '#E23428'}}/>
-                    <div>
-                        <p style={{fontWeight: '700'}}>{(reservation.length / 1000) * 100}%</p>
-                        <p style={{color: 'gray', fontSize: '10px'}}>Busy</p>
-                    </div>
-                </Card>
-                <Card>
-                    <LoginIcon style={{backgroundColor: '#FFEDEC', padding: '2px', marginRight: '22px', color: '#E23428'}}/>
-                    <div>
-                        <p style={{fontWeight: '700'}}>{checkIn.length}</p>
-                        <p style={{color: 'gray', fontSize: '10px'}}>Check In</p>
-                    </div>
-                </Card>
-                <Card>
-                    <LogoutIcon style={{backgroundColor: '#FFEDEC', padding: '2px', marginRight: '22px', color: '#E23428'}}/>
-                    <div>
-                        <p style={{fontWeight: '700'}}>{checkOut.length}</p>
-                        <p style={{color: 'gray', fontSize: '10px'}}>Check Out</p>
-                    </div>
-                </Card>
-            </section>
-    )
+    const styleIcon = {
+        backgroundColor: '#FFEDEC',
+        padding: '2px',
+        marginRight: '22px',
+        color: '#E23428',
+        width: '65px',
+        height: '65px',
     }
+
+
+    return (
+        <section style={{ display: 'flex', marginTop: '30px', justifyContent: 'space-around' }}>
+
+            <Card>
+                <CalendarMonthIcon style={styleIcon} />
+                <div>
+                    <Number>{reservation.length}</Number>
+                    <Category >Reservation</Category>
+                </div>
+            </Card>
+
+            <Card>
+                <BedIcon style={styleIcon} />
+                <div>
+                    <Number >{(reservation.length / 1000) * 100}%</Number>
+                    <Category >Busy</Category>
+                </div>
+            </Card>
+            <Card>
+                <LoginIcon style={styleIcon} />
+                <div>
+                    <Number >{checkIn.length}</Number>
+                    <Category >Check In</Category>
+                </div>
+            </Card>
+            <Card>
+                <LogoutIcon style={styleIcon} />
+                <div>
+                    <Number >{checkOut.length}</Number>
+                    <Category >Check Out</Category>
+                </div>
+            </Card>
+        </section>
+    )
+}
