@@ -3,16 +3,16 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '@mui/material';
+import { LogContext } from './logContext';
 
 
 export function Bar({ setAside, setMarleft }) {
 
-    const navigate = useNavigate()
     const [state, setState] = useState(1)
-
+    const {dispatchLog} = useContext(LogContext)
 
     let noti = {
         position: 'absolute',
@@ -27,8 +27,7 @@ export function Bar({ setAside, setMarleft }) {
     }
 
     const handleLogout = () => {
-        localStorage.removeItem('user')
-        navigate('/login')
+        dispatchLog({type: 'logout'})
     }
 
     const handleShow = () => {

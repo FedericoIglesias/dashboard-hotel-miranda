@@ -1,28 +1,20 @@
-import { useNavigate } from "react-router"
-import { useState } from "react"
-import template from '../json/template.json'
+import { useContext, useState } from "react"
 import styled from "styled-components"
-import backgroundLogin from '../assets/backgroungLogin.avif'
-import loginBackground from './login.css'
+import { LogContext } from "../components/logContext"
+
 
 export function Login() {
 
     const [name, setName] = useState('Xymenes Hallas')
     const [password, setPassword] = useState('100')
-    const navigate = useNavigate()
+
+    const { log, dispatchLog } = useContext(LogContext)
 
     const handleLogin = () => {
-        let user = template.filter(user => user.name === name)
-        console.log(user)
-        console.log(user[0].password)
-        if (user[0].password == password) {
-            localStorage.setItem('user', '1')
-            navigate('/dashboard-hotel-miranda/dashboard')
-        }
+        dispatchLog({ type: 'login', name: name, password: password })
     }
 
     const Myh1 = styled.section`
-    loginBackground;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -70,6 +62,7 @@ export function Login() {
                 <div>
                     <h1>Welcome</h1>
                     <input type="text" value='Xymenes Hallas' onChange={(e) => setName(e.target.value)} />
+                    <p> {log.name == null ? 'Name inalid' : ''}</p>
                     <input type='password' value='100' onChange={(e) => setPassword(e.target.value)} />
                     <button onClick={handleLogin}>Login</button>
                 </div>

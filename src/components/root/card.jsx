@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import founder from '../../assets/founder.jpg'
 import { useState } from "react";
-
 import { EditCard } from "./edit-card";
 
 export function Card() {
 
 
     const [edit, setEdit] = useState(0)
+
 
 
     const handelEdit = () => {

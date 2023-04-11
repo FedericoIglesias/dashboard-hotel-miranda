@@ -1,9 +1,17 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { LogContext } from "../logContext"
 
 export function EditCard({ edit }) {
 
-    const [name, setName] = useState('Mitchael Iddon')
-    const [mail, setMail] = useState('bgodley0@quantcast.com')
+    const {log} = useContext(LogContext)
+
+    const [name, setName] = useState('')
+    const [mail, setMail] = useState('')
+
+    useEffect(() => {
+        setMail(log.mail)
+        setName(log.name)
+    },[log])
 
     const styleMail = {
         color: 'gray',

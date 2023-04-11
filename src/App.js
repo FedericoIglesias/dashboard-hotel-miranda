@@ -10,6 +10,7 @@ import { ProtectedRoutes } from "./pages/protected-routes";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";
+import { LogProvider } from "./components/logContext";
 
 function App() {
 
@@ -36,7 +37,9 @@ function App() {
 
   return (
     <>
+    <LogProvider>
       <RouterProvider router={router} />
+    </LogProvider>
     </>
   );
 }
