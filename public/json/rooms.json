@@ -1,0 +1,506 @@
+[
+        {
+            "idHabitacion": "#00000001",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000002",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000003",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000004",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000005",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000006",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000007",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000008",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000009",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000010",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000011",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000012",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000013",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000014",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000015",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000016",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000017",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000018",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000019",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000020",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000021",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000022",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000023",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000024",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000025",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000026",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000027",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000028",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000029",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000030",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000031",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00001",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 145,
+            "offerPercent": 35,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000032",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00002",
+            "roomType": "single Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 199,
+            "offerPercent": 25,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000033",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00003",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 300,
+            "offerPercent": 5,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000034",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00004",
+            "roomType": "Double Superior",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 100,
+            "offerPercent": 0,
+            "status": "Available"
+        },
+        {
+            "idHabitacion": "#00000035",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00005",
+            "roomType": "Double Bed",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 160,
+            "offerPercent": 50,
+            "status": "Booked"
+        },
+        {
+            "idHabitacion": "#00000036",
+            "foto": [
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg",
+                "../resources/Imagenes/room01.jpg"
+            ],
+            "numeroHabitacion": "00006",
+            "roomType": "Suite",
+            "amenities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
+            "price": 245,
+            "offerPercent": 23,
+            "status": "Booked"
+        }
+    ]

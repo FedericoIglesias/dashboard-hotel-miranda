@@ -11,6 +11,8 @@ import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";
 import { LogProvider } from "./components/logContext";
+import { Provider } from 'react-redux';
+import { store } from "./components/store/store";
 
 function App() {
 
@@ -37,9 +39,11 @@ function App() {
 
   return (
     <>
+    <Provider store={store}>
     <LogProvider>
       <RouterProvider router={router} />
     </LogProvider>
+    </Provider>
     </>
   );
 }
