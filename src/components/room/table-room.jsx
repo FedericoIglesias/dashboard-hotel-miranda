@@ -15,12 +15,11 @@ const TableRoom = () => {
 
     const [np, setNp] = useState(1)
     const dispatch = useDispatch()
-    const rooms = useSelector(store => store.rooms)
+    const rooms = useSelector(store => store.room)
     
     
     useEffect(() => {
         dispatch(searchRoom('get'))
-        // console.log(room)
     }, [rooms])
     
     

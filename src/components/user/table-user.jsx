@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import founder from '../../assets/founder.jpg'
 import CallIcon from '@mui/icons-material/Call';
@@ -8,8 +8,11 @@ import { SelectPage } from '../select-page';
 
 export function TableUSer({template}) {
 
-    let [page, setPage] = useState(1)
+    const [page, setPage] = useState(1)
+    
     let user = template.slice(((10*page)-10),(10*page))
+
+
 
     const Row = styled.div`
         display: flex;
@@ -22,6 +25,10 @@ export function TableUSer({template}) {
             transform: Scale(1.02);
         }
         `;
+
+        const ifStyle = (item) => item.status === true ? {color:'#5AD07A'}: {color: '#E23428'}
+
+
     return (
         <section style={{width:'90%', margin:'auto'}}>
             <Row>
@@ -45,7 +52,7 @@ export function TableUSer({template}) {
                         <p style={{ width: '20%' }}>{item.description}</p>
                         <p style={{ width: '20%' }}>Monday</p>
                         <p style={{ width: '20%' }}><CallIcon/>{item.conctac} </p>
-                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={item.status === true ? {color:'#5AD07A'}: {color: '#E23428'}}>{item.status === true? 'Active' : 'Inactive'}</span></p>
+                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={ifStyle(item)}>{item.status === true? 'Active' : 'Inactive'}</span></p>
                         <MoreVertIcon/>
                     </Row>
 

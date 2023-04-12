@@ -1,8 +1,9 @@
-import mail from '../../json/mail.json'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BasicModal from './modal'
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchContact } from '../features/contactSlice';
 
 
 
@@ -10,12 +11,24 @@ import { SelectPage } from '../select-page';
 export function TableContact() {
 
     const [page, setPage] = useState(1)
-    let mails = mail.slice(((10 * page) - 10), (10 * page))
-    let archive = []
+    const dispatch = useDispatch()
+    const mail = useSelector(store => store.contact)
+
+    const mails = mail.slice(((10 * page) - 10), (10 * page))
+
+
+    const archive = []
+
+
+    useEffect(() => {
+        dispatch(searchContact())
+    }, [])
+
     const handleArchive = (item) => {
         archive.unshift(item)
-        console.log(archive)
     }
+
+
     const Row = styled.div`
         display: flex;
         padding: 10px;
@@ -27,6 +40,15 @@ export function TableContact() {
             transform: Scale(1.02);
         }
         `;
+
+    const btnStyle = {
+        background: '#135846',
+        color: 'white',
+        border: 'none',
+        padding: '10px',
+        fontSize: '10px',
+        borderRadius: '10px'
+    }
 
 
     return (
@@ -47,12 +69,12 @@ export function TableContact() {
                             <p style={{ width: '20%' }}>{item.date}</p>
                             <p style={{ width: '20%' }}>{item.name}</p>
                             <p style={{ width: '20%' }}><BasicModal /></p>
-                            <p style={{ width: '20%' }} onClick={() => handleArchive(item)}><span style={{ background: '#135846', color: 'white', border: 'none', padding: '10px', fontSize: '10px', borderRadius: '10px' }}> Archive</span></p>
+                            <p style={{ width: '20%' }} onClick={() => handleArchive(item)}><span style={ btnStyle }> Archive</span></p>
                         </Row>
                     )
                 }
                 )}
-                <SelectPage array={mail} show={mails} setNp={setPage} /> 
+                <SelectPage array={mail} show={mails} setNp={setPage} />
             </section>
         </>
     )

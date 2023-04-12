@@ -1,4 +1,3 @@
-
 import { Proof } from "./proof"
 import { TableContact } from "./table-contact"
 
