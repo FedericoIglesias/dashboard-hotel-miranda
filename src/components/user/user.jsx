@@ -68,7 +68,7 @@ export function User() {
             <div style={{ display: 'flex', margin: '20px ', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex' }}>
                     <p style={all} onClick={() => { setUsers(template); colorCase(0) }} >All Employed </p>
-                    <p style={active} onClick={() => { setUsers(template.filter(template => template.status == true)); colorCase(1) }} >Active Employee</p>
+                    <p style={active} onClick={() => { setUsers(template.filter(template => template.status === true)); colorCase(1) }} >Active Employee</p>
                     <p style={inactive} onClick={() => { setUsers(template.filter(template => template.status == false)); colorCase(2) }} >Inactive Employee</p>
                 </div>
                 <div>

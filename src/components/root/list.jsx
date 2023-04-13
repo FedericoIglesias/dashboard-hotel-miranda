@@ -1,4 +1,3 @@
-import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
@@ -17,7 +16,7 @@ export default function NestedList() {
     const linkStyle = { color: 'gray', textDecoration: 'none', fontWeight: 700 }
     const active = { borderLeft: '3px solid #E23428', color: '#E23428', fontWeight: 400 }
 
-    const [d, setD] = useState(active)
+    const [d, setD] = useState(linkStyle)
     const [r, setR] = useState(linkStyle)
     const [u, setU] = useState(linkStyle)
     const [c, setC] = useState(linkStyle)

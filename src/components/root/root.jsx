@@ -5,16 +5,16 @@ import { Outlet } from "react-router-dom";
 import { Bar } from "../bar";
 import { useState } from "react";
 import logo from '../../assets/logo.webp'
-
+import Slide from '@mui/material/Slide';
 
 
 export function Root() {
 
-    const [aside, setAside] = useState('')
-    const [marleft, setMarleft] = useState('20%')
+
+
+    const [checked, setChecked] = useState({check: true, marleft: '20%'});
 
     const boxNav = {
-        display: aside,
         width: '20%',
         padding: '20px',
         backgroundColor: 'white',
@@ -22,6 +22,7 @@ export function Root() {
         position: 'fixed',
         left: 0,
         boxSizing: 'border-box',
+
     }
 
     const smallLetter = {
@@ -38,24 +39,27 @@ export function Root() {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={boxNav}>
-                <div style={{ display: 'flex', marginBottom: '20px' }}>
-                    <img src={logo} alt="" style={{ width: '60px', marginRight: '10px' }} />
-                    <div>
-                        <p style={title} >travl</p>
-                        <p style={smallLetter} >Admin Dashboard</p>
+            <Slide direction="right" in={checked.check} mountOnEnter unmountOnExit>
+                <div style={boxNav}>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                        <img src={logo} alt="" style={{ width: '60px', marginRight: '10px' }} />
+                        <div>
+                            <p style={title} >travl</p>
+                            <p style={smallLetter} >Admin Dashboard</p>
+                        </div>
                     </div>
+                    <NestedList />
+                    <Card />
+                    <p style={{ fontWeight: '700' }} >Travl Admin Dashboard</p>
+                    <p style={smallLetter} >© 2020 All Rights Reserved</p>
+                    <p style={smallLetter} >Made whit ♥ by Federico Dev</p>
                 </div>
-                <NestedList />
-                <Card />
-                <p style={{ fontWeight: '700' }} >Travl Admin Dashboard</p>
-                <p style={smallLetter} >© 2020 All Rights Reserved</p>
-                <p style={smallLetter} >Made whit ♥ by Federico Dev</p>
-            </div>
-            <div style={{ backgroundColor: '#f8f8f8', width: '80%', paddingBottom: '50px', marginLeft: marleft }}>
-                <Bar setAside={setAside} setMarleft={setMarleft} />
+            </Slide>
+            <div style={{ backgroundColor: '#f8f8f8', width: '80%', paddingBottom: '50px', marginLeft: checked.marleft }}>
+                <Bar setChecked={setChecked} />
                 <Outlet />
             </div>
         </div>
     )
 }
+

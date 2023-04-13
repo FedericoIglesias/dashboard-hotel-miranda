@@ -4,20 +4,17 @@ import founder from '../../assets/founder.jpg'
 import CallIcon from '@mui/icons-material/Call';
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
-import { useDispatch } from 'react-redux';
-import { searchUser } from '../features/userSlice';
 
 
 export function TableUSer({ template }) {
 
     const [page, setPage] = useState(1)
-    const dispatch = useDispatch()
     const user = template.slice(((10 * page) - 10), (10 * page))
 
     
 
     useEffect(() => {
-    }, [2])
+    }, [user])
 
 const Row = styled.div`
         display: flex;

@@ -9,12 +9,12 @@ import { Box } from '@mui/material';
 import { LogContext } from './logContext';
 
 
-export function Bar({ setAside, setMarleft }) {
+export function Bar({ setChecked }) {
 
     const [state, setState] = useState(1)
     const {dispatchLog} = useContext(LogContext)
 
-    let noti = {
+    const noti = {
         position: 'absolute',
         fontSize: '8px',
         backgroundColor: '#E23428',
@@ -32,12 +32,10 @@ export function Bar({ setAside, setMarleft }) {
 
     const handleShow = () => {
         if (state === 1) {
-            setAside('none')
-            setMarleft('0')
+            setChecked({check: false, marleft: ''})
             setState(0)
         } else {
-            setAside('')
-            setMarleft('20%')
+            setChecked({check: true, marleft: '20%'})
             setState(1)
         }
     }
