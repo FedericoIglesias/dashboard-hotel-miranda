@@ -7,7 +7,7 @@ import contactReducer from '../features/contactSlice'
 
 export const store = configureStore({
         reducer:{
-            // booking: bookingReducer,
+            booking: bookingReducer,
             room: roomReducer,
             user: userReducer,
             contact: contactReducer,

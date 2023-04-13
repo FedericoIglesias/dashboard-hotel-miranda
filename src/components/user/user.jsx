@@ -12,7 +12,7 @@ export function User() {
     const dispatch = useDispatch()
     const template = useSelector(store => store.user)
 
-
+    console.log(template);
 
     useEffect(() => {
         dispatch(searchUser())
@@ -26,29 +26,58 @@ export function User() {
             setUsers(template.filter(template => template.name.includes(e)))
         } else { setUsers(template) }
     }
-    const [active, setActive] = useState()
-    const [inactive, setInactive] = useState()
-    const [all, setAll] = useState('')
+    
+    const redStyle = {
+        marginRight: '20px',
+        borderBottom: '1px solid black',
+        fontSize: '12px',
+        color: '#e23428',
+        fontWeight: '700'
+    }
+    
+    const grayStyle = {
+        marginRight: '20px',
+        borderBottom: '1px solid black',
+        fontSize: '12px',
+        color: 'gray',
+        fontWeight: '700'
+    }
+    
+    const [active, setActive] = useState(grayStyle)
+    const [inactive, setInactive] = useState(grayStyle)
+    const [all, setAll] = useState(redStyle)
+
+
 
     const colorCase = (n) => {
-        n === 0 ? setAll('#E23428') : setAll('')
-        n === 1 ? setActive('#E23428') : setActive('')
-        n === 2 ? setInactive('#E23428') : setInactive('')
+        n === 0 ? setAll(redStyle) : setAll(grayStyle)
+        n === 1 ? setActive(redStyle) : setActive(grayStyle)
+        n === 2 ? setInactive(redStyle) : setInactive(grayStyle)
+    }
+
+    const btnStyle = {
+        color: 'white',
+        border: 'none',
+        padding: '10px 20px',
+        backgroundColor: '#135846',
+        borderRadius: '20px'
     }
 
     return (
         <>
             <div style={{ display: 'flex', margin: '20px ', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex' }}>
-                    <p style={{ marginRight: '20px', borderBottom: '1px solid black', fontSize: '12px', color: 'gray', color: all, fontWeight: '700' }} onClick={() => { setUsers(template); colorCase(0) }} >All Employed </p>
-                    <p style={{ marginRight: '20px', borderBottom: '1px solid black', fontSize: '12px', color: 'gray', color: active, fontWeight: '700' }} onClick={() => { setUsers(template.filter(template => template.status == true)); colorCase(1) }} >Active Employee</p>
-                    <p style={{ borderBottom: '1px solid black', fontSize: '12px', color: 'gray', color: inactive, fontWeight: '700' }} onClick={() => { setUsers(template.filter(template => template.status == false)); colorCase(2) }} >Inactive Employee</p>
+                    <p style={all} onClick={() => { setUsers(template); colorCase(0) }} >All Employed </p>
+                    <p style={active} onClick={() => { setUsers(template.filter(template => template.status == true)); colorCase(1) }} >Active Employee</p>
+                    <p style={inactive} onClick={() => { setUsers(template.filter(template => template.status == false)); colorCase(2) }} >Inactive Employee</p>
                 </div>
                 <div>
                     <span>Search: </span>
                     <input type="text" onChange={(e) => { handleSearch(e.target.value); colorCase(0) }} />
                 </div>
-                <button style={{ color: 'white', border: 'none', padding: '10px 20px', backgroundColor: '#135846', borderRadius: '20px' }}><Link to={'/new-user'} style={{ color: 'white', textDecoration: 'none' }}>+New User</Link></button>
+                <button style={btnStyle}>
+                    <Link to={'/new-user'} style={{ color: 'white', textDecoration: 'none' }}>+New User</Link>
+                </button>
             </div >
             <TableUSer template={users} />
         </>

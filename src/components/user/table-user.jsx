@@ -4,17 +4,22 @@ import founder from '../../assets/founder.jpg'
 import CallIcon from '@mui/icons-material/Call';
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
+import { useDispatch } from 'react-redux';
+import { searchUser } from '../features/userSlice';
 
 
-export function TableUSer({template}) {
+export function TableUSer({ template }) {
 
     const [page, setPage] = useState(1)
+    const dispatch = useDispatch()
+    const user = template.slice(((10 * page) - 10), (10 * page))
+
     
-    let user = template.slice(((10*page)-10),(10*page))
 
+    useEffect(() => {
+    }, [2])
 
-
-    const Row = styled.div`
+const Row = styled.div`
         display: flex;
         padding: 10px;
         background-color: white;
@@ -26,40 +31,40 @@ export function TableUSer({template}) {
         }
         `;
 
-        const ifStyle = (item) => item.status === true ? {color:'#5AD07A'}: {color: '#E23428'}
+const ifStyle = (item) => item.status === true ? { color: '#5AD07A' } : { color: '#E23428' }
 
 
-    return (
-        <section style={{width:'90%', margin:'auto'}}>
-            <Row>
-                <p style={{ width: '20%' }}>Name</p>
-                <p style={{ width: '20%' }}>Job Desk</p>
-                <p style={{ width: '20%' }}>Schedule</p>
-                <p style={{ width: '20%' }}>Contact</p>
-                <p style={{ width: '20%' }}>Status</p>
-            </Row>
-            {template.slice(((10*page)-10),(10*page)).map((item) => {
-                return (
-                    <Row key={item.id} >
-                        <div style={{ width: '20%', display: 'flex', fontSize: '10px' }}>
-                            <img src={founder} alt="profile" style={{width:'25px'}} />
-                            <div>
-                                <p>{item.name}</p>
-                                <p>{item.id}</p>
-                                <p>{item.startDate}</p>
-                            </div>
+return (
+    <section style={{ width: '90%', margin: 'auto' }}>
+        <Row>
+            <p style={{ width: '20%' }}>Name</p>
+            <p style={{ width: '20%' }}>Job Desk</p>
+            <p style={{ width: '20%' }}>Schedule</p>
+            <p style={{ width: '20%' }}>Contact</p>
+            <p style={{ width: '20%' }}>Status</p>
+        </Row>
+        {template.slice(((10 * page) - 10), (10 * page)).map((item) => {
+            return (
+                <Row key={item.id} >
+                    <div style={{ width: '20%', display: 'flex', fontSize: '10px' }}>
+                        <img src={founder} alt="profile" style={{ width: '25px' }} />
+                        <div>
+                            <p>{item.name}</p>
+                            <p>{item.id}</p>
+                            <p>{item.startDate}</p>
                         </div>
-                        <p style={{ width: '20%' }}>{item.description}</p>
-                        <p style={{ width: '20%' }}>Monday</p>
-                        <p style={{ width: '20%' }}><CallIcon/>{item.conctac} </p>
-                        <p style={{ width: '18%', fontWeight:'700' }  }><span style={ifStyle(item)}>{item.status === true? 'Active' : 'Inactive'}</span></p>
-                        <MoreVertIcon/>
-                    </Row>
+                    </div>
+                    <p style={{ width: '20%' }}>{item.description}</p>
+                    <p style={{ width: '20%' }}>Monday</p>
+                    <p style={{ width: '20%' }}><CallIcon />{item.conctac} </p>
+                    <p style={{ width: '18%', fontWeight: '700' }}><span style={ifStyle(item)}>{item.status === true ? 'Active' : 'Inactive'}</span></p>
+                    <MoreVertIcon />
+                </Row>
 
-                )
-            }
-            )}
-            <SelectPage array={template} show={user} setNp={setPage} />
-        </section >
-    )
+            )
+        }
+        )}
+        <SelectPage array={template} show={user} setNp={setPage} />
+    </section >
+)
 }

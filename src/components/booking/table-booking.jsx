@@ -1,16 +1,24 @@
-import booking from '../../json/booking.json'
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchBooking } from '../features/bookingSlice';
 
 
 export function Table() {
 
-    let [page, setPage] = useState(1)
-    let book = booking.slice(((10 * page) - 10), (10 * page))
+    const [page, setPage] = useState(1)
+    const booking = useSelector(store => store.booking)
+    const dispatch = useDispatch()
 
+    const book = booking.slice(((10 * page) - 10), (10 * page))
+
+useEffect(() => {
+    dispatch(searchBooking())
+},[])
 
     const Row = styled.div`
         display: flex;

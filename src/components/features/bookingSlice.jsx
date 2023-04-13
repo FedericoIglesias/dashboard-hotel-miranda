@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
 
-let intialState = []
+const initialState = []
 
 
 
@@ -10,7 +10,7 @@ let intialState = []
 export const searchBooking = createAsyncThunk('serach/searchBooking', async (arg) => {
 
     try{
-        const response = fetch('json/booking.json')
+        const response = await fetch('json/booking.json')
         const data = await response.json()
         return data;
     }catch (error){alert(error)}
@@ -21,7 +21,7 @@ export const searchBooking = createAsyncThunk('serach/searchBooking', async (arg
 
 const bookingSlice = createSlice({
     name: 'booking',
-    intialState,
+    initialState,
     extraReducers:{
         [searchBooking.pending]: (state) => {
             console.log('Loading')
