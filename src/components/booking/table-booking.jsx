@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchBooking } from '../features/bookingSlice';
+import { searchBooking } from '../../features/bookingSlice';
 
 
 export function Table() {

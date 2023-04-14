@@ -4,7 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchContact } from '../features/contactSlice';
+import { searchContact } from '../../features/contactSlice';
 
 
 

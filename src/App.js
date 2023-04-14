@@ -10,9 +10,9 @@ import { ProtectedRoutes } from "./pages/protected-routes";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";
-import { LogProvider } from "./components/logContext";
 import { Provider } from 'react-redux';
-import { store } from "./components/store/store";
+import { store } from "./store/store";
+import { LoginProvider } from "./context/loginContext";
 
 function App() {
 
@@ -40,9 +40,9 @@ function App() {
   return (
     <>
     <Provider store={store}>
-    <LogProvider>
+    <LoginProvider>
       <RouterProvider router={router} />
-    </LogProvider>
+    </LoginProvider>
     </Provider>
     </>
   );

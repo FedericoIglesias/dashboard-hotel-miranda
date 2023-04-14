@@ -2,17 +2,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useNavigate } from 'react-router';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '@mui/material';
-import { LogContext } from './logContext';
+import { LoginContext } from '../context/loginContext';
 
 
 export function Bar({ setChecked }) {
 
     const [state, setState] = useState(1)
-    const {dispatchLog} = useContext(LogContext)
+    const {dispatchLogin} = useContext(LoginContext)
 
     const noti = {
         position: 'absolute',
@@ -27,7 +26,7 @@ export function Bar({ setChecked }) {
     }
 
     const handleLogout = () => {
-        dispatchLog({type: 'logout'})
+        dispatchLogin({type: 'logout'})
     }
 
     const handleShow = () => {

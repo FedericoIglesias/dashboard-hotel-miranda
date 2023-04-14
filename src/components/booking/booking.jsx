@@ -5,7 +5,7 @@ export function Booking() {
 
     
 
-    let handleOrder = (state) => {
+    const handleOrder = (state) => {
         switch (state) {
             case 'book':
                 booking.sort((a, b) => new Date(a.orderDate).getTime() - new Date(b.orderDate).getTime())

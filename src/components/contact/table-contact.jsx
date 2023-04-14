@@ -3,7 +3,7 @@ import BasicModal from './modal'
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchContact } from '../features/contactSlice';
+import { searchContact } from '../../features/contactSlice';
 
 
 

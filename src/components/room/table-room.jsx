@@ -1,11 +1,10 @@
-// import rooms from '../../json/rooms.json'
 import { useEffect, useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import room1 from '../../assets/room1.webp'
 import styled from 'styled-components';
 import { SelectPage } from '../select-page';
 import { useSelector, useDispatch } from 'react-redux';
-import { searchRoom } from '../features/roomSlice';
+import { fetchRooms } from '../../features/roomSlice';
 
 
 
@@ -15,11 +14,11 @@ const TableRoom = () => {
 
     const [np, setNp] = useState(1)
     const dispatch = useDispatch()
-    const rooms = useSelector(store => store.room)
+    const rooms = useSelector(store => store.room.rooms)
     
     
     useEffect(() => {
-        dispatch(searchRoom('get'))
+        dispatch(fetchRooms())
     }, [rooms])
     
     

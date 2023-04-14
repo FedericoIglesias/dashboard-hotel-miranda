@@ -2,7 +2,7 @@ import { TableUSer } from "./table-user"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { searchUser } from "../features/userSlice"
+import { searchUser } from "../../features/userSlice"
 
 
 
@@ -11,6 +11,7 @@ export function User() {
 
     const dispatch = useDispatch()
     const template = useSelector(store => store.user)
+    const [users, setUsers] = useState(template)
 
     console.log(template);
 
@@ -18,8 +19,10 @@ export function User() {
         dispatch(searchUser())
     }, [])
 
+    useEffect(() => {
+        setUsers(template)
+    }, [template])
 
-    const [users, setUsers] = useState(template)
 
     const handleSearch = (e) => {
         if (e !== '') {

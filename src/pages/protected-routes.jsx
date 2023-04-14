@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { Login } from "./login";
 import { useContext } from "react";
-import { LogContext } from "../components/logContext";
+import { LoginContext } from "../context/loginContext";
 
 export const ProtectedRoutes = () => {
 
 
-    const {log} = useContext(LogContext)
+    const {login} = useContext(LoginContext)
 
-    
+    console.log(); 
 
-    if (!log.auth) {
+    if (!login.auth) {
         return <Login/>
     } else {
         return <Outlet />;

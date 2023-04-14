@@ -1,17 +1,17 @@
 import { useContext, useEffect, useState } from "react"
-import { LogContext } from "../logContext"
+import { LoginContext } from "../../context/loginContext"
 
 export function EditCard({ edit }) {
 
-    const {log} = useContext(LogContext)
+    const {login} = useContext(LoginContext)
 
     const [name, setName] = useState('')
     const [mail, setMail] = useState('')
 
     useEffect(() => {
-        setMail(log.mail)
-        setName(log.name)
-    },[log])
+        setMail(login.mail)
+        setName(login.name)
+    },[login])
 
     const styleMail = {
         color: 'gray',
