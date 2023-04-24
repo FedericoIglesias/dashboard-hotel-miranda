@@ -11,6 +11,7 @@ export const searchUser = createAsyncThunk('search/searchUser', async (arg) => {
     try{
         const response = await fetch('json/template.json');
         const data = await response.json();
+        console.log(data)
         return data;
     }catch(error){
         alert(error)
@@ -27,6 +28,7 @@ const userSlice = createSlice({
         },
         [searchUser.fulfilled]: (state, action) => {
             state = action.payload
+            
             return state
         },
         [searchUser.reject]: (state) => {

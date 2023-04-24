@@ -13,7 +13,6 @@ export function User() {
     const template = useSelector(store => store.user)
     const [users, setUsers] = useState(template)
 
-    console.log(template);
 
     useEffect(() => {
         dispatch(searchUser())

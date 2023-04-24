@@ -70,7 +70,7 @@ export function Bar({ setChecked }) {
                     <ChatOutlinedIcon />
                     <p style={noti}>000</p>
                 </div>
-                <LogoutIcon onClick={() => handleLogout()} />
+                <LogoutIcon id='cypress-logout' onClick={() => handleLogout()} />
             </Assets>
         </section>
     )

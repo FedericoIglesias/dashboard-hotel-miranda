@@ -3,32 +3,12 @@ import styled from "styled-components"
 import { LoginContext } from "../context/loginContext"
 import { useDispatch, useSelector } from "react-redux"
 import { searchUser } from "../features/userSlice"
+import template from '../json/template.json'
 
 
-export function Login() {
 
-    const [name, setName] = useState('Xymenes Hallas')
-    const [password, setPassword] = useState('100')
-    const { login, dispatchLogin } = useContext(LoginContext)
-    const template = useSelector(store => store.user)
-    const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(searchUser())
-    },[])
-
-    const handleLogin = () => {
-        const aux = template.find(item => item.name === name) 
-        if( !aux){
-            alert('Name invalid')
-        } else if (aux.password != password){
-            alert('Password invalid')
-        }else{
-        dispatchLogin({auth: true, name: aux.name, mail: aux.email})
-        }
-    }
-
-    const Myh1 = styled.section`
+const Myh1 = styled.section`
     background-color: #f8f8f8;
     display: flex;
     justify-content: center;
@@ -48,7 +28,7 @@ export function Login() {
     }
         `;
 
-    const InputDiv = styled.section`
+const InputDiv = styled.section`
         padding: 40px;
         display: flex;
         justify-content: center;
@@ -78,7 +58,7 @@ export function Login() {
         
     `;
 
-    const Travl = styled.section`
+const Travl = styled.section`
 
     text-align: center;
     width: 400px;
@@ -98,16 +78,40 @@ export function Login() {
 
 
 
+export function Login() {
+
+    const [name, setName] = useState('Xymenes Hallas')
+    const [password, setPassword] = useState('100')
+    const { dispatchLogin } = useContext(LoginContext)
+    // const template = useSelector(store => store.user)
+    const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(searchUser())
+    // }, [])
+
+
+
+    const handleLogin = () => { //this will be when i have the server
+        const aux = template.find(item => item.name === name)
+        if (!aux) {
+            alert('Name invalid')
+        } else if (aux.password != password) {
+            alert('Password invalid')
+        } else {
+            dispatchLogin({ auth: true, name: aux.name, mail: aux.email })
+        }
+    }
 
 
     return (
         <>
-            <Myh1 className="login" style={{}}>
-                <div>
+            <Myh1>
+                <div >
                     <InputDiv>
-                        <input type="text" value='Xymenes Hallas' onChange={(e) => setName(e.target.value)} />
-                        <input type='password' value='100' onChange={(e) => setPassword(e.target.value)} />
-                        <button onClick={handleLogin}>Login</button>
+                        <input type="text" name='username' placeholder='Xymenes Hallas' onChange={(e) => setName(e.target.value)} />
+                        <input type='password' name="password" placeholder='100' onChange={(e) => setPassword(e.target.value)} />
+                        <button id="cypress-login" onClick={handleLogin}>Login</button>
                     </InputDiv>
                     <hr />
                     <Travl>
@@ -119,4 +123,4 @@ export function Login() {
             </Myh1>
         </>
     )
-}
+} 

@@ -19,19 +19,19 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route  path="/dashboard-hotel-miranda" element={<ProtectedRoutes />}>
+        <Route path="/dashboard-hotel-miranda" element={<ProtectedRoutes />}>
           <Route path="/dashboard-hotel-miranda" element={<Root />} >
             <Route path="/dashboard-hotel-miranda/dashboard" element={<Dashboard />} />
             <Route path="/dashboard-hotel-miranda/room" element={<Room />} />
             <Route path="/dashboard-hotel-miranda/new-room" element={<NewRoom />} />
-            <Route path="/dashboard-hotel-miranda/booking" element={<Booking />}/>
-            <Route path="/dashboard-hotel-miranda/booking/:id" element={<Reservation/>}/>
+            <Route path="/dashboard-hotel-miranda/booking" element={<Booking />} />
+            <Route path="/dashboard-hotel-miranda/booking/:id" element={<Reservation />} />
             <Route path="/dashboard-hotel-miranda/user" element={<User />} />
             <Route path="/dashboard-hotel-miranda/new-user" element={<NewUser />} />
-            <Route path="/dashboard-hotel-miranda/contact" element={<Contact />} /> 
+            <Route path="/dashboard-hotel-miranda/contact" element={<Contact />} />
           </Route>
         </Route>
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
       </>
     )
   );
@@ -39,11 +39,11 @@ function App() {
 
   return (
     <>
-    <Provider store={store}>
-    <LoginProvider>
-      <RouterProvider router={router} />
-    </LoginProvider>
-    </Provider>
+      <Provider store={store}>
+        <LoginProvider>
+          <RouterProvider router={router} />
+        </LoginProvider>
+      </Provider>
     </>
   );
 }
