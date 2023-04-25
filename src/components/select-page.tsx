@@ -1,9 +1,15 @@
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React, { FC } from 'react'
 
+interface Iprops{
+    array: any;
+    setNp: any;
+    show:  any
+}
 
-export function SelectPage({ array, setNp, show }) {
+export const SelectPage : FC<Iprops> = ({ array, setNp, show }): JSX.Element => {
 
 
     const secSelect = {
@@ -16,18 +22,12 @@ export function SelectPage({ array, setNp, show }) {
 
 
     const theme = createTheme({
-        status: {
-            danger: '#e53e3e',
-        },
         palette: {
             primary: {
                 main: '#135846',
-                darker: '#135846',
+                
                 light: '#135846',
                 contrastText: '#135846',
-            },
-            neutral: {
-                main: '#8b6483',
             },
         },
     });

@@ -1,4 +1,5 @@
 import { Root } from "./components/root/root";
+import React from 'react'
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
 import { Dashboard } from "./components/dashboard/dashboard";
 import { Contact } from "./components/contact/contact";
@@ -6,7 +7,7 @@ import { User } from "./components/user/user";
 import { Room } from "./components/room/rooms";
 import { Booking } from "./components/booking/booking";
 import { Reservation } from "./components/booking/reservation";
-import { ProtectedRoutes } from "./pages/protected-routes";
+import { ProtectedRoutes } from "./pages/protected-routes.jsx";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";

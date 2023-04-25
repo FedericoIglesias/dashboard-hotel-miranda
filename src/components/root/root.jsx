@@ -22,7 +22,6 @@ export function Root() {
         position: 'fixed',
         left: 0,
         boxSizing: 'border-box',
-
     }
 
     const smallLetter = {

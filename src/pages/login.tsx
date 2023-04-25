@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react"
-import styled from "styled-components"
+import React from 'react'
 import { LoginContext } from "../context/loginContext"
 import { useDispatch, useSelector } from "react-redux"
 import { searchUser } from "../features/userSlice"
 import template from '../json/template.json'
+import styled from "@emotion/styled"
 
 
 
@@ -78,11 +79,11 @@ const Travl = styled.section`
 
 
 
-export function Login() {
+export function Login(){
 
-    const [name, setName] = useState('Xymenes Hallas')
-    const [password, setPassword] = useState('100')
-    const { dispatchLogin } = useContext(LoginContext)
+    const [name, setName] = useState<string>('Xymenes Hallas');
+    const [password, setPassword] = useState<string>('100');
+    const { dispatchLogin } = useContext<any>(LoginContext)
     // const template = useSelector(store => store.user)
     const dispatch = useDispatch()
 
@@ -94,9 +95,10 @@ export function Login() {
 
     const handleLogin = () => { //this will be when i have the server
         const aux = template.find(item => item.name === name)
+        const pass : string | undefined = aux?.password.toString()
         if (!aux) {
             alert('Name invalid')
-        } else if (aux.password != password) {
+        } else if (pass !== password) {
             alert('Password invalid')
         } else {
             dispatchLogin({ auth: true, name: aux.name, mail: aux.email })
@@ -119,7 +121,7 @@ export function Login() {
                         <p>If you want test, try press Login button</p>
                     </Travl>
                 </div>
-
+        
             </Myh1>
         </>
     )

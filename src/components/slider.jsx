@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export function Slider (){
 
-    let [show, setShow] = useState('')
+    const [show, setShow] = useState('')
 
     return(
         <div>
