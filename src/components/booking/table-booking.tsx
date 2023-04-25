@@ -1,24 +1,35 @@
 
-import { useEffect, useState } from 'react';
+import React,{ FC, useEffect, useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { SelectPage } from '../select-page';
-import { useDispatch, useSelector } from 'react-redux';
 import { searchBooking } from '../../features/bookingSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-export function Table() {
+const styleColumn = { width: '14%' }
 
-    const [page, setPage] = useState(1)
-    const booking = useSelector(store => store.booking)
-    const dispatch = useDispatch()
-
-    const book = booking.slice(((10 * page) - 10), (10 * page))
-
-useEffect(() => {
-    dispatch(searchBooking())
-},[])
+const styleIn = {
+    backgroundColor: '#5AD07A50',
+    borderRadius: '10px',
+    paddingLeft: '12px',
+    color: '#5AD07A',
+    textAlign: 'center',
+    padding: '10px 10px',
+    width: '125px',
+    fontWeight: 700
+}
+const styleOut = {
+    backgroundColor: '#E2342850',
+    borderRadius: '10px',
+    paddingLeft: '12px',
+    color: '#E23428',
+    textAlign: 'center',
+    padding: '10px 10px',
+    width: '125px',
+    fontWeight: 700
+}
 
     const Row = styled.div`
         display: flex;
@@ -32,31 +43,21 @@ useEffect(() => {
         }
         `;
 
+export const Table: FC = (): JSX.Element => {
+
+    const [page, setPage] = useState<number>(1)
+    const booking = useSelector(store => store.booking)
+    const dispatch = useDispatch()
+
+    const book = booking.slice(((10 * page) - 10), (10 * page))
+
+useEffect(() => {
+    dispatch(searchBooking())
+},[])
+
     const handleDelete = () => {
     }
 
-    const styleColumn = { width: '14%' }
-
-    const styleIn = {
-        backgroundColor: '#5AD07A50',
-        borderRadius: '10px',
-        paddingLeft: '12px',
-        color: '#5AD07A',
-        textAlign: 'center',
-        padding: '10px 10px',
-        width: '125px',
-        fontWeight: 700
-    }
-    const styleOut = {
-        backgroundColor: '#E2342850',
-        borderRadius: '10px',
-        paddingLeft: '12px',
-        color: '#E23428',
-        textAlign: 'center',
-        padding: '10px 10px',
-        width: '125px',
-        fontWeight: 700
-    }
 
     return (
         <>

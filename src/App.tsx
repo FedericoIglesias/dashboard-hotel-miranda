@@ -7,7 +7,7 @@ import { User } from "./components/user/user";
 import { Room } from "./components/room/rooms";
 import { Booking } from "./components/booking/booking";
 import { Reservation } from "./components/booking/reservation";
-import { ProtectedRoutes } from "./pages/protected-routes.jsx";
+import { ProtectedRoutes } from "./pages/protected-routes.js";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";

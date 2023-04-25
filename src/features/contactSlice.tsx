@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 
-const initialState = []
+const initialState: object[] = []
 
 
 
 
-export const searchContact = createAsyncThunk('search/searchContact', async arg => {
+export const searchContact: any = createAsyncThunk('search/searchContact', async arg => {
     try{
         const response = await fetch('json/mail.json')
         const data = await response.json()
@@ -21,11 +21,12 @@ export const searchContact = createAsyncThunk('search/searchContact', async arg 
 const contactSlice = createSlice({
     name: 'contact',
     initialState,
+    reducers: {},
     extraReducers:{
         [searchContact.Pending]: (state) => {
             console.log('loading')
         },
-        [searchContact.fulfilled]: (state, action) => {
+        [searchContact.fulfilled]: (state, action: PayloadAction<object[]>) => {
             state = action.payload
             return state
         },

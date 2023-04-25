@@ -1,11 +1,16 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+interface ObjRoom {
+    rooms: object[]
+    room: object
+}
 
 
-const initialState = {rooms: [], room: {}}
+const initialState: ObjRoom  = {rooms: [], room: {}}
 
 
 
-export const fetchRooms = createAsyncThunk('fetch/fetchRoom', async (arg) => {
+export const fetchRooms: any = createAsyncThunk('fetch/fetchRoom', async (arg) => {
     try {
         const response = await fetch(`json/rooms.json`);
         const data = response.json();
@@ -64,11 +69,12 @@ export const upDateRoom = createAsyncThunk('upDate/upDateRoom', async (data) => 
 const roomSlice = createSlice({
     name: 'room',
     initialState,
+    reducers: {},
     extraReducers: {
         [fetchRooms.pending]: (state) => {
             console.log('Loading')
         },
-        [fetchRooms.fulfilled]: (state, action) => {
+        [fetchRooms.fulfilled]: (state, action: PayloadAction<object[]>) => {
             state.rooms = action.payload
             return state
         },

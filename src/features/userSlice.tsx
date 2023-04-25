@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 
-const initialState = []
+const initialState: object[] = []
 
 
 
 
-export const searchUser = createAsyncThunk('search/searchUser', async (arg) => {
+export const searchUser: any = createAsyncThunk('search/searchUser', async (arg) => {
     try{
         const response = await fetch('json/template.json');
         const data = await response.json();
@@ -22,13 +22,13 @@ export const searchUser = createAsyncThunk('search/searchUser', async (arg) => {
 const userSlice = createSlice({
     name: 'User',
     initialState,
+    reducers: {},
     extraReducers:{
         [searchUser.Pending]: (state) => {
             console.log('loading')
         },
-        [searchUser.fulfilled]: (state, action) => {
+        [searchUser.fulfilled]: (state, action: PayloadAction<object[]>) => {
             state = action.payload
-            
             return state
         },
         [searchUser.reject]: (state) => {

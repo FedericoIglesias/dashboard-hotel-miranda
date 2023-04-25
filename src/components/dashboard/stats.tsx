@@ -4,7 +4,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import room from "../../json/room.json";
 import check from "../../json/check.json";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import React, { FC } from "react";
 
 const Card = styled.div`

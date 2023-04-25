@@ -1,13 +1,10 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 
 
-
-const initialState = []
-
+const initialState: object[] = []
 
 
-
-export const searchBooking = createAsyncThunk('serach/searchBooking', async (arg) => {
+export const searchBooking: any = createAsyncThunk('serach/searchBooking', async (arg) => {
 
     try{
         const response = await fetch('json/booking.json')
@@ -19,14 +16,15 @@ export const searchBooking = createAsyncThunk('serach/searchBooking', async (arg
 
 
 
-const bookingSlice = createSlice({
+const bookingSlice= createSlice({
     name: 'booking',
     initialState,
+    reducers: {},
     extraReducers:{
-        [searchBooking.pending]: (state) => {
+        [searchBooking.pending ]: (state) => {
             console.log('Loading')
         },
-        [searchBooking.fulfilled]: (state, action) => {
+        [searchBooking.fulfilled]: (state, action: PayloadAction<object[]> ) => {
             state = action.payload
             return state
         },
