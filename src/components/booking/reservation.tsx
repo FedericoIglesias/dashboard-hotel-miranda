@@ -2,22 +2,23 @@ import { useParams } from "react-router"
 import booking from '../../json/booking.json'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MessageIcon from '@mui/icons-material/Message';
-import founder from '../../assets/founder.jpg'
-import { Rotate90DegreesCcw } from "@mui/icons-material";
+import React from "react";
+
+
 
 export function Reservation() {
 
 
     const params = useParams()
-    const id = params.id
-    let book = booking.filter(booking => booking.id == id)
+    const id: string | undefined  = params.id
+    let book: object = booking.filter(booking => booking.id.toString() === id)
 
 
     return (
         <section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <article style={{ backgroundColor: 'white', padding: '20px 100px 10px 10px', height:'400px' }}>
                 <div style={{ display: 'flex' }}>
-                    <img src={founder} alt="profile" style={{ width: '100px', height: '110px', borderRadius: '5px', marginRight: '10px' }} />
+                    <img  alt="profile" style={{ width: '100px', height: '110px', borderRadius: '5px', marginRight: '10px' }} />
                     <div style={{ padding: '10px 0' }}>
                         <p style={{ fontWeight: '700', marginBottom: '5px' }}>{book[0].name}</p>
                         <p style={{ fontWeight: '700', marginBottom: '5px', fontSize: '10px', color: 'gray' }}>ID {book[0].id}</p>
@@ -39,7 +40,7 @@ export function Reservation() {
                 <div style={{ display: 'flex',paddingLeft:'15px', marginBottom:'10px' }}>
                     <div style={{marginRight:'100px'}}>
                         <p style={{fontSize:'10px',color:'gray', fontWeight:'700'}}>Room Info</p>
-                        <p style={{fontSize:'15px', fontWeight:'700'}}>{book[0].tipoHabitacion}Deluxe</p>
+                        <p style={{fontSize:'15px', fontWeight:'700'}}>{book[0].tipoHabitacion? '' : ''}Deluxe</p>
                     </div>
                     <div>
                         <p style={{fontSize:'10px',color:'gray', fontWeight:'700'}}>price</p>
@@ -52,7 +53,7 @@ export function Reservation() {
                 </div>
             </article>
             <article style={{width: '390px', position:'relative', top:'2px'}}>
-                <img src={founder} alt="room"  style={{width:'100%', height:'400px'}}/>
+                <img  alt="room"  style={{width:'100%', height:'400px'}}/>
                 <div style={{position:'absolute', bottom:'0px', padding:'15px' }}>
                 <p style={{color: 'gray'}}>{book[0].tipoHabitacion}Deluxe</p>
                 <p style={{color:'gray', fontSize:'10px'}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum voluptas minus incidunt voluptate eveniet perspiciatis natus reprehenderit necessitatibus? Tempora nostrum quae quos asperiores minima vitae voluptatibus rerum earum provident officia?</p>
