@@ -1,22 +1,10 @@
 import styled from "styled-components"
 import founder from '../../assets/founder.jpg'
-import { useState } from "react";
+import { FC, useState } from "react";
 import { EditCard } from "./edit-card";
+import React from "react";
 
-export function Card() {
-
-
-    const [edit, setEdit] = useState(0)
-
-
-
-    const handelEdit = () => {
-        edit === 0 ? setEdit(1) : setEdit(0)
-    }
-
-
-
-    const Card = styled.div`
+    const ProfileCard = styled.div`
     width: 200px;
     background-color: #f8f8f8;
     text-align: center;
@@ -38,11 +26,19 @@ export function Card() {
     }
     `;
 
+export const Card: FC = (): JSX.Element => {
+
+    const [edit, setEdit] = useState<number>(0)
+
+    const handelEdit = () => {
+        edit === 0 ? setEdit(1) : setEdit(0)
+    }
+
     return (
-        <Card>
+        <ProfileCard>
             <img src={founder} alt="photoProfile" />
             <EditCard edit={edit} />
             <button onClick={() => handelEdit()} >Edit</button>
-        </Card>
+        </ProfileCard>
     )
 }

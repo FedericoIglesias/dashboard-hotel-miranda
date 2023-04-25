@@ -2,11 +2,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useContext, useState } from "react";
+import { FC, useContext, useState } from "react";
 import styled from "styled-components";
 import { Box } from "@mui/material";
 import { LoginContext } from "../context/loginContext";
 import React from "react";
+
 
 const Assets = styled.div`
   display: flex;
@@ -36,7 +37,8 @@ const secStyle = {
   padding: "5px 30px",
 };
 
-export const Bar: object = ({ setChecked }): JSX.Element => {
+
+export const Bar: FC <any> = ({ setChecked }): JSX.Element => {
   const [state, setState] = useState(1);
   const { dispatchLogin } = useContext<any>(LoginContext);
 

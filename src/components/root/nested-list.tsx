@@ -6,21 +6,24 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BedIcon from '@mui/icons-material/Bed';
 import PersonIcon from '@mui/icons-material/Person';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import React from 'react'
 
 
+const marRight: object = {
+    marginRight: '20px',
+}
+const linkStyle: object = { color: 'gray', textDecoration: 'none', fontWeight: 700 }
+const active: object = { borderLeft: '3px solid #E23428', color: '#E23428', fontWeight: 400 }
 
-export default function NestedList() {
+export const NestedList: FC = (): JSX.Element => {
 
 
-    const linkStyle = { color: 'gray', textDecoration: 'none', fontWeight: 700 }
-    const active = { borderLeft: '3px solid #E23428', color: '#E23428', fontWeight: 400 }
-
-    const [d, setD] = useState(linkStyle)
-    const [r, setR] = useState(linkStyle)
-    const [u, setU] = useState(linkStyle)
-    const [c, setC] = useState(linkStyle)
-    const [b, setB] = useState(linkStyle)
+    const [d, setD] = useState<object>(linkStyle)
+    const [r, setR] = useState<object>(linkStyle)
+    const [u, setU] = useState<object>(linkStyle)
+    const [c, setC] = useState<object>(linkStyle)
+    const [b, setB] = useState<object>(linkStyle)
 
     const handleStyle = (n) => {
         n === 0 ? setD(active) : setD(linkStyle)
@@ -30,9 +33,6 @@ export default function NestedList() {
         n === 4 ? setC(active) : setC(linkStyle)
     }
 
-    const marRight = {
-        marginRight: '20px',
-    }
 
     return (
         <>

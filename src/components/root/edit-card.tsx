@@ -1,12 +1,17 @@
-import { useContext, useEffect, useState } from "react"
+import { FC, useContext, useEffect, useState } from "react"
 import { LoginContext } from "../../context/loginContext"
+import React from "react"
 
-export function EditCard({ edit }) {
+interface Edit {
+    edit: number
+}
 
-    const {login} = useContext(LoginContext)
+export const EditCard: FC<Edit> = ({ edit }): JSX.Element =>  {
 
-    const [name, setName] = useState('')
-    const [mail, setMail] = useState('')
+    const {login} = useContext<any>(LoginContext)
+
+    const [name, setName] = useState<string>('')
+    const [mail, setMail] = useState<string>('')
 
     useEffect(() => {
         setMail(login.mail)
