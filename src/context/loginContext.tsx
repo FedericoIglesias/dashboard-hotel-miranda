@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import {  createContext, useReducer } from "react";
 import { LoginReducer, userInitialState } from "../reducer/loginReducer";
 
@@ -6,7 +6,7 @@ import { LoginReducer, userInitialState } from "../reducer/loginReducer";
 export const LoginContext = createContext({})
 
 
-export function LoginProvider ({children}) {
+export const LoginProvider: FC<any> = ({children}): JSX.Element => {
 
     const [login, dispatchLogin] = useReducer(LoginReducer, userInitialState)
 

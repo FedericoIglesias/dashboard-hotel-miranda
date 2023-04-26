@@ -8,7 +8,7 @@ interface  InitState{
 export const userInitialState: InitState = { auth: false, name: '', email: '' }
 
 
-export const LoginReducer = (state, action) => {
+export const LoginReducer = (state: InitState, action: InitState) => {
 
     state = action
     return state
