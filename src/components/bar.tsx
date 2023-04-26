@@ -15,7 +15,7 @@ const Assets = styled.div`
     position: relative;
     margin: 0 40px;
     & p {
-      position: "absolute";
+      position: absolute;
       font-size: 8px;
       background-color: #e23428;
       border-radius: 5px;

@@ -7,7 +7,7 @@ import { User } from "./components/user/user";
 import { Room } from "./components/room/rooms";
 import { Booking } from "./components/booking/booking";
 import { Reservation } from "./components/booking/reservation";
-import { ProtectedRoutes } from "./pages/protected-routes.js";
+import { ProtectedRoutes } from "./pages/protected-routes";
 import { NewRoom } from "./components/room/new-room";
 import { NewUser } from "./components/user/new-user";
 import { Login } from "./pages/login";
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store as any}>
         <LoginProvider>
           <RouterProvider router={router} />
         </LoginProvider>
