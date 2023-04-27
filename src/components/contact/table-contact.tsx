@@ -1,21 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
-import styled from "styled-components";
+import { Row, btnStyle } from "./variablesContact";
 import { SelectPage } from "../select-page";
 import { useDispatch, useSelector } from "react-redux";
 import { searchContact } from "../../features/contactSlice";
 
-const Row = styled.div`
-  display: flex;
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  align-items: center;
-  :hover {
-    box-shadow: 1px 1px 5px gray;
-    transform: Scale(1.02);
-  }
-`;
+
 
 export const TableContact: FC = (): JSX.Element => {
   const [page, setPage] = useState<number>(1);
@@ -34,14 +24,6 @@ export const TableContact: FC = (): JSX.Element => {
     archive.unshift(item);
   };
 
-  const btnStyle = {
-    background: "#135846",
-    color: "white",
-    border: "none",
-    padding: "10px",
-    fontSize: "10px",
-    borderRadius: "10px",
-  };
 
   return (
     <>

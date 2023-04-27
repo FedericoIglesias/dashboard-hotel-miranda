@@ -8,24 +8,20 @@ import PersonIcon from '@mui/icons-material/Person';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import { FC, useState } from 'react';
 import React from 'react'
+import { marRight, linkStyle, active } from './variablesRoot';
+import { CSSProperties } from 'styled-components';
 
-
-const marRight: object = {
-    marginRight: '20px',
-}
-const linkStyle: object = { color: 'gray', textDecoration: 'none', fontWeight: 700 }
-const active: object = { borderLeft: '3px solid #E23428', color: '#E23428', fontWeight: 400 }
 
 export const NestedList: FC = (): JSX.Element => {
 
 
-    const [d, setD] = useState<object>(linkStyle)
-    const [r, setR] = useState<object>(linkStyle)
-    const [u, setU] = useState<object>(linkStyle)
-    const [c, setC] = useState<object>(linkStyle)
-    const [b, setB] = useState<object>(linkStyle)
+    const [d, setD] = useState<CSSProperties>(linkStyle)
+    const [r, setR] = useState<CSSProperties>(linkStyle)
+    const [u, setU] = useState<CSSProperties>(linkStyle)
+    const [c, setC] = useState<CSSProperties>(linkStyle)
+    const [b, setB] = useState<CSSProperties>(linkStyle)
 
-    const handleStyle = (n) => {
+    const handleStyle = (n: number): void => {
         n === 0 ? setD(active) : setD(linkStyle)
         n === 1 ? setR(active) : setR(linkStyle)
         n === 2 ? setB(active) : setB(linkStyle)

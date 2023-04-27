@@ -1,10 +1,8 @@
 import { FC, useContext, useEffect, useState } from "react"
 import { LoginContext } from "../../context/loginContext"
 import React from "react"
+import { Edit, styleMail } from "./variablesRoot"
 
-interface Edit {
-    edit: number
-}
 
 export const EditCard: FC<Edit> = ({ edit }): JSX.Element =>  {
 
@@ -18,11 +16,7 @@ export const EditCard: FC<Edit> = ({ edit }): JSX.Element =>  {
         setName(login.name)
     },[login])
 
-    const styleMail = {
-        color: 'gray',
-        fontSize: '12px',
-        marginBottom: '10px'
-    }
+
 
     if (edit === 1) {
         return (

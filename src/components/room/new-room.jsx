@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-
+import { secStyle } from './variablesRoom';
 
 export function NewRoom() {
 
@@ -20,14 +20,7 @@ export function NewRoom() {
         setRoom([type, number, description, offer, price, discount, cancellation])
     }
 
-    const secStyle = {
-        padding: '50px',
-        backgroundColor: 'white',
-        boxShadow: '1px 1px 5px grey',
-        width: '80%',
-        margin: 'auto',
-        marginTop: '50px'
-    }
+
 
     const addFacilities = (option) => {
 

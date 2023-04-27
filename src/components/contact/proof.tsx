@@ -2,50 +2,11 @@ import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import styled from "styled-components";
+import { ProofStyled, proofStyle, btnStyle, letterStyle } from "./variablesContact";
 import { useDispatch, useSelector } from "react-redux";
 import { searchContact } from "../../features/contactSlice";
 
-const ProofStyled = styled.section`
-  background-color: white;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-  box-shadow: 1px 1px 5px gray;
-  & article {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-`;
 
-const btnStyle = {
-  background: "#135846",
-  color: "white",
-  border: "none",
-  padding: "10px",
-  fontSize: "10px",
-  borderRadius: "10px",
-};
-
-const letterStyle = {
-  backgroundColor: "#E23428",
-  width: "50px",
-  height: "50px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "100%",
-  marginRight: "10px",
-};
-
-const proofStyle = {
-  width: "250px",
-  backgroundColor: "white",
-  margin: "5px auto",
-  padding: "10px",
-  boxShadow: "1px 1px 5px gray",
-};
 
 export const Proof: FC = (): JSX.Element => {
   

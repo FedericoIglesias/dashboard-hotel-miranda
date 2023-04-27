@@ -2,23 +2,11 @@ import React, { FC, useEffect, useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 // import founder from '../../assets/founder.jpg'
 import CallIcon from "@mui/icons-material/Call";
-import styled from "styled-components";
+import { Row } from "./variablesUser";
 import { SelectPage } from "../select-page";
 
-  const Row = styled.div`
-    display: flex;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    align-items: center;
-    :hover {
-      box-shadow: 1px 1px 5px gray;
-      transform: Scale(1.02);
-    }
-  `;
 
-
-export const TableUSer:FC<any> = ({ template }): JSX.Element => {
+export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
 
   const [page, setPage] = useState<number>(1);
   const user: any = template.slice(10 * page - 10, 10 * page);

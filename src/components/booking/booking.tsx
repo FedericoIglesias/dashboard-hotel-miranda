@@ -1,16 +1,32 @@
+import { useDispatch } from "react-redux";
 import { Table } from "./table-booking";
-import React, { FC } from "react";
-import booking from "../../json/booking.json";
+import React, { FC, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { searchBooking } from "../../features/bookingSlice";
+// import booking from "../../json/booking.json";
 
 export const Booking: FC = (): JSX.Element => {
-    
-  const handleOrder = (state) => {
+  const dispatch = useDispatch();
+  const booking: any = useSelector<any>((store) => store.booking);
+  const [book, setBook] = useState<[]>(booking);
+  console.log(booking);
+  
+  useEffect(() => {
+    dispatch(searchBooking());
+  }, []);
+
+  useEffect(() => {
+    setBook(booking);
+  }, [booking]);
+
+  const handleOrder = (state:string) => {
     switch (state) {
       case "book":
-        booking.sort(
-          (a, b) =>
+        booking.sort((a, b) => {
+          return (
             new Date(a.orderDate).getTime() - new Date(b.orderDate).getTime()
-        );
+          );
+        });
         break;
       case "in":
         booking.sort((a, b) => {
@@ -25,7 +41,9 @@ export const Booking: FC = (): JSX.Element => {
         });
         break;
       case "progres":
-        // booking.sort((a, b) => { return a.status - b.status })
+        booking.sort((a, b) => {
+          return a.status - b.status;
+        });
         break;
       default:
     }
@@ -47,7 +65,7 @@ export const Booking: FC = (): JSX.Element => {
         <p onClick={() => handleOrder("out")}>Checking Out</p>
         <p onClick={() => handleOrder("progres")}>In Progress</p>
       </section>
-      <Table />
+      <Table book={book} />
     </>
   );
 };

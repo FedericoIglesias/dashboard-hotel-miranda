@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import React, { FC } from "react";
 
 export const NewUser: FC = (): JSX.Element => {
-    
   return (
     <>
       <section
@@ -57,8 +56,8 @@ export const NewUser: FC = (): JSX.Element => {
           <textarea
             name=""
             id=""
-            cols="30"
-            rows="10"
+            cols={30}
+            rows={10}
             style={{ resize: "none" }}
           ></textarea>
         </label>

@@ -1,14 +1,8 @@
 import { TableRoom } from "./table-room";
 import { NavLink } from "react-router-dom";
 import React, { FC } from "react";
+import { btnStyle } from "./variablesRoom";
 
-const btnStyle = {
-  padding: "13px 51px",
-  backgroundColor: "#135846",
-  border: "none",
-  borderRadius: "10px",
-  margin: "10px",
-};
 
 export const Room: FC = (): JSX.Element => {
   return (

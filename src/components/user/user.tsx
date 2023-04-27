@@ -1,37 +1,15 @@
 import { TableUSer } from "./table-user";
-import { Link } from "react-router-dom";
-import React, { FC, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import React, { CSSProperties, FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchUser } from "../../features/userSlice";
+import { redStyle, grayStyle, btnStyle, IUser } from "./variablesUser";
 
-const redStyle = {
-  marginRight: "20px",
-  borderBottom: "1px solid black",
-  fontSize: "12px",
-  color: "#e23428",
-  fontWeight: "700",
-};
-
-const grayStyle = {
-  marginRight: "20px",
-  borderBottom: "1px solid black",
-  fontSize: "12px",
-  color: "gray",
-  fontWeight: "700",
-};
-
-const btnStyle = {
-  color: "white",
-  border: "none",
-  padding: "10px 20px",
-  backgroundColor: "#135846",
-  borderRadius: "20px",
-};
 
 export const User: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const template: any = useSelector<any>((store) => store.user);
-  const [users, setUsers] = useState<object[]>(template);
+  const [users, setUsers] = useState<IUser[]>(template);
 
   useEffect(() => {
     dispatch(searchUser());
@@ -41,24 +19,24 @@ export const User: FC = (): JSX.Element => {
     setUsers(template);
   }, [template]);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: string): void => {
     if (e !== "") {
+      
       setUsers(template.filter((template) => template.name.includes(e)));
     } else {
       setUsers(template);
     }
   };
 
-  const [active, setActive] = useState<{}>(grayStyle);
-  const [inactive, setInactive] = useState<{}>(grayStyle);
-  const [all, setAll] = useState<{}>(redStyle);
+  const [active, setActive] = useState<CSSProperties>(grayStyle);
+  const [inactive, setInactive] = useState<CSSProperties>(grayStyle);
+  const [all, setAll] = useState<CSSProperties>(redStyle);
 
-  const colorCase = (n) => {
+  const colorCase = (n: number): void => {
     n === 0 ? setAll(redStyle) : setAll(grayStyle);
     n === 1 ? setActive(redStyle) : setActive(grayStyle);
     n === 2 ? setInactive(redStyle) : setInactive(grayStyle);
   };
-
 
   return (
     <>
@@ -91,7 +69,7 @@ export const User: FC = (): JSX.Element => {
           <p
             style={inactive}
             onClick={() => {
-              setUsers(template.filter((template) => template.status == false));
+              setUsers(template.filter((template) => template.status === false));
               colorCase(2);
             }}
           >
@@ -109,12 +87,12 @@ export const User: FC = (): JSX.Element => {
           />
         </div>
         <button style={btnStyle}>
-          <Link
-            to={"/new-user"}
+          <NavLink
+            to={"/dashboard-hotel-miranda/new-user"}
             style={{ color: "white", textDecoration: "none" }}
           >
             +New User
-          </Link>
+          </NavLink>
         </button>
       </div>
       <TableUSer template={users} />

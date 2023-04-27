@@ -4,41 +4,10 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import room from "../../json/room.json";
 import check from "../../json/check.json";
-import styled from "@emotion/styled";
+import { styleIcon, Category, Number, Card } from "./variablesDashboard";
 import React, { FC } from "react";
 
-const Card = styled.div`
-  background-color: white;
-  display: flex;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  width: 23%;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px #eee;
-  :hover {
-    box-shadow: 1px 1px 5px red;
-    transform: Scale(1.08);
-  }
-`;
 
-const Number = styled.p`
-  font-weight: 700;
-  font-size: 30px;
-`;
-
-const Category = styled.p`
-  color: gray;
-  font-size: 14px;
-`;
-
-const styleIcon = {
-  backgroundColor: "#FFEDEC",
-  padding: "2px",
-  marginRight: "22px",
-  color: "#E23428",
-  width: "65px",
-  height: "65px",
-};
 
 export const Stats: FC = (): JSX.Element => {
 
