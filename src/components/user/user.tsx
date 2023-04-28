@@ -1,14 +1,16 @@
 import { TableUSer } from "./table-user";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React, { CSSProperties, FC, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { searchUser } from "../../features/userSlice";
-import { redStyle, grayStyle, btnStyle, IUser } from "./variablesUser";
+import { IUser, searchUser } from "../../features/userSlice";
+import { redStyle, grayStyle, btnStyle } from "./variablesUser";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 
 export const User: FC = (): JSX.Element => {
-  const dispatch = useDispatch();
-  const template: any = useSelector<any>((store) => store.user);
+
+
+  const dispatch = useAppDispatch();
+  const template: IUser[] = useAppSelector<IUser[]>((store) => store.user);
   const [users, setUsers] = useState<IUser[]>(template);
 
   useEffect(() => {

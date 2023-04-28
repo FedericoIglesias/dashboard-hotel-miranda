@@ -25,16 +25,7 @@ export const btnStyle: CSSProperties = {
   borderRadius: "20px",
 };
 
-export interface IUser {
-  id: 1;
-  name: string;
-  email: string;
-  startDate: Date;
-  description: string;
-  conctac: number;
-  status: boolean;
-  password: number;
-}
+
 
   export const Row = styled.div`
     display: flex;

@@ -2,19 +2,20 @@ import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
 import { Row, btnStyle } from "./variablesContact";
 import { SelectPage } from "../select-page";
-import { useDispatch, useSelector } from "react-redux";
-import { searchContact } from "../../features/contactSlice";
+import { IContact, searchContact } from "../../features/contactSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 
 
 export const TableContact: FC = (): JSX.Element => {
+
   const [page, setPage] = useState<number>(1);
-  const dispatch = useDispatch();
-  const mail: any = useSelector<any>(store => store.contact);
+  const dispatch = useAppDispatch();
+  const mail: IContact[] = useAppSelector<IContact[]>(state => state.contact);
 
-  const mails: any = mail.slice(10 * page - 10, 10 * page);
+  const mails: IContact[] = mail.slice(10 * page - 10, 10 * page);
 
-  const archive: object[] = [];
+  const archive: IContact[] = [];
 
   useEffect(() => {
     dispatch(searchContact());

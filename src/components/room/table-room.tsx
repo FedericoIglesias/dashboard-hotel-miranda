@@ -1,19 +1,19 @@
 import React, { useEffect, useState, FC } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { IRoom, Row, styleAvai, styleBooked, styleColumn,styleImg } from "./variablesRoom";
+import { Row, styleAvai, styleBooked, styleColumn,styleImg } from "./variablesRoom";
 import { SelectPage } from "../select-page";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchRooms } from "../../features/roomSlice";
+import { IRoom, fetchRooms } from "../../features/roomSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 
 
 export const TableRoom: FC = (): JSX.Element => {
   const [np, setNp] = useState<number>(1);
-  const dispatch = useDispatch();
-  const rooms: any = useSelector<any>((store) => store.room.rooms);
+  const dispatch = useAppDispatch();
+  const rooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
   const imgRoom = require('../../assets/room1.webp')
 
-  let room: Array<IRoom> = rooms.slice(10 * np - 10, 10 * np);
+  let room: IRoom[] = rooms.slice(10 * np - 10, 10 * np);
 
   useEffect(() => {
     dispatch(fetchRooms());

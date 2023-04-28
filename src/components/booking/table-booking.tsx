@@ -3,11 +3,12 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { NavLink } from "react-router-dom";
 import { styleColumn, styleIn, styleOut, Row, TypeItem } from "./variablesBooking";
 import { SelectPage } from "../select-page";
+import { Ibooking } from "../../features/bookingSlice";
 
 export const Table: FC<any> = ({ book }): JSX.Element => {
   const [page, setPage] = useState<number>(1);
 
-  const booking: any = book.slice(10 * page - 10, 10 * page);
+  const booking: Ibooking[] = book.slice(10 * page - 10, 10 * page);
 
   const handleDelete = () => {};
 

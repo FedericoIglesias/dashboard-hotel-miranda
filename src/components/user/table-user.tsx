@@ -1,22 +1,23 @@
 import React, { FC, useEffect, useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-// import founder from '../../assets/founder.jpg'
 import CallIcon from "@mui/icons-material/Call";
 import { Row } from "./variablesUser";
 import { SelectPage } from "../select-page";
+import { IUser } from "../../features/userSlice";
+import { CSSProperties } from "styled-components";
 
 
 export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
 
   const [page, setPage] = useState<number>(1);
-  const user: any = template.slice(10 * page - 10, 10 * page);
+  const user: IUser[] = template.slice(10 * page - 10, 10 * page);
   const imgFounder = require('../../assets/founder.jpg')
 
   useEffect(() => {}, [user]);
 
 
-  const ifStyle = (item) =>
-    item.status === true ? { color: "#5AD07A" } : { color: "#E23428" };
+  const ifStyle = (status: boolean): CSSProperties =>
+    status === true ? { color: "#5AD07A" } : { color: "#E23428" };
 
   return (
     <section style={{ width: "90%", margin: "auto" }}>
@@ -45,7 +46,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
               {item.conctac}{" "}
             </p>
             <p style={{ width: "18%", fontWeight: "700" }}>
-              <span style={ifStyle(item)}>
+              <span style={ifStyle(item.status)}>
                 {item.status === true ? "Active" : "Inactive"}
               </span>
             </p>

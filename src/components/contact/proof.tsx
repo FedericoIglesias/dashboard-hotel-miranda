@@ -3,17 +3,17 @@ import { BasicModal } from "./modal";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { ProofStyled, proofStyle, btnStyle, letterStyle } from "./variablesContact";
-import { useDispatch, useSelector } from "react-redux";
-import { searchContact } from "../../features/contactSlice";
+import { IContact, searchContact } from "../../features/contactSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 
 
 export const Proof: FC = (): JSX.Element => {
   
   const [number, setNumber] = useState<number[]>([0, 3]);
-  const archive: object[] = [];
-  const proofMail: any = useSelector<any>((store) => store.contact);
-  const dispatch = useDispatch();
+  const archive: IContact[] = [];
+  const proofMail: IContact[] = useAppSelector<IContact[]>((store) => store.contact);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(searchContact());

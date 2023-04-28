@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import roomReducer from "../features/roomSlice";
-import bookingReducer from "../features/bookingSlice";
+import bookingReducer, { Ibooking } from "../features/bookingSlice";
 import userReducer from '../features/userSlice'
 import contactReducer from '../features/contactSlice'
+import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
+import { type } from "os";
 
 
-export const store: object = configureStore({
+export const store: ToolkitStore = configureStore({
         reducer:{
             booking: bookingReducer,
             room: roomReducer,
@@ -14,3 +16,6 @@ export const store: object = configureStore({
         }
     }
 )
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

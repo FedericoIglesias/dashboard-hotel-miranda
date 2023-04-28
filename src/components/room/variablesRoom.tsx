@@ -8,16 +8,6 @@ export const btnStyle = {
   margin: "10px",
 };
 
-export interface IRoom {
-  idHabitacion: string;
-  foto: any;
-  numeroHabitacion: string;
-  roomType: string;
-  amenities: string;
-  price: number;
-  offerPercent: number;
-  status: string;
-}
 
 export const Row = styled.div`
   display: flex;

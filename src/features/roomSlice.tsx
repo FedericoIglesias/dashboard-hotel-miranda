@@ -1,12 +1,23 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store/store";
 
 interface ObjRoom {
-    rooms: object[]
-    room: object
+    rooms: IRoom[]
+    room: IRoom[]
 }
+export interface IRoom {
+    idHabitacion: string;
+    foto: any;
+    numeroHabitacion: string;
+    roomType: string;
+    amenities: string;
+    price: number;
+    offerPercent: number;
+    status: string;
+  }
 
 
-const initialState: ObjRoom  = {rooms: [], room: {}}
+const initialState: ObjRoom  = {rooms: [], room: []}
 
 
 
@@ -74,7 +85,7 @@ const roomSlice = createSlice({
         [fetchRooms.pending]: (state) => {
             console.log('Loading')
         },
-        [fetchRooms.fulfilled]: (state, action: PayloadAction<object[]>) => {
+        [fetchRooms.fulfilled]: (state, action: PayloadAction<IRoom[]>) => {
             state.rooms = action.payload
             return state
         },
@@ -84,6 +95,7 @@ const roomSlice = createSlice({
     }
 })
 
+export const selectRoom = (state: RootState) => state
 
 
 export default roomSlice.reducer

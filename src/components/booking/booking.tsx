@@ -1,13 +1,13 @@
-import { useDispatch } from "react-redux";
 import { Table } from "./table-booking";
 import React, { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { searchBooking } from "../../features/bookingSlice";
+import { Ibooking } from "../../features/bookingSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 export const Booking: FC = (): JSX.Element => {
-  const dispatch = useDispatch();
-  const booking: any = useSelector<any>((store) => store.booking);
-  const [book, setBook] = useState<[]>(booking);
+  const dispatch = useAppDispatch();
+  const booking: Ibooking[] = useAppSelector(state => state.booking)
+  const [book, setBook] = useState<Ibooking[]>(booking);
   
   
   useEffect(() => {
@@ -41,7 +41,9 @@ export const Booking: FC = (): JSX.Element => {
         break;
       case "progres":
         booking.sort((a, b) => {
-          return a.status - b.status;
+          return (
+            new Date(a.orderDate).getTime() - new Date(b.orderDate).getTime()
+          )
         });
         break;
       default:

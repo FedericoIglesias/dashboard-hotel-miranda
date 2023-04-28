@@ -26,10 +26,8 @@ export const NewRoom: FC = (): JSX.Element => {
 
         
         if(facilities.includes(option)){
-            console.log('dentro de if')
             facilities.filter(item => item !== option) 
         } else {
-            console.log('dentro de else')
             facilities.push(option)
         }
     }
