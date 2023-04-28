@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState, FC } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { secStyle } from './variablesRoom';
 
-export function NewRoom() {
+export const NewRoom: FC = (): JSX.Element => {
 
     const [type, setType] = useState('')
     const [number, setNumber] = useState('')
@@ -79,7 +79,7 @@ export function NewRoom() {
                     </Grid>
                 </Box>
                 <p style={{ marginTop: '5px' }} >Cancellation Polity</p>
-                <textarea  cols="30" rows="10" style={{ resize: 'none' }} onChange={e => setCancellation(e.target.value)}></textarea>
+                <textarea  cols={30} rows={10} style={{ resize: 'none' }} onChange={e => setCancellation(e.target.value)}></textarea>
                 <label >
                     <p style={{ marginTop: '10px' }}>Facilities: </p>
                     <article style={{ display: 'flex', justifyContent: 'space-around' }}>

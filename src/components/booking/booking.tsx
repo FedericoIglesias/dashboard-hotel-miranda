@@ -3,13 +3,12 @@ import { Table } from "./table-booking";
 import React, { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { searchBooking } from "../../features/bookingSlice";
-// import booking from "../../json/booking.json";
 
 export const Booking: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const booking: any = useSelector<any>((store) => store.booking);
   const [book, setBook] = useState<[]>(booking);
-  console.log(booking);
+  
   
   useEffect(() => {
     dispatch(searchBooking());

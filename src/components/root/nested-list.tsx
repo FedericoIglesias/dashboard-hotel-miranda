@@ -6,8 +6,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BedIcon from '@mui/icons-material/Bed';
 import PersonIcon from '@mui/icons-material/Person';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import { FC, useState } from 'react';
-import React from 'react'
+import React,{ FC, useState } from 'react';
 import { marRight, linkStyle, active } from './variablesRoot';
 import { CSSProperties } from 'styled-components';
 

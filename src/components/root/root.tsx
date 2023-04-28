@@ -12,13 +12,14 @@ import { NestedList } from "./nested-list";
 export const Root: FC = (): JSX.Element => {
 
     const [checked, setChecked] = useState<ObjCheck>({check: true, marleft: '20%'});
+    const imgLogo = require('../../assets/logo.webp')
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Slide direction="right" in={checked.check} mountOnEnter unmountOnExit>
                 <BoxNav >
                     <div style={{ display: 'flex', marginBottom: '20px' }}>
-                        <img  alt="" style={{ width: '60px', marginRight: '10px' }} />
+                        <img  alt="" src={imgLogo} style={{ width: '60px', marginRight: '10px' }} />
                         <div>
                             <p style={title} >travl</p>
                             <p style={smallLetter} >Admin Dashboard</p>

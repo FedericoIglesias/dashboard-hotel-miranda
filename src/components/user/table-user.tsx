@@ -10,6 +10,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
 
   const [page, setPage] = useState<number>(1);
   const user: any = template.slice(10 * page - 10, 10 * page);
+  const imgFounder = require('../../assets/founder.jpg')
 
   useEffect(() => {}, [user]);
 
@@ -30,7 +31,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
         return (
           <Row key={item.id}>
             <div style={{ width: "20%", display: "flex", fontSize: "10px" }}>
-              <img  alt="profile" style={{ width: "25px" }} />
+              <img  alt="profile" src={imgFounder} style={{ width: "25px" }} />
               <div>
                 <p>{item.name}</p>
                 <p>{item.id}</p>

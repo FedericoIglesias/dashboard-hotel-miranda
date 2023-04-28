@@ -12,13 +12,15 @@ export function Reservation() {
     const params = useParams()
     const id: string | undefined  = params.id
     let book: object = booking.filter(booking => booking.id.toString() === id)
+    const imgRoom = require('../../assets/room3.jpg')
+    const imgCustomer = require('../../assets/customer.webp');
 
 
     return (
         <section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <article style={{ backgroundColor: 'white', padding: '20px 100px 10px 10px', height:'400px' }}>
                 <div style={{ display: 'flex' }}>
-                    <img  alt="profile" style={{ width: '100px', height: '110px', borderRadius: '5px', marginRight: '10px' }} />
+                    <img src={imgCustomer} alt="profile" style={{ width: '100px', height: '110px', borderRadius: '5px', marginRight: '10px' }} />
                     <div style={{ padding: '10px 0' }}>
                         <p style={{ fontWeight: '700', marginBottom: '5px' }}>{book[0].name}</p>
                         <p style={{ fontWeight: '700', marginBottom: '5px', fontSize: '10px', color: 'gray' }}>ID {book[0].id}</p>
@@ -53,7 +55,7 @@ export function Reservation() {
                 </div>
             </article>
             <article style={{width: '390px', position:'relative', top:'2px'}}>
-                <img  alt="room"  style={{width:'100%', height:'400px'}}/>
+                <img  alt="room" src={imgRoom} style={{width:'100%', height:'400px'}}/>
                 <div style={{position:'absolute', bottom:'0px', padding:'15px' }}>
                 <p style={{color: 'gray'}}>{book[0].tipoHabitacion}Deluxe</p>
                 <p style={{color:'gray', fontSize:'10px'}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum voluptas minus incidunt voluptate eveniet perspiciatis natus reprehenderit necessitatibus? Tempora nostrum quae quos asperiores minima vitae voluptatibus rerum earum provident officia?</p>
