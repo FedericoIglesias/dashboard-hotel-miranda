@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
-import { IContact } from "./types";
+import { IContact } from "../types";
+import { route } from "../dotenv";
 
 
 
@@ -10,7 +11,7 @@ export const searchContacts: any = createAsyncThunk(
   "search/searchContacts",
   async (arg) => {
     try {
-      const response = await fetch(process.env.CONTACT_ROUTE);
+      const response = await fetch(route.contact);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -22,7 +23,7 @@ export const searchContact: any = createAsyncThunk(
   "search/searchContact",
   async (arg) => {
     try {
-      const response = await fetch(`${process.env.CONTACT_ROUTE}/${arg}`);
+      const response = await fetch(`${route.contact}/${arg}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -34,7 +35,7 @@ export const deleteContact: any = createAsyncThunk(
   "delete/deleteContact",
   async (arg) => {
     try {
-      const response = await fetch(process.env.CONTACT_ROUTE);
+      const response = await fetch(route.contact);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -46,7 +47,7 @@ export const postContact: any = createAsyncThunk(
   "post/postContact",
   async (arg) => {
     try {
-      const response = await fetch(process.env.CONTACT_ROUTE);
+      const response = await fetch(route.contact);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -58,7 +59,7 @@ export const putContact: any = createAsyncThunk(
   "put/putContact",
   async (arg) => {
     try {
-      const response = await fetch(process.env.CONTACT_ROUTE);
+      const response = await fetch(route.contact);
       const data = await response.json();
       return data;
     } catch (error) {

@@ -20,7 +20,7 @@ export const Reservation: FC = ():JSX.Element => {
   const id: string | undefined = params.id;
 
   let book: Ibooking[] = booking.filter(
-    (booking) => booking.id.toString() === id
+    (booking) => booking._id.toString() === id
   );
 
   const imgRoom = require("../../assets/room3.jpg");
@@ -65,7 +65,7 @@ export const Reservation: FC = ():JSX.Element => {
                 color: "gray",
               }}
             >
-              ID {book[0].id}
+              ID {book[0]._id}
             </p>
             <span style={{ color: "#135846", marginRight: "10px" }}>
               <LocalPhoneIcon />
@@ -121,8 +121,9 @@ export const Reservation: FC = ():JSX.Element => {
             <p style={{ fontSize: "10px", color: "gray", fontWeight: "700" }}>
               Room Info
             </p>
+            
             <p style={{ fontSize: "15px", fontWeight: "700" }}>
-              {book[0].tipoHabitacion ? "" : ""}Deluxe
+              {book[0].idRoom ? "" : ""}Deluxe {/*Repair in the future */}
             </p>
           </div>
           <div>
@@ -151,7 +152,7 @@ export const Reservation: FC = ():JSX.Element => {
           style={{ width: "100%", height: "400px" }}
         />
         <div style={{ position: "absolute", bottom: "0px", padding: "15px" }}>
-          <p style={{ color: "gray" }}>{book[0].tipoHabitacion}Deluxe</p>
+          <p style={{ color: "gray" }}>{book[0].idRoom}Deluxe</p>     {/* Repair in the future */}
           <p style={{ color: "gray", fontSize: "10px" }}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
             voluptas minus incidunt voluptate eveniet perspiciatis natus

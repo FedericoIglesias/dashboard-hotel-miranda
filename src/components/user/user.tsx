@@ -1,9 +1,11 @@
 import { TableUSer } from "./table-user";
 import { NavLink } from "react-router-dom";
 import React, { CSSProperties, FC, useEffect, useState } from "react";
-import { IUser, searchUser } from "../../features/userSlice";
+import {  searchUser, searchUsers } from "../../features/userSlice";
 import { redStyle, grayStyle, btnStyle } from "./variablesUser";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IUser } from "../../types";
+import { StatusUser } from "../../enum";
 
 
 export const User: FC = (): JSX.Element => {
@@ -14,7 +16,7 @@ export const User: FC = (): JSX.Element => {
   const [users, setUsers] = useState<IUser[]>(template);
 
   useEffect(() => {
-    dispatch(searchUser());
+    dispatch(searchUsers());
   }, []);
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export const User: FC = (): JSX.Element => {
           <p
             style={active}
             onClick={() => {
-              setUsers(template.filter((template) => template.status === true));
+              setUsers(template.filter((template) => template.status === StatusUser.Active));
               colorCase(1);
             }}
           >
@@ -71,7 +73,7 @@ export const User: FC = (): JSX.Element => {
           <p
             style={inactive}
             onClick={() => {
-              setUsers(template.filter((template) => template.status === false));
+              setUsers(template.filter((template) => template.status === StatusUser.Inactive));
               colorCase(2);
             }}
           >

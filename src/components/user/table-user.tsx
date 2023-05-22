@@ -3,8 +3,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CallIcon from "@mui/icons-material/Call";
 import { Row } from "./variablesUser";
 import { SelectPage } from "../select-page";
-import { IUser } from "../../features/userSlice";
 import { CSSProperties } from "styled-components";
+import { IUser } from "../../types";
 
 
 export const TableUSer:FC<any> = ({  template  }): JSX.Element => {

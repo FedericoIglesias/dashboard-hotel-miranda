@@ -1,6 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
-import { IRoom } from "./types";
+import { IRoom } from "../types";
+import { route } from "../dotenv";
+
 
 interface ObjRoom {
   rooms: IRoom[];
@@ -13,8 +15,10 @@ export const getRooms: any = createAsyncThunk(
   "fetch/fetchRoom",
   async (arg) => {
     try {
-      const response = await fetch(process.env.ROOM_ROUTER);
+      const response = await fetch(route.room);
       const data = response.json();
+      console.log(data, 'asasd');
+      
       return data;
     } catch (error) {
       alert(error);
@@ -24,7 +28,7 @@ export const getRooms: any = createAsyncThunk(
 
 export const getRoom: any = createAsyncThunk("get/getRoom", async (id) => {
   try {
-    const response = await fetch(`${process.env.ROOM_ROUTE}/${id}`);
+    const response = await fetch(`${route.room}/${id}`);
     const data = response.json();
     return data;
   } catch (error) {
@@ -34,7 +38,7 @@ export const getRoom: any = createAsyncThunk("get/getRoom", async (id) => {
 
 export const deleteRoom: any = createAsyncThunk("delete/deleteRoom", async (id) => {
   try {
-    const response = await fetch(process.env.ROOM_ROUTER);
+    const response = await fetch(route.room);
     return id;
   } catch (error) {
     alert(error);
@@ -57,7 +61,7 @@ export const putRoom: any = createAsyncThunk(
   "put/putRoom",
   async (data) => {
     try {
-      const response = await fetch(process.env.ROOM_ROUTER);
+      const response = await fetch(route.room);
       const data = response.json();
       return data;
     } catch (error) {

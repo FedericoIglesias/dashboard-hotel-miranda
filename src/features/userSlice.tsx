@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
-import { IUser } from "./types";
+import { IUser } from "../types";
+import { route } from "../dotenv";
 
 const initialState: IUser[] = [];
 
@@ -8,7 +9,7 @@ export const searchUsers: any = createAsyncThunk(
   "search/searchUsers",
   async (arg) => {
     try {
-      const response = await fetch(`${process.env.USER_ROUTE}/${arg}`);
+      const response = await fetch(route.user);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -20,7 +21,7 @@ export const searchUser: any = createAsyncThunk(
   "search/searchUser",
   async (arg) => {
     try {
-      const response = await fetch(process.env.USER_ROUTE);
+      const response = await fetch(`${route.user}/${arg}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -32,7 +33,7 @@ export const deleteUser: any = createAsyncThunk(
   "delete/deleteUser",
   async (arg) => {
     try {
-      const response = await fetch(process.env.USER_ROUTE);
+      const response = await fetch(route.user);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -44,7 +45,7 @@ export const postUser: any = createAsyncThunk(
   "post/postUser",
   async (arg) => {
     try {
-      const response = await fetch(process.env.USER_ROUTE);
+      const response = await fetch(route.user);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -56,7 +57,7 @@ export const putUser: any = createAsyncThunk(
   "put/putUser",
   async (arg) => {
     try {
-      const response = await fetch(process.env.USER_ROUTE);
+      const response = await fetch(route.user);
       const data = await response.json();
       return data;
     } catch (error) {

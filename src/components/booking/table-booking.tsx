@@ -32,11 +32,11 @@ export const Table: FC<any> = ({ book }): JSX.Element => {
           <p style={styleColumn}>Room Type</p>
           <p style={styleColumn}>Status</p>
         </Row>
-        {booking.map((item: TypeItem) => {
+        {booking.map((item: Ibooking) => {
           return (
-            <Row key={item.id}>
+            <Row key={item._id}>
               <NavLink
-                to={`/dashboard-hotel-miranda/booking/${item.id}`}
+                to={`/dashboard-hotel-miranda/booking/${item._id}`}
                 style={{ width: "16%", color: "black", textDecoration: "none" }}
               >
                 <p>{item.name}</p>
@@ -45,7 +45,7 @@ export const Table: FC<any> = ({ book }): JSX.Element => {
               <p style={styleColumn}>{item.checkIn}</p>
               <p style={styleColumn}>{item.checkOut}</p>
               <p style={styleColumn}>lorem</p>
-              <p style={styleColumn}>{item.tipoHabitacion}Deluxe</p>
+              <p style={styleColumn}>{item.idRoom}</p>
               <p style={handleStatusColor(item.status)}>
                 {item.status === true ? "Check In" : "Check Out"}
               </p>

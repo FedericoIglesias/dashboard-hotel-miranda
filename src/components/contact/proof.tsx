@@ -3,8 +3,9 @@ import { BasicModal } from "./modal";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { ProofStyled, proofStyle, btnStyle, letterStyle } from "./variablesContact";
-import { IContact, searchContact } from "../../features/contactSlice";
+import { searchContact } from "../../features/contactSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IContact } from "../../types";
 
 
 
@@ -52,7 +53,7 @@ export const Proof: FC = (): JSX.Element => {
           <ArrowBackIosIcon onClick={() => hanldePrev()} />
           {proofMail.slice(number[0], number[1]).map((item) => {
             return (
-              <div style={proofStyle} key={item.id}>
+              <div style={proofStyle} key={item._id}>
                 <div style={{ display: "flex" }}>
                   <div style={letterStyle}>
                     <p style={{ color: "white" }}>{item.name.slice(0, 1)}</p>
@@ -60,7 +61,7 @@ export const Proof: FC = (): JSX.Element => {
                   <div>
                     <p style={{ fontSize: "13px" }}>{item.name}</p>
                     <p style={{ fontSize: "13px" }}>Date: {item.date}</p>
-                    <p style={{ fontSize: "13px" }}>Id: {item.id}</p>
+                    <p style={{ fontSize: "13px" }}>Id: {item._id}</p>
                   </div>
                 </div>
                 <p style={{ fontSize: "14px" }}>Subject: {item.subject}</p>
@@ -69,7 +70,7 @@ export const Proof: FC = (): JSX.Element => {
                   {item.email}
                 </p>
                 <p style={{ fontSize: "13px", marginBottom: "10px" }}>
-                  {item.contact}
+                  {item.phone}
                 </p>
                 <button style={btnStyle} onClick={() => handleArchive(item)}>
                   ARCHIVE

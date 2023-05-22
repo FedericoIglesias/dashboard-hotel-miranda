@@ -2,8 +2,9 @@ import React, { useEffect, useState, FC } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Row, styleAvai, styleBooked, styleColumn,styleImg } from "./variablesRoom";
 import { SelectPage } from "../select-page";
-import { IRoom, fetchRooms } from "../../features/roomSlice";
+import { getRooms } from "../../features/roomSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IRoom } from "../../types";
 
 
 
@@ -11,12 +12,11 @@ export const TableRoom: FC = (): JSX.Element => {
   const [np, setNp] = useState<number>(1);
   const dispatch = useAppDispatch();
   const rooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
-  const imgRoom = require('../../assets/room1.webp')
 
   let room: IRoom[] = rooms.slice(10 * np - 10, 10 * np);
 
   useEffect(() => {
-    dispatch(fetchRooms());
+    dispatch(getRooms());
   }, []);
 
   const handleDelete = () => {
@@ -40,7 +40,7 @@ export const TableRoom: FC = (): JSX.Element => {
 
         {room.map((item) => {
           return (
-            <Row key={item.idHabitacion}>
+            <Row key={item._id}>
               <div
                 style={{
                   width: "26%",
@@ -49,8 +49,8 @@ export const TableRoom: FC = (): JSX.Element => {
                   margin: "3px 0",
                 }}
               >
-                <img alt="" style={styleImg} src={imgRoom} />
-                <p>{item.idHabitacion}</p>
+                <img alt="" style={styleImg} src={item.photo[0]} />
+                <p>{item.numberRoom}</p>
               </div>
               <p style={styleColumn}>{item.roomType}</p>
               <p style={styleColumn}>Floor A1</p>

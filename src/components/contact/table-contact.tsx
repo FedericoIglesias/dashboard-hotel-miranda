@@ -2,8 +2,9 @@ import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
 import { Row, btnStyle } from "./variablesContact";
 import { SelectPage } from "../select-page";
-import { IContact, searchContact } from "../../features/contactSlice";
+import { searchContact } from "../../features/contactSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IContact } from "../../types";
 
 
 
@@ -38,8 +39,8 @@ export const TableContact: FC = (): JSX.Element => {
         </Row>
         {mails.map((item) => {
           return (
-            <Row key={item.id}>
-              <p style={{ width: "20%" }}>{item.id}</p>
+            <Row key={item._id}>
+              <p style={{ width: "20%" }}>{item._id}</p>
               <p style={{ width: "20%" }}>{item.date}</p>
               <p style={{ width: "20%" }}>{item.name}</p>
               <p style={{ width: "20%" }}>
