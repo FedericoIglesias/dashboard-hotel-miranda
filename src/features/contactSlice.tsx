@@ -1,22 +1,64 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
+import { IContact } from "./types";
 
-export interface IContact {
-  id: number;
-  name: string;
-  email: string;
-  contact: number;
-  date: string;
-  subject: string;
-}
+
 
 const initialState: IContact[] = [];
 
+export const searchContacts: any = createAsyncThunk(
+  "search/searchContacts",
+  async (arg) => {
+    try {
+      const response = await fetch(process.env.CONTACT_ROUTE);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert(error);
+    }
+  }
+);
 export const searchContact: any = createAsyncThunk(
   "search/searchContact",
   async (arg) => {
     try {
-      const response = await fetch("json/mail.json");
+      const response = await fetch(`${process.env.CONTACT_ROUTE}/${arg}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert(error);
+    }
+  }
+);
+export const deleteContact: any = createAsyncThunk(
+  "delete/deleteContact",
+  async (arg) => {
+    try {
+      const response = await fetch(process.env.CONTACT_ROUTE);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert(error);
+    }
+  }
+);
+export const postContact: any = createAsyncThunk(
+  "post/postContact",
+  async (arg) => {
+    try {
+      const response = await fetch(process.env.CONTACT_ROUTE);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert(error);
+    }
+  }
+);
+export const putContact: any = createAsyncThunk(
+  "put/putContact",
+  async (arg) => {
+    try {
+      const response = await fetch(process.env.CONTACT_ROUTE);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -30,6 +72,16 @@ const contactSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    [searchContacts.Pending]: (state) => {
+      console.log("loading");
+    },
+    [searchContacts.fulfilled]: (state, action: PayloadAction<IContact[]>) => {
+      state = action.payload;
+      return state;
+    },
+    [searchContacts.reject]: (state) => {
+      console.log("fail");
+    },
     [searchContact.Pending]: (state) => {
       console.log("loading");
     },
@@ -38,6 +90,36 @@ const contactSlice = createSlice({
       return state;
     },
     [searchContact.reject]: (state) => {
+      console.log("fail");
+    },
+    [deleteContact.Pending]: (state) => {
+      console.log("loading");
+    },
+    [deleteContact.fulfilled]: (state, action: PayloadAction<IContact[]>) => {
+      state = action.payload;
+      return state;
+    },
+    [deleteContact.reject]: (state) => {
+      console.log("fail");
+    },
+    [postContact.Pending]: (state) => {
+      console.log("loading");
+    },
+    [postContact.fulfilled]: (state, action: PayloadAction<IContact[]>) => {
+      state = action.payload;
+      return state;
+    },
+    [postContact.reject]: (state) => {
+      console.log("fail");
+    },
+    [putContact.Pending]: (state) => {
+      console.log("loading");
+    },
+    [putContact.fulfilled]: (state, action: PayloadAction<IContact[]>) => {
+      state = action.payload;
+      return state;
+    },
+    [putContact.reject]: (state) => {
       console.log("fail");
     },
   },
