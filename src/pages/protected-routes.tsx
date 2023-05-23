@@ -8,9 +8,9 @@ export const ProtectedRoutes = () => {
 
 
     const {login} = useContext<any>(LoginContext)
+    
 
-
-    if (!login.auth) {
+    if (!false) {
         return <Login/>
     } else {
         return <Outlet />;

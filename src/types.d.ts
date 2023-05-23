@@ -1,5 +1,15 @@
 import { StatusBook, StatusRoom, StatusUser, TypeRoom } from "./enum";
 
+export interface InitState {
+  token: string;
+  name: string;
+  email: string;
+  photo: string
+}
+export interface SendLogin {
+  name: string,
+  password: string
+}
 export interface IRoom {
     _id: number;
     photo: string[];

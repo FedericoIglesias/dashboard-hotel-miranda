@@ -8,7 +8,7 @@ export const LoginContext = createContext({})
 
 export const LoginProvider: FC<any> = ({children}): JSX.Element => {
 
-    const [login, dispatchLogin] = useReducer(LoginReducer, userInitialState)
+    const [login, dispatchLogin] = useReducer<any>(LoginReducer, userInitialState)
 
 
     const data ={login, dispatchLogin}

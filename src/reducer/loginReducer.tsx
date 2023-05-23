@@ -1,15 +1,31 @@
+import { route } from "../dotenv";
+import { InitState, SendLogin } from "../types";
 
-interface  InitState{
-    auth: boolean
-    name: string
-    email: string
-}
+export const userInitialState: InitState = { token: "", name: "", email: "", photo: '' };
 
-export const userInitialState: InitState = { auth: false, name: '', email: '' }
+export const LoginReducer = async (
+  state: InitState,
+  action: SendLogin
+): Promise<InitState> => {
+;
+    
+  try {
+    const response = await fetch('http://localhost:3100/login', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin' ,
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(action)
+    });
 
-
-export const LoginReducer = (state: InitState, action: InitState) => {
-
-    state = action
+    state = await response.json(); 
+    console.log(state);
+    
     return state
-}
+  } catch (e) {
+    alert(e);
+  }
+};
