@@ -69,21 +69,26 @@ const Travl = styled.section`
   }
 `;
 
+const token = {
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhYmYwN2E0ODRiNTQ3ODEwNjI1NSIsIm5hbWUiOiJhZG1pbiIsImlhdCI6MTY4NDg3NzYzOCwiZXhwIjoxNjg0ODgxMjM4fQ.Qix80X5qO1dqTYb4QERrQv9Q1yT5NMvkXCymRHoSxAY",
+    name: "admin",
+    email: "Hillary.Durgan@gmail.com",
+    photo: "https://avatars.githubusercontent.com/u/47946331"
+  
+}
+
 export function Login() {
   const [user, setUser] = useState<SendLogin>({
     name: "admin",
     password: "$2b$10$FvsRU2IingA1tao9wH7fduisDOWrfSehnSnRv8hHZoxfdJ6t6GkmO",
   });
 
-  const { dispatchLogin, login } = useContext<any>(LoginContext);
+  const { dispatchLogin } = useContext<any>(LoginContext);
 
-  const handleLogin = () => {
-    dispatchLogin(user);
+  const handleLogin = async() => {
+    await dispatchLogin(user);
   };
-  useEffect(() => {
-    localStorage.setItem("info", login);
-    // console.log(login);
-  }, [login]);
+
   return (
     <>
       <Myh1>
@@ -92,7 +97,7 @@ export function Login() {
             <input
               type="text"
               name="username"
-              placeholder="Xymenes Hallas"
+              placeholder="admin"
               onChange={(e) =>
                 setUser({ name: e.target.value, password: user.password })
               }
@@ -100,7 +105,7 @@ export function Login() {
             <input
               type="password"
               name="password"
-              placeholder="100"
+              placeholder="admin"
               onChange={(e) =>
                 setUser({ name: user.name, password: e.target.value })
               }
@@ -119,3 +124,4 @@ export function Login() {
     </>
   );
 }
+
