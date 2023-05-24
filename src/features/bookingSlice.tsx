@@ -1,28 +1,30 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
-import { route } from "../dotenv";
+import { route } from "../env-var";
+import { IBooking } from "../types";
 
 
-export interface Ibooking {
-  _id: number;
-  name: string;
-  orderDate: number;
-  checkIn: number;
-  checkOut: number;
-  idRoom: number;
-  status: boolean;
-  specialRequest?: string;
-}
 
-const initialState: Ibooking[] = [];
 
+const initialState: IBooking[] = [];
+
+const token = localStorage.getItem("token");
 
 export const searchBooking: any = createAsyncThunk(
   "search/searchBooking",
   async (arg) => {
     try {
-      const response = await fetch(route.booking);
-      const data = await response.json();
+      
+      const response = await fetch(route.booking,{
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,}
+        });
+        const data = await response.json();
       return data;
     } catch (error) {
       alert(error);
@@ -89,7 +91,7 @@ const bookingSlice = createSlice({
     [searchBooking.pending]: (state) => {
       console.log("Loading");
     },
-    [searchBooking.fulfilled]: (state, action: PayloadAction<Ibooking[]>) => {
+    [searchBooking.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
       state = action.payload;
       return state;
     },
@@ -99,7 +101,7 @@ const bookingSlice = createSlice({
     [searchBook.pending]: (state) => {
       console.log("Loading");
     },
-    [searchBook.fulfilled]: (state, action: PayloadAction<Ibooking[]>) => {
+    [searchBook.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
       state = action.payload;
       return state;
     },
@@ -109,7 +111,7 @@ const bookingSlice = createSlice({
     [postBook.pending]: (state) => {
       console.log("Loading");
     },
-    [postBook.fulfilled]: (state, action: PayloadAction<Ibooking[]>) => {
+    [postBook.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
       state = action.payload;
       return state;
     },
@@ -119,7 +121,7 @@ const bookingSlice = createSlice({
     [putBook.pending]: (state) => {
       console.log("Loading");
     },
-    [putBook.fulfilled]: (state, action: PayloadAction<Ibooking[]>) => {
+    [putBook.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
       state = action.payload;
       return state;
     },
@@ -129,7 +131,7 @@ const bookingSlice = createSlice({
     [deleteBook.pending]: (state) => {
       console.log("Loading");
     },
-    [deleteBook.fulfilled]: (state, action: PayloadAction<Ibooking[]>) => {
+    [deleteBook.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
       state = action.payload;
       return state;
     },

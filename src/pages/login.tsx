@@ -70,13 +70,6 @@ const Travl = styled.section`
   }
 `;
 
-const token = {
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhYmYwN2E0ODRiNTQ3ODEwNjI1NSIsIm5hbWUiOiJhZG1pbiIsImlhdCI6MTY4NDg3NzYzOCwiZXhwIjoxNjg0ODgxMjM4fQ.Qix80X5qO1dqTYb4QERrQv9Q1yT5NMvkXCymRHoSxAY",
-    name: "admin",
-    email: "Hillary.Durgan@gmail.com",
-    photo: "https://avatars.githubusercontent.com/u/47946331"
-  
-}
 
 export function Login() {
   const [user, setUser] = useState<SendLogin>({
@@ -88,6 +81,7 @@ export function Login() {
 
   const handleLogin = async() => {
     const infoUser = await fetchLogin(user)
+    localStorage.setItem('token', JSON.stringify(infoUser.token))
     dispatchLogin(infoUser);
   };
 

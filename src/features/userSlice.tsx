@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { IUser } from "../types";
-import { route } from "../dotenv";
+import { route } from "../env-var";
 
 const initialState: IUser[] = [];
 

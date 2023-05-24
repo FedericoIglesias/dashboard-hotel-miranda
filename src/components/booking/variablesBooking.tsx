@@ -12,6 +12,16 @@ export const styleIn: CSSProperties = {
   width: "125px",
   fontWeight: 700,
 };
+export const styleProgress: CSSProperties = {
+  backgroundColor: "#ffe53a",
+  borderRadius: "10px",
+  paddingLeft: "12px",
+  color: "#FF9C3A",
+  textAlign: "center",
+  padding: "10px 10px",
+  width: "125px",
+  fontWeight: 700,
+};
 export const styleOut: CSSProperties = {
   backgroundColor: "#E2342850",
   borderRadius: "10px",

@@ -2,13 +2,14 @@ import { useParams } from "react-router";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MessageIcon from "@mui/icons-material/Message";
 import React, { useEffect, FC } from "react";
-import { Ibooking, searchBooking } from "../../features/bookingSlice";
+import { searchBooking } from "../../features/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IBooking } from "../../types";
 
 export const Reservation: FC = ():JSX.Element => {
 
   const dispatch = useAppDispatch();
-  const booking: Ibooking[] = useAppSelector((state) => state.booking);
+  const booking: IBooking[] = useAppSelector((state) => state.booking);
 
   useEffect(() => {
     dispatch(searchBooking());
@@ -19,7 +20,7 @@ export const Reservation: FC = ():JSX.Element => {
   const params = useParams();
   const id: string | undefined = params.id;
 
-  let book: Ibooking[] = booking.filter(
+  let book: IBooking[] = booking.filter(
     (booking) => booking._id.toString() === id
   );
 
@@ -140,7 +141,7 @@ export const Reservation: FC = ():JSX.Element => {
             </p>
           </div>
         </div>
-        <p>{book[0].specialRequest}</p>
+        <p>lorem </p>
         <div>
           <p>Facilities</p>
         </div>

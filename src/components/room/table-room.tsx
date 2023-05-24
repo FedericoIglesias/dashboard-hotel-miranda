@@ -11,9 +11,10 @@ import { IRoom } from "../../types";
 export const TableRoom: FC = (): JSX.Element => {
   const [np, setNp] = useState<number>(1);
   const dispatch = useAppDispatch();
-  const rooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
+  const listRooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
 
-  let room: IRoom[] = rooms.slice(10 * np - 10, 10 * np);
+
+  let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
 
   useEffect(() => {
     dispatch(getRooms());
@@ -30,7 +31,7 @@ export const TableRoom: FC = (): JSX.Element => {
     <>
       <section style={{ width: "90%", margin: "auto" }}>
         <Row>
-          <p style={{ width: "26%" }}>Room Name</p>
+          <p style={{ width: "26%" }}>Number Room</p>
           <p style={styleColumn}>Bed Type</p>
           <p style={styleColumn}>Room Floor</p>
           <p style={styleColumn}>Facilities</p>
@@ -38,7 +39,7 @@ export const TableRoom: FC = (): JSX.Element => {
           <p style={styleColumn}>Status</p>
         </Row>
 
-        {room.map((item) => {
+        {rooms.map((item) => {
           return (
             <Row key={item._id}>
               <div
@@ -64,7 +65,7 @@ export const TableRoom: FC = (): JSX.Element => {
           );
         })}
 
-        <SelectPage array={rooms} setNp={setNp} show={room} />
+        <SelectPage array={listRooms} setNp={setNp} show={rooms} />
       </section>
     </>
   );

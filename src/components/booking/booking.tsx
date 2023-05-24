@@ -1,15 +1,15 @@
 import { Table } from "./table-booking";
 import React, { FC, useEffect, useState } from "react";
 import { searchBooking } from "../../features/bookingSlice";
-import { Ibooking } from "../../features/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IBooking } from "../../types";
+import { StatusBook } from "../../enum";
 
 export const Booking: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const booking: Ibooking[] = useAppSelector(state => state.booking)
-  const [book, setBook] = useState<Ibooking[]>(booking);
-  
-  
+  const booking: IBooking[] = useAppSelector((state) => state.booking);
+  const [book, setBook] = useState<IBooking[]>(booking);
+
   useEffect(() => {
     dispatch(searchBooking());
   }, []);
@@ -18,34 +18,20 @@ export const Booking: FC = (): JSX.Element => {
     setBook(booking);
   }, [booking]);
 
-  const handleOrder = (state:string) => {
+  const handleOrder = (state: string) => {
+    let newOrder;
     switch (state) {
       case "book":
-        booking.sort((a, b) => {
-          return (
-            new Date(a.orderDate).getTime() - new Date(b.orderDate).getTime()
-          );
-        });
-        break;
-      case "in":
-        booking.sort((a, b) => {
-          return new Date(a.checkIn).getTime() - new Date(b.checkIn).getTime();
-        });
-        break;
-      case "out":
-        booking.sort((a, b) => {
-          return (
-            new Date(a.checkOut).getTime() - new Date(b.checkOut).getTime()
-          );
-        });
-        break;
-      case "progres":
-        booking.sort((a, b) => {
-          return (
-            new Date(a.orderDate).getTime() - new Date(b.orderDate).getTime()
-          )
-        });
-        break;
+        return setBook(booking);
+      case StatusBook.CheckIn:
+        newOrder = booking.filter((item) => item.status === StatusBook.CheckIn);
+        return setBook(newOrder);
+      case StatusBook.CheckOut:
+        newOrder = booking.filter((item) => item.status === StatusBook.CheckOut);
+        return setBook(newOrder);
+      case StatusBook.InProgress:
+        newOrder = booking.filter((item) => item.status === StatusBook.InProgress);
+        return setBook(newOrder)
       default:
     }
   };
@@ -62,9 +48,9 @@ export const Booking: FC = (): JSX.Element => {
         }}
       >
         <p onClick={() => handleOrder("book")}>All Booking</p>
-        <p onClick={() => handleOrder("in")}>Checking In</p>
-        <p onClick={() => handleOrder("out")}>Checking Out</p>
-        <p onClick={() => handleOrder("progres")}>In Progress</p>
+        <p onClick={() => handleOrder(StatusBook.CheckIn)}>Checking In</p>
+        <p onClick={() => handleOrder(StatusBook.CheckOut)}>Checking Out</p>
+        <p onClick={() => handleOrder(StatusBook.InProgress)}>In Progress</p>
       </section>
       <Table book={book} />
     </>

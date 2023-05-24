@@ -8,7 +8,6 @@ export const ProtectedRoutes = () => {
 
 
     const {login} = useContext<any>(LoginContext)
-    console.log(login);
     
 
     if (!login.token) {
