@@ -11,11 +11,11 @@ export const searchUsers: any = createAsyncThunk(
   "search/searchUsers",
   async (arg) => {
     try {
-      const response = await fetch(route.user,{
-        method:'GET',
-        headers:{
+      const response = await fetch(route.user, {
+        method: "GET",
+        headers: {
           authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
-        }
+        },
       });
       const data = await response.json();
       return data;
@@ -48,32 +48,24 @@ export const deleteUser: any = createAsyncThunk(
     }
   }
 );
-export const postUser: any = createAsyncThunk(
-  "post/postUser",
-  async (arg) => {
-    try {
-      const response = await fetch(route.user);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      alert(error);
-    }
+export const postUser: any = createAsyncThunk("post/postUser", async (arg) => {
+  try {
+    const response = await fetch(route.user);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    alert(error);
   }
-);
-export const putUser: any = createAsyncThunk(
-  "put/putUser",
-  async (arg) => {
-    try {
-      const response = await fetch(route.user);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      alert(error);
-    }
+});
+export const putUser: any = createAsyncThunk("put/putUser", async (arg) => {
+  try {
+    const response = await fetch(route.user);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    alert(error);
   }
-);
-
-
+});
 
 const userSlice = createSlice({
   name: "User",
@@ -132,8 +124,6 @@ const userSlice = createSlice({
     },
   },
 });
-
-
 
 export const selectUser = (state: RootState) => state;
 export default userSlice.reducer;

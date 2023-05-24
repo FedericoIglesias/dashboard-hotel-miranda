@@ -11,12 +11,6 @@ export const EditCard: FC<Edit> = ({ edit }): JSX.Element =>  {
     const [name, setName] = useState<string>('')
     const [mail, setMail] = useState<string>('')
 
-    useEffect(() => {
-        setMail(login.mail)
-        setName(login.name)
-    },[login])
-
-
 
     if (edit === 1) {
         return (
@@ -28,8 +22,8 @@ export const EditCard: FC<Edit> = ({ edit }): JSX.Element =>  {
     } else {
         return (
             <>
-                <p style={{ fontWeight: '700' }}>{name}</p>
-                <p style={styleMail} >{mail}</p>
+                <p style={{ fontWeight: '700' }}>{login.name}</p>
+                <p style={styleMail} >{login.email}</p>
             </>
         )
     }

@@ -3,15 +3,21 @@ import { RootState } from "../store/store";
 import { IContact } from "../types";
 import { route } from "../env-var";
 
-
-
 const initialState: IContact[] = [];
+
+const token = localStorage.getItem("token");
 
 export const searchContacts: any = createAsyncThunk(
   "search/searchContacts",
   async (arg) => {
+    
     try {
-      const response = await fetch(route.contact);
+      const response = await fetch(route.contact, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        },
+      });
       const data = await response.json();
       return data;
     } catch (error) {
@@ -19,6 +25,7 @@ export const searchContacts: any = createAsyncThunk(
     }
   }
 );
+
 export const searchContact: any = createAsyncThunk(
   "search/searchContact",
   async (arg) => {
