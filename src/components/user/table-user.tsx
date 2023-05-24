@@ -5,19 +5,20 @@ import { Row } from "./variablesUser";
 import { SelectPage } from "../select-page";
 import { CSSProperties } from "styled-components";
 import { IUser } from "../../types";
+import { StatusUser } from "../../enum";
 
 
 export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
 
   const [page, setPage] = useState<number>(1);
   const user: IUser[] = template.slice(10 * page - 10, 10 * page);
-  const imgFounder = require('../../assets/founder.jpg')
+
 
   useEffect(() => {}, [user]);
 
 
-  const ifStyle = (status: boolean): CSSProperties =>
-    status === true ? { color: "#5AD07A" } : { color: "#E23428" };
+  const ifStyle = (status: StatusUser): CSSProperties =>
+    status === StatusUser.Active ? { color: "#5AD07A" } : { color: "#E23428" };
 
   return (
     <section style={{ width: "90%", margin: "auto" }}>
@@ -32,10 +33,10 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
         return (
           <Row key={item.id}>
             <div style={{ width: "20%", display: "flex", fontSize: "10px" }}>
-              <img  alt="profile" src={imgFounder} style={{ width: "25px" }} />
+              <img  alt="profile" src={item.photo} style={{ width: "25px" }} />
               <div>
                 <p>{item.name}</p>
-                <p>{item.id}</p>
+                <p>{item._id}</p>
                 <p>{item.startDate}</p>
               </div>
             </div>
@@ -43,11 +44,11 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
             <p style={{ width: "20%" }}>Monday</p>
             <p style={{ width: "20%" }}>
               <CallIcon />
-              {item.conctac}{" "}
+              {item.phone}
             </p>
             <p style={{ width: "18%", fontWeight: "700" }}>
               <span style={ifStyle(item.status)}>
-                {item.status === true ? "Active" : "Inactive"}
+                {item.status}
               </span>
             </p>
             <MoreVertIcon />

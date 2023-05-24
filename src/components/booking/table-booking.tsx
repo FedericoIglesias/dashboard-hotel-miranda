@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { NavLink } from "react-router-dom";
-import { styleColumn, styleIn, styleOut, Row, TypeItem, styleProgress } from "./variablesBooking";
+import { styleColumn, styleIn, styleOut, Row, styleProgress } from "./variablesBooking";
 import { SelectPage } from "../select-page";
 import { IBooking } from "../../types";
 import { StatusBook } from "../../enum";

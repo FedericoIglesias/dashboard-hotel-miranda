@@ -14,6 +14,7 @@ export const User: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const template: IUser[] = useAppSelector<IUser[]>((store) => store.user);
   const [users, setUsers] = useState<IUser[]>(template);
+console.log(template);
 
   useEffect(() => {
     dispatch(searchUsers());
@@ -26,7 +27,7 @@ export const User: FC = (): JSX.Element => {
   const handleSearch = (e: string): void => {
     if (e !== "") {
       
-      setUsers(template.filter((template) => template.name.includes(e)));
+      setUsers(template.filter((template) => template.name.toLowerCase().includes(e.toLowerCase())));
     } else {
       setUsers(template);
     }

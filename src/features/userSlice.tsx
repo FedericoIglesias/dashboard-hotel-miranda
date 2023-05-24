@@ -5,11 +5,18 @@ import { route } from "../env-var";
 
 const initialState: IUser[] = [];
 
+const token = localStorage.getItem("token");
+
 export const searchUsers: any = createAsyncThunk(
   "search/searchUsers",
   async (arg) => {
     try {
-      const response = await fetch(route.user);
+      const response = await fetch(route.user,{
+        method:'GET',
+        headers:{
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        }
+      });
       const data = await response.json();
       return data;
     } catch (error) {
