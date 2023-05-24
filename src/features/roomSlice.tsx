@@ -15,7 +15,7 @@ export const getRooms: any = createAsyncThunk(
   "fetch/fetchRoom",
   async (arg) => {
     try {
-      const response = await fetch(route.room,{
+      const response = await fetch('http://localhost:3100/rooms',{
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -48,7 +48,7 @@ export const getRoom: any = createAsyncThunk("get/getRoom", async (id) => {
 
 export const deleteRoom: any = createAsyncThunk("delete/deleteRoom", async (id) => {
   try {
-    const response = await fetch(route.room);
+    await fetch(route.room);
     return id;
   } catch (error) {
     alert(error);

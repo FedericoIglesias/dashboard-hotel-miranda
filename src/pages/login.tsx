@@ -3,6 +3,7 @@ import React from "react";
 import { LoginContext } from "../context/loginContext";
 import styled from "@emotion/styled";
 import { SendLogin } from "../types";
+import { fetchLogin } from "../components/fetchLogin";
 
 const Myh1 = styled.section`
   background-color: #f8f8f8;
@@ -86,7 +87,8 @@ export function Login() {
   const { dispatchLogin } = useContext<any>(LoginContext);
 
   const handleLogin = async() => {
-    await dispatchLogin(user);
+    const infoUser = await fetchLogin(user)
+    dispatchLogin(infoUser);
   };
 
   return (
