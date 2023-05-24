@@ -27,26 +27,26 @@ export const TableContact: FC = (): JSX.Element => {
     <>
       <section style={{ width: "90%", margin: "auto" }}>
         <Row>
-          <p style={{ width: "20%" }}>Order Id</p>
+          <p style={{ width: "30%" }}>Email</p>
           <p style={{ width: "20%" }}>Date</p>
           <p style={{ width: "20%" }}>Customer</p>
           <p style={{ width: "20%" }}>Coments</p>
-          <p style={{ width: "20%" }}>Action</p>
+          <p style={{ width: "10%" }}>Action</p>
         </Row>
         {mails.map((item) => {
           return (
             <Row key={item._id}>
-              <p style={{ width: "20%" }}>{item._id}</p>
-              <p style={{ width: "20%" }}>{item.date}</p>
+              <p style={{ width: "30%" }}>{item.email}</p>
+              <p style={{ width: "20%" }}>{(new Date(item.date).toDateString())}</p>
               <p style={{ width: "20%" }}>{item.name}</p>
               <p style={{ width: "20%" }}>
                 <BasicModal />
               </p>
               <p
-                style={{ width: "20%" }}
+                style={{ width: "10%" }}
                 onClick={(item) => handleArchive(item)}
               >
-                <span style={btnStyle}> Archive</span>
+                <span style={btnStyle}>Delete</span>
               </p>
             </Row>
           );

@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { ProofStyled, proofStyle, btnStyle, letterStyle } from "./variablesContact";
+import { ProofStyled, proofStyle, btnStyle, letterStyle, imgContact } from "./variablesContact";
 import { searchContacts } from "../../features/contactSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IContact } from "../../types";
@@ -12,7 +12,6 @@ import { IContact } from "../../types";
 export const Proof: FC = (): JSX.Element => {
   
   const [number, setNumber] = useState<number[]>([0, 3]);
-  const archive: IContact[] = [];
   const proofMail: IContact[] = useAppSelector<IContact[]>((store) => store.contact);
   const dispatch = useAppDispatch();
 
@@ -37,8 +36,7 @@ export const Proof: FC = (): JSX.Element => {
   };
 
   const handleArchive = (item) => {
-    archive.unshift(item);
-    console.log(archive); // this will be removed
+
   };
 
   return (
@@ -56,7 +54,7 @@ export const Proof: FC = (): JSX.Element => {
               <div style={proofStyle} key={item._id}>
                 <div style={{ display: "flex" }}>
                   <div style={letterStyle}>
-                    <p style={{ color: "white" }}>{item.name.slice(0, 1)}</p>
+                    <img src={item.photo} style={imgContact}alt="" />
                   </div>
                   <div>
                     <p style={{ fontSize: "13px" }}>{item.name}</p>
@@ -73,7 +71,7 @@ export const Proof: FC = (): JSX.Element => {
                   {item.phone}
                 </p>
                 <button style={btnStyle} onClick={() => handleArchive(item)}>
-                  ARCHIVE
+                  Delete
                 </button>
               </div>
             );

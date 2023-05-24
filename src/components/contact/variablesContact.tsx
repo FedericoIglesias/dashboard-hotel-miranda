@@ -14,7 +14,7 @@ export const ProofStyled = styled.section`
 `;
 
 export const btnStyle = {
-  background: "#135846",
+  background: "#e20d0d",
   color: "white",
   border: "none",
   padding: "10px",
@@ -23,7 +23,6 @@ export const btnStyle = {
 };
 
 export const letterStyle = {
-  backgroundColor: "#E23428",
   width: "50px",
   height: "50px",
   display: "flex",
@@ -64,3 +63,10 @@ export const style = {
   boxShadow: 24,
   p: 4,
 };
+
+export const imgContact = {
+  width: "30px",
+  height: "30px",
+  borderRadius: "5px",
+  marginRight: "10px",
+}

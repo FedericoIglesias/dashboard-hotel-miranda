@@ -2,18 +2,31 @@ import BedIcon from "@mui/icons-material/Bed";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
-import room from "../../json/room.json";
-import check from "../../json/check.json";
 import { styleIcon, Category, Number, Card } from "./variablesDashboard";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import { IBooking, IRoom } from "../../types";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getRooms } from "../../features/roomSlice";
+import { StatusBook, StatusRoom } from "../../enum";
+import { searchBooking } from "../../features/bookingSlice";
 
 
 
 export const Stats: FC = (): JSX.Element => {
 
-  const reservation: object[] = room.filter((room) => room.booking);
-  const checkIn: object[] = check.filter((check) => check.checkIn);
-  const checkOut: object[] = check.filter((check) => check.checkOut);
+  const dispatch = useAppDispatch();
+  const listRooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
+  const bookigns: IBooking[]= useAppSelector<IBooking[]>((store) => store.booking);
+
+
+  useEffect(() => {
+    dispatch(getRooms());
+    dispatch(searchBooking());
+  }, []);
+
+  const reservation: object[] = listRooms.filter((room) => room.status === StatusRoom.Booked);
+  const checkIn: object[] = bookigns.filter((book) => book.status === StatusBook.CheckIn);
+  const checkOut: object[] = bookigns.filter((book) => book.status === StatusBook.CheckOut);
 
   return (
     <section
@@ -34,7 +47,7 @@ export const Stats: FC = (): JSX.Element => {
       <Card>
         <BedIcon style={styleIcon} />
         <div>
-          <Number>{(reservation.length / 1000) * 100}%</Number>
+          <Number>{(reservation.length / listRooms.length) * 100}%</Number>
           <Category>Busy</Category>
         </div>
       </Card>

@@ -55,6 +55,8 @@ export interface IContact {
   phone: string;
   date: number;
   subject: string;
+  photo: string,
+  comment: string
 }
 
 export type AddNewContact = Omit<IContact, "_id">;

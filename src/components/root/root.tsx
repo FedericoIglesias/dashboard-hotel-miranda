@@ -3,7 +3,6 @@ import { Card } from "./card";
 import { Outlet } from "react-router-dom";
 import { Bar } from "../bar";
 import { useState } from "react";
-// import logo from '../../assets/logo.webp'
 import Slide from '@mui/material/Slide';
 import { ObjCheck, BoxNav, smallLetter, title } from "./variablesRoot";
 import { NestedList } from "./nested-list";
