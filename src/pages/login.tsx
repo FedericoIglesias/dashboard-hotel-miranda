@@ -74,7 +74,7 @@ const Travl = styled.section`
 export function Login() {
   const [user, setUser] = useState<SendLogin>({
     name: "admin",
-    password: "$2b$10$FvsRU2IingA1tao9wH7fduisDOWrfSehnSnRv8hHZoxfdJ6t6GkmO",
+    password: "admin",
   });
 
   const { dispatchLogin } = useContext<any>(LoginContext);

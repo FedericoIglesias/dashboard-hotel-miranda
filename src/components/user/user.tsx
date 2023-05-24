@@ -2,10 +2,11 @@ import { TableUSer } from "./table-user";
 import { NavLink } from "react-router-dom";
 import React, { CSSProperties, FC, useEffect, useState } from "react";
 import {  searchUser, searchUsers } from "../../features/userSlice";
-import { redStyle, grayStyle, btnStyle } from "./variablesUser";
+import { redStyle, grayStyle } from "./variablesUser";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IUser } from "../../types";
 import { StatusUser } from "../../enum";
+import { ButtonOrder } from "../booking/variablesBooking";
 
 
 export const User: FC = (): JSX.Element => {
@@ -14,7 +15,7 @@ export const User: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const template: IUser[] = useAppSelector<IUser[]>((store) => store.user);
   const [users, setUsers] = useState<IUser[]>(template);
-console.log(template);
+
 
   useEffect(() => {
     dispatch(searchUsers());
@@ -91,14 +92,14 @@ console.log(template);
             }}
           />
         </div>
-        <button style={btnStyle}>
+        <ButtonOrder >
           <NavLink
             to={"/dashboard-hotel-miranda/new-user"}
             style={{ color: "white", textDecoration: "none" }}
           >
             +New User
           </NavLink>
-        </button>
+        </ButtonOrder>
       </div>
       <TableUSer template={users} />
     </>

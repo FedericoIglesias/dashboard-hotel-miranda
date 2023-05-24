@@ -2,6 +2,19 @@ import styled, { CSSProperties } from "styled-components";
 
 export const styleColumn = { width: "14%" };
 
+export const ButtonOrder = styled.button`
+background-color: #135846;
+color: white;
+font-weight: 700;
+padding: 10px;
+border: none;
+border-radius: 10px;
+:hover{
+  background-color: #FF9C3A;
+}
+`;
+
+
 export const styleIn: CSSProperties = {
   backgroundColor: "#5AD07A50",
   borderRadius: "10px",

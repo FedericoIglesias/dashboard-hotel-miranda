@@ -5,14 +5,15 @@ import { styleColumn, styleIn, styleOut, Row, styleProgress } from "./variablesB
 import { SelectPage } from "../select-page";
 import { IBooking } from "../../types";
 import { StatusBook } from "../../enum";
+import { OptionBooking } from "./optionBooking";
 
 export const Table: FC<any> = ({ book }): JSX.Element => {
   const [page, setPage] = useState<number>(1);
-console.log(book);
+
 
   const booking: IBooking[] = book.slice(10 * page - 10, 10 * page);
 
-  const handleDelete = () => {};
+  
 
   const handleStatusColor = (status: StatusBook) => {
     if (status === StatusBook.CheckIn) {
@@ -45,17 +46,15 @@ console.log(book);
               >
                 <p>{item.name}</p>
               </NavLink>
-              <p style={styleColumn}>{new Date(item.orderDate).toDateString()}</p>
-              <p style={styleColumn}>{new Date(item.checkIn).toDateString()}</p>
-              <p style={styleColumn}>{new Date(item.checkOut).toDateString()}</p>
+              <p style={styleColumn}>{new Date(item.orderDate).toLocaleDateString('es-ES')}</p>
+              <p style={styleColumn}>{new Date(item.checkIn).toLocaleDateString('es-ES')}</p>
+              <p style={styleColumn}>{new Date(item.checkOut).toLocaleDateString('es-ES')}</p>
               <p style={styleColumn}>lorem</p>
               <p style={styleColumn}>{item.idRoom}</p>
               <p style={handleStatusColor(item.status)}>
                 {item.status}
               </p>
-              <div onClick={() => handleDelete()}>
-                <MoreVertIcon />
-              </div>
+              <OptionBooking/>
             </Row>
           );
         })}

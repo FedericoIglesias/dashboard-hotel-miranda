@@ -1,13 +1,5 @@
 import styled, { CSSProperties } from "styled-components";
 
-export const btnStyle = {
-  padding: "13px 51px",
-  backgroundColor: "#135846",
-  border: "none",
-  borderRadius: "10px",
-  margin: "10px",
-};
-
 
 export const Row = styled.div`
   display: flex;

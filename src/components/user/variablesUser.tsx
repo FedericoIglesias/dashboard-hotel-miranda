@@ -17,15 +17,6 @@ export const grayStyle: CSSProperties = {
   fontWeight: "700",
 };
 
-export const btnStyle: CSSProperties = {
-  color: "white",
-  border: "none",
-  padding: "10px 20px",
-  backgroundColor: "#135846",
-  borderRadius: "20px",
-};
-
-
 
   export const Row = styled.div`
     display: flex;

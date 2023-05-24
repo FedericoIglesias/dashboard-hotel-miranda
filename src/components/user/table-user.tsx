@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CallIcon from "@mui/icons-material/Call";
 import { Row } from "./variablesUser";
 import { SelectPage } from "../select-page";
 import { CSSProperties } from "styled-components";
 import { IUser } from "../../types";
 import { StatusUser } from "../../enum";
+import { OptionUser } from "./optionUser";
 
 
 export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
@@ -37,21 +37,21 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
               <div>
                 <p>{item.name}</p>
                 <p>{item._id}</p>
-                <p>{item.startDate}</p>
+                <p>{(new Date(item.startDate).toLocaleDateString('es-ES'))}</p>
               </div>
             </div>
             <p style={{ width: "20%" }}>{item.description}</p>
-            <p style={{ width: "20%" }}>Monday</p>
+            <p style={{ width: "20%" }}> {item.schedule}</p>
             <p style={{ width: "20%" }}>
               <CallIcon />
               {item.phone}
             </p>
-            <p style={{ width: "18%", fontWeight: "700" }}>
+            <p style={{ width: "15%", fontWeight: "700" }}>
               <span style={ifStyle(item.status)}>
                 {item.status}
               </span>
             </p>
-            <MoreVertIcon />
+            <OptionUser/>
           </Row>
         );
       })}

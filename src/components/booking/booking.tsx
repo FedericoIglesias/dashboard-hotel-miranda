@@ -4,6 +4,7 @@ import { searchBooking } from "../../features/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IBooking } from "../../types";
 import { StatusBook } from "../../enum";
+import { ButtonOrder} from "./variablesBooking";
 
 export const Booking: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -47,10 +48,10 @@ export const Booking: FC = (): JSX.Element => {
           justifyContent: "space-around",
         }}
       >
-        <p onClick={() => handleOrder("book")}>All Booking</p>
-        <p onClick={() => handleOrder(StatusBook.CheckIn)}>Checking In</p>
-        <p onClick={() => handleOrder(StatusBook.CheckOut)}>Checking Out</p>
-        <p onClick={() => handleOrder(StatusBook.InProgress)}>In Progress</p>
+        <ButtonOrder  onClick={() => handleOrder("book")}>All Booking</ButtonOrder>
+        <ButtonOrder  onClick={() => handleOrder(StatusBook.CheckIn)}>Checking In</ButtonOrder>
+        <ButtonOrder  onClick={() => handleOrder(StatusBook.CheckOut)}>Checking Out</ButtonOrder>
+        <ButtonOrder  onClick={() => handleOrder(StatusBook.InProgress)}>In Progress</ButtonOrder>
       </section>
       <Table book={book} />
     </>

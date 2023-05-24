@@ -1,18 +1,24 @@
 import React, { useEffect, useState, FC } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Row, styleAvai, styleBooked, styleColumn,styleImg } from "./variablesRoom";
+import {
+  Row,
+  styleAvai,
+  styleBooked,
+  styleColumn,
+  styleImg,
+} from "./variablesRoom";
 import { SelectPage } from "../select-page";
 import { getRooms } from "../../features/roomSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IRoom } from "../../types";
-
-
+import { OptionRoom } from "./optionRoom";
 
 export const TableRoom: FC = (): JSX.Element => {
   const [np, setNp] = useState<number>(1);
   const dispatch = useAppDispatch();
-  const listRooms: IRoom[] = useAppSelector<IRoom[]>((store) => store.room.rooms);
-
+  const listRooms: IRoom[] = useAppSelector<IRoom[]>(
+    (store) => store.room.rooms
+  );
 
   let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
 
@@ -20,12 +26,8 @@ export const TableRoom: FC = (): JSX.Element => {
     dispatch(getRooms());
   }, []);
 
-  const handleDelete = () => {
-    console.log("i will delete you");
-  };
-
-  const status = (status:string) => status === "Available"? styleAvai : styleBooked;
-  
+  const status = (status: string) =>
+    status === "Available" ? styleAvai : styleBooked;
 
   return (
     <>
@@ -58,9 +60,7 @@ export const TableRoom: FC = (): JSX.Element => {
               <p style={{ width: "13%", fontSize: "10px" }}>{item.amenities}</p>
               <p style={styleColumn}>${item.price}</p>
               <p style={status(item.status)}>{item.status}</p>
-              <div onClick={() => handleDelete()}>
-                <MoreVertIcon />
-              </div>
+              <OptionRoom />
             </Row>
           );
         })}

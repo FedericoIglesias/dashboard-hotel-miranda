@@ -42,6 +42,7 @@ export interface IUser {
   startDate: number;
   description: string;
   phone: string;
+  schedule:string,
   status: StatusUser;
   password: string;
 }
