@@ -16,10 +16,7 @@ export const User: FC = (): JSX.Element => {
   const template: IUser[] = useAppSelector<IUser[]>((store) => store.user);
   const [users, setUsers] = useState<IUser[]>(template);
 
-
-  useEffect(() => {
     dispatch(searchUsers());
-  }, []);
 
   useEffect(() => {
     setUsers(template);

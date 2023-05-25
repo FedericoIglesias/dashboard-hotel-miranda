@@ -38,11 +38,14 @@ export const searchUser: any = createAsyncThunk(
 );
 export const deleteUser: any = createAsyncThunk(
   "delete/deleteUser",
-  async (arg) => {
+  async (_id) => {
     try {
-      const response = await fetch(route.user);
-      const data = await response.json();
-      return data;
+      await fetch(`${route.user}/${_id}`,{
+        method: 'DELETE',
+        headers:{
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`
+        }
+      });
     } catch (error) {
       alert(error);
     }
@@ -96,8 +99,7 @@ const userSlice = createSlice({
       console.log("loading");
     },
     [deleteUser.fulfilled]: (state, action: PayloadAction<IUser[]>) => {
-      state = action.payload;
-      return state;
+      return alert('The user was delete');
     },
     [deleteUser.reject]: (state) => {
       console.log("fail");

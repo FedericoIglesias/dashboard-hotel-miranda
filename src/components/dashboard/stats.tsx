@@ -47,7 +47,7 @@ export const Stats: FC = (): JSX.Element => {
       <Card>
         <BedIcon style={styleIcon} />
         <div>
-          <Number>{(reservation.length / listRooms.length) * 100}%</Number>
+          <Number>{Math.floor((reservation.length / listRooms.length) * 100)}%</Number>
           <Category>Busy</Category>
         </div>
       </Card>

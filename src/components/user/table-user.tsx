@@ -40,7 +40,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
                 <p>{(new Date(item.startDate).toLocaleDateString('es-ES'))}</p>
               </div>
             </div>
-            <p style={{ width: "20%" }}>{item.description}</p>
+            <p style={{ width: "20%" }}>{item.job}</p>
             <p style={{ width: "20%" }}> {item.schedule}</p>
             <p style={{ width: "20%" }}>
               <CallIcon />
@@ -51,7 +51,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
                 {item.status}
               </span>
             </p>
-            <OptionUser/>
+            <OptionUser id={item._id}/>
           </Row>
         );
       })}
