@@ -3,9 +3,6 @@ import { RootState } from "../store/store";
 import { route } from "../env-var";
 import { IBooking } from "../types";
 
-
-
-
 const initialState: IBooking[] = [];
 
 const token = localStorage.getItem("token");
@@ -14,17 +11,17 @@ export const searchBooking: any = createAsyncThunk(
   "search/searchBooking",
   async (arg) => {
     try {
-      
-      const response = await fetch(route.booking,{
+      const response = await fetch(route.booking, {
         method: "GET",
         mode: "cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",
-          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,}
-        });
-        const data = await response.json();
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        },
+      });
+      const data = await response.json();
       return data;
     } catch (error) {
       alert(error);
@@ -44,44 +41,39 @@ export const searchBook: any = createAsyncThunk(
     }
   }
 );
-export const postBook: any = createAsyncThunk(
-  "post/postBook",
-  async (arg) => {
-    try {
-      const response = await fetch(route.booking);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      alert(error);
-    }
+export const postBook: any = createAsyncThunk("post/postBook", async (arg) => {
+  try {
+    const response = await fetch(route.booking);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    alert(error);
   }
-);
-export const putBook: any = createAsyncThunk(
-  "put/putBook",
-  async (arg) => {
-    try {
-      const response = await fetch(route.booking);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      alert(error);
-    }
+});
+export const putBook: any = createAsyncThunk("put/putBook", async (arg) => {
+  try {
+    const response = await fetch(route.booking);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    alert(error);
   }
-);
+});
 export const deleteBook: any = createAsyncThunk(
   "delete/deleteBook",
-  async (arg) => {
+  async (_id) => {
     try {
-      const response = await fetch(route.booking);
-      const data = await response.json();
-      return data;
+      await fetch(`${route.booking}/${_id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        },
+      });
     } catch (error) {
       alert(error);
     }
   }
 );
-
-
 
 const bookingSlice = createSlice({
   name: "booking",
@@ -132,8 +124,7 @@ const bookingSlice = createSlice({
       console.log("Loading");
     },
     [deleteBook.fulfilled]: (state, action: PayloadAction<IBooking[]>) => {
-      state = action.payload;
-      return state;
+      return alert("The book was delete");
     },
     [deleteBook.reject]: (state) => {
       console.log("fail");
@@ -141,6 +132,6 @@ const bookingSlice = createSlice({
   },
 });
 
-export const selectBooking = (state: RootState) => state
+export const selectBooking = (state: RootState) => state;
 
 export default bookingSlice.reducer;

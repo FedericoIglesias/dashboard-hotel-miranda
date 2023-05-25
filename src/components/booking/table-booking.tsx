@@ -1,7 +1,12 @@
 import React, { FC, useState } from "react";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { NavLink } from "react-router-dom";
-import { styleColumn, styleIn, styleOut, Row, styleProgress } from "./variablesBooking";
+import {
+  styleColumn,
+  styleIn,
+  styleOut,
+  Row,
+  styleProgress,
+} from "./variablesBooking";
 import { SelectPage } from "../select-page";
 import { IBooking } from "../../types";
 import { StatusBook } from "../../enum";
@@ -10,18 +15,15 @@ import { OptionBooking } from "./optionBooking";
 export const Table: FC<any> = ({ book }): JSX.Element => {
   const [page, setPage] = useState<number>(1);
 
-
   const booking: IBooking[] = book.slice(10 * page - 10, 10 * page);
-
-  
 
   const handleStatusColor = (status: StatusBook) => {
     if (status === StatusBook.CheckIn) {
       return styleIn;
-    } else if (status === StatusBook.CheckOut){
+    } else if (status === StatusBook.CheckOut) {
       return styleOut;
-    } else{
-      return styleProgress
+    } else {
+      return styleProgress;
     }
   };
 
@@ -46,15 +48,19 @@ export const Table: FC<any> = ({ book }): JSX.Element => {
               >
                 <p>{item.name}</p>
               </NavLink>
-              <p style={styleColumn}>{new Date(item.orderDate).toLocaleDateString('es-ES')}</p>
-              <p style={styleColumn}>{new Date(item.checkIn).toLocaleDateString('es-ES')}</p>
-              <p style={styleColumn}>{new Date(item.checkOut).toLocaleDateString('es-ES')}</p>
+              <p style={styleColumn}>
+                {new Date(item.orderDate).toLocaleDateString("es-ES")}
+              </p>
+              <p style={styleColumn}>
+                {new Date(item.checkIn).toLocaleDateString("es-ES")}
+              </p>
+              <p style={styleColumn}>
+                {new Date(item.checkOut).toLocaleDateString("es-ES")}
+              </p>
               <p style={styleColumn}>lorem</p>
               <p style={styleColumn}>{item.idRoom}</p>
-              <p style={handleStatusColor(item.status)}>
-                {item.status}
-              </p>
-              <OptionBooking/>
+              <p style={handleStatusColor(item.status)}>{item.status}</p>
+              <OptionBooking id={item._id}/>
             </Row>
           );
         })}

@@ -4,16 +4,14 @@ import { searchBooking } from "../../features/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IBooking } from "../../types";
 import { StatusBook } from "../../enum";
-import { ButtonOrder} from "./variablesBooking";
+import { ButtonOrder } from "./variablesBooking";
 
 export const Booking: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const booking: IBooking[] = useAppSelector((state) => state.booking);
   const [book, setBook] = useState<IBooking[]>(booking);
 
-  useEffect(() => {
-    dispatch(searchBooking());
-  }, []);
+  dispatch(searchBooking());
 
   useEffect(() => {
     setBook(booking);
@@ -28,11 +26,15 @@ export const Booking: FC = (): JSX.Element => {
         newOrder = booking.filter((item) => item.status === StatusBook.CheckIn);
         return setBook(newOrder);
       case StatusBook.CheckOut:
-        newOrder = booking.filter((item) => item.status === StatusBook.CheckOut);
+        newOrder = booking.filter(
+          (item) => item.status === StatusBook.CheckOut
+        );
         return setBook(newOrder);
       case StatusBook.InProgress:
-        newOrder = booking.filter((item) => item.status === StatusBook.InProgress);
-        return setBook(newOrder)
+        newOrder = booking.filter(
+          (item) => item.status === StatusBook.InProgress
+        );
+        return setBook(newOrder);
       default:
     }
   };
@@ -48,10 +50,18 @@ export const Booking: FC = (): JSX.Element => {
           justifyContent: "space-around",
         }}
       >
-        <ButtonOrder  onClick={() => handleOrder("book")}>All Booking</ButtonOrder>
-        <ButtonOrder  onClick={() => handleOrder(StatusBook.CheckIn)}>Checking In</ButtonOrder>
-        <ButtonOrder  onClick={() => handleOrder(StatusBook.CheckOut)}>Checking Out</ButtonOrder>
-        <ButtonOrder  onClick={() => handleOrder(StatusBook.InProgress)}>In Progress</ButtonOrder>
+        <ButtonOrder onClick={() => handleOrder("book")}>
+          All Booking
+        </ButtonOrder>
+        <ButtonOrder onClick={() => handleOrder(StatusBook.CheckIn)}>
+          Checking In
+        </ButtonOrder>
+        <ButtonOrder onClick={() => handleOrder(StatusBook.CheckOut)}>
+          Checking Out
+        </ButtonOrder>
+        <ButtonOrder onClick={() => handleOrder(StatusBook.InProgress)}>
+          In Progress
+        </ButtonOrder>
       </section>
       <Table book={book} />
     </>
