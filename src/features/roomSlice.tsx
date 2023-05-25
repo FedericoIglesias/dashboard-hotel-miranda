@@ -46,10 +46,16 @@ export const getRoom: any = createAsyncThunk("get/getRoom", async (id) => {
 
 export const deleteRoom: any = createAsyncThunk(
   "delete/deleteRoom",
-  async (id) => {
+  async (_id: string) => {
     try {
-      await fetch(route.room);
-      return id;
+      await fetch(`${route.room}/${_id}`,{
+        method:'DELETE',
+        headers:{
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`
+        },
+      });
+    
+      return `The room whit ${_id}, was delete`;
     } catch (error) {
       alert(error);
     }
@@ -103,9 +109,8 @@ const roomSlice = createSlice({
     [deleteRoom.pending]: (state) => {
       console.log("Loading");
     },
-    [deleteRoom.fulfilled]: (state, action: PayloadAction<IRoom[]>) => {
-      state.rooms = action.payload;
-      return state;
+    [deleteRoom.fulfilled]: (state, action: PayloadAction<string>) => {
+      return alert('The room was delte')
     },
     [deleteRoom.reject]: (state) => {
       console.log("fail");
