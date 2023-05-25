@@ -10,7 +10,6 @@ const token = localStorage.getItem("token");
 export const searchContacts: any = createAsyncThunk(
   "search/searchContacts",
   async (arg) => {
-    
     try {
       const response = await fetch(route.contact, {
         method: "GET",
@@ -40,11 +39,16 @@ export const searchContact: any = createAsyncThunk(
 );
 export const deleteContact: any = createAsyncThunk(
   "delete/deleteContact",
-  async (arg) => {
+  async (id) => {
     try {
-      const response = await fetch(route.contact);
-      const data = await response.json();
-      return data;
+      console.log(id);
+      
+      await fetch(`${route.contact}/${id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        },
+      });
     } catch (error) {
       alert(error);
     }
@@ -104,8 +108,7 @@ const contactSlice = createSlice({
       console.log("loading");
     },
     [deleteContact.fulfilled]: (state, action: PayloadAction<IContact[]>) => {
-      state = action.payload;
-      return state;
+      return alert("The comment was delete");
     },
     [deleteContact.reject]: (state) => {
       console.log("fail");

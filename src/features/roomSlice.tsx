@@ -64,9 +64,21 @@ export const deleteRoom: any = createAsyncThunk(
 
 export const postRoom: any = createAsyncThunk("post/postRoom", async (data) => {
   try {
-    const response = await fetch(``);
-    const data = response.json();
-    return data;
+    console.log(JSON.stringify(data));
+    
+    const response = await fetch(`${route.room}`,{
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+      },
+      body: JSON.stringify(data),
+    });
+    const room = response.json();
+    return room;
   } catch (error) {
     alert(error);
   }
@@ -119,7 +131,7 @@ const roomSlice = createSlice({
       console.log("Loading");
     },
     [postRoom.fulfilled]: (state, action: PayloadAction<IRoom[]>) => {
-      state.rooms = action.payload;
+      state.room = action.payload;
       return state;
     },
     [postRoom.reject]: (state) => {

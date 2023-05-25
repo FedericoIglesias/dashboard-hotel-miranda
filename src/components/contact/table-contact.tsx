@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { BasicModal } from "./modal";
 import { Row, btnStyle } from "./variablesContact";
 import { SelectPage } from "../select-page";
-import { searchContacts } from "../../features/contactSlice";
+import { deleteContact, searchContacts } from "../../features/contactSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IContact } from "../../types";
 
@@ -13,14 +13,12 @@ export const TableContact: FC = (): JSX.Element => {
 
   const mails: IContact[] = mail.slice(10 * page - 10, 10 * page);
 
-  const archive: IContact[] = [];
+  dispatch(searchContacts());
 
-  useEffect(() => {
-    dispatch(searchContacts());
-  }, []);
+  useEffect(() => {}, [mail]);
 
-  const handleArchive = (item) => {
-    archive.unshift(item);
+  const handleDelete = (item) => {
+    dispatch(deleteContact(item._id));
   };
 
   return (
@@ -37,17 +35,19 @@ export const TableContact: FC = (): JSX.Element => {
           return (
             <Row key={item._id}>
               <p style={{ width: "30%" }}>{item.email}</p>
-              <p style={{ width: "20%" }}>{(new Date(item.date).toDateString())}</p>
+              <p style={{ width: "20%" }}>
+                {new Date(item.date).toDateString()}
+              </p>
               <p style={{ width: "20%" }}>{item.name}</p>
               <p style={{ width: "20%" }}>
                 <BasicModal />
               </p>
-              <p
+              <button
                 style={{ width: "10%" }}
-                onClick={(item) => handleArchive(item)}
+                onClick={(item) => handleDelete(item)}
               >
                 <span style={btnStyle}>Delete</span>
-              </p>
+              </button>
             </Row>
           );
         })}

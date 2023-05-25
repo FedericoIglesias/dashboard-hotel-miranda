@@ -57,7 +57,7 @@ export const TableRoom: FC = (): JSX.Element => {
               </div>
               <p style={styleColumn}>{item.roomType}</p>
               <p style={styleColumn}>Floor A1</p>
-              <p style={{ width: "13%", fontSize: "10px" }}>{item.amenities}</p>
+              <p style={{ width: "13%", fontSize: "10px" }}>{item.amenities.join(', ')}</p>
               <p style={styleColumn}>${item.price}</p>
               <p style={status(item.status)}>{item.status}</p>
               <OptionRoom id ={item._id}/>

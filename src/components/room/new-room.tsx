@@ -1,110 +1,155 @@
-import React, { useState, FC } from 'react';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import { secStyle } from './variablesRoom';
+import React, { useState, FC, useEffect } from "react";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import { secStyle } from "./variablesRoom";
+import { SelectionAmenitites } from "./selectAmenities";
+import { IRoom } from "../../types";
+import { StatusRoom, TypeRoom } from "../../enum";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { postRoom } from "../../features/roomSlice";
 
 export const NewRoom: FC = (): JSX.Element => {
+  const dispatch = useAppDispatch();
 
-    const [type, setType] = useState('')
-    const [number, setNumber] = useState('')
-    const [description, setDescription] = useState('')
-    const [offer, setOffer] = useState('')
-    const [price, setPrice] = useState('')
-    const [discount, setDiscount] = useState('')
-    const [cancellation, setCancellation] = useState('')
-    const facilities = []
+   let room: IRoom = useAppSelector<IRoom>((state) => state.room) 
 
-    const [room, setRoom] = useState([])
+  const [amenitie, setAmenities] = useState<string[]>([]);
 
-    const handleCreate = () => {
-        setRoom([type, number, description, offer, price, discount, cancellation])
-    }
+  const [show, setShow] = useState<boolean>(false);
 
+  const [newRoom, setNewRoom] = useState<Partial<IRoom>>({
+    photo: ["asd"],
+    numberRoom: 0,
+    roomType: TypeRoom.Deluxe,
+    amenities: [],
+    price: 0,
+    offerPercent: 0,
+    status: StatusRoom.Available,
+  });
 
+  const handleCreate = () => {
+    dispatch(postRoom(newRoom))
+    setShow(!show);
+    
+  };
 
-    const addFacilities = (option) => {
+  useEffect(() => {
+    setNewRoom({ ...newRoom, amenities: amenitie });
+  }, [amenitie]);
 
-        
-        if(facilities.includes(option)){
-            facilities.filter(item => item !== option) 
-        } else {
-            facilities.push(option)
-        }
-    }
-
-
-    return (
-        <>
-            <section style={secStyle}>
-                <Box sx={{ width: '100%' }}>
-                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Room Type</p>
-                                <input type="text" name="" id="" onChange={e => setType(e.target.value)} />
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Room Number</p>
-                                <input type="text" onChange={e => setNumber(e.target.value)} />
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Description</p>
-                                <input type="text" onChange={e => setDescription(e.target.value)} />
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Offer</p>
-                                <input type="checekd" name="" id="" onChange={e => setOffer(e.target.value)} />
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Price</p>
-                                <input type="text" onChange={e => setPrice(e.target.value)} />
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <label htmlFor="">
-                                <p>Discount</p>
-                                <input type="text" onChange={e => setDiscount(e.target.value)} />
-                            </label>
-                        </Grid>
-                    </Grid>
-                </Box>
-                <p style={{ marginTop: '5px' }} >Cancellation Polity</p>
-                <textarea  cols={30} rows={10} style={{ resize: 'none' }} onChange={e => setCancellation(e.target.value)}></textarea>
-                <label >
-                    <p style={{ marginTop: '10px' }}>Facilities: </p>
-                    <article style={{ display: 'flex', justifyContent: 'space-around' }}>
-                        <div>
-                            <p onClick={() => addFacilities('wifi')} >WIFI</p>
-                        </div>
-                        <div>
-                            <p onClick={() => addFacilities('tv')} >Tv</p>
-                        </div>
-                        <div>
-                            <p onClick={() => addFacilities('air')} >Air</p>
-                        </div>
-                        <div>
-                            <p onClick={() => addFacilities('shower')} >Shower</p>
-                        </div>
-                        <div>
-                            <p onClick={() => addFacilities('bed')} >Bed</p>
-                        </div>
-                            
-                    </article>
-                </label>
-                <button onClick={() => handleCreate()} >Create</button>
-            </section>
-            {room}
-        </>
-    )
-}
-
-
-
+  return (
+    <>
+      <section style={secStyle}>
+        <Box sx={{ width: "100%" }}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          >
+            <Grid item xs={6}>
+              <label htmlFor="">
+                <p>Room Type</p>
+                <select
+                  name={TypeRoom.Deluxe}
+                  id=""
+                  placeholder=""
+                  onChange={(e) =>
+                    setNewRoom({
+                      ...newRoom,
+                      roomType: e.target.value as TypeRoom,
+                    })
+                  }
+                >
+                  <option value={TypeRoom.Deluxe}>{TypeRoom.Deluxe}</option>
+                  <option value={TypeRoom.DoubleBed}>
+                    {TypeRoom.DoubleBed}
+                  </option>
+                  <option value={TypeRoom.SingleBed}>
+                    {TypeRoom.SingleBed}
+                  </option>
+                </select>
+              </label>
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="">
+                <p>Room Number</p>
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    setNewRoom({
+                      ...newRoom,
+                      numberRoom: Number(e.target.value),
+                    })
+                  }
+                />
+              </label>
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="">
+                <p>Offer</p>
+                <input
+                  type="checekd"
+                  name=""
+                  id=""
+                  onChange={(e) =>
+                    setNewRoom({
+                      ...newRoom,
+                      offerPercent: Number(e.target.value),
+                    })
+                  }
+                />
+              </label>
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="">
+                <p>Price</p>
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    setNewRoom({ ...newRoom, price: Number(e.target.value) })
+                  }
+                />
+              </label>
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="">
+                <p>Status</p>
+                <select
+                  name={StatusRoom.Available}
+                  onChange={(e) =>
+                    setNewRoom({
+                      ...newRoom,
+                      status: e.target.value as StatusRoom,
+                    })
+                  }
+                >
+                  <option value={StatusRoom.Available}>
+                    {StatusRoom.Available}
+                  </option>
+                  <option value={StatusRoom.Booked}>{StatusRoom.Booked}</option>
+                </select>
+              </label>
+            </Grid>
+          </Grid>
+        </Box>
+        <SelectionAmenitites amenities={setAmenities} />
+        <button onClick={() => handleCreate()}>Create</button>
+      </section>
+      <div>
+        {show === true ? (
+          <>
+            <p>{room.amenities}</p>
+            <p>{room.numberRoom}</p>
+            <p>{room.offerPercent}</p>
+            <p>{room.photo}</p>
+            <p>{room.price}</p>
+            <p>{room.roomType}</p>
+            <p>{room.status}</p>
+          </>
+        ) : (
+          <p></p>
+        )}
+      </div>
+    </>
+  );
+};
