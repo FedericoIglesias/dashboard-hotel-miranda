@@ -10,12 +10,16 @@ export const Booking: FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const booking: IBooking[] = useAppSelector((state) => state.booking);
   const [book, setBook] = useState<IBooking[]>(booking);
-
-  dispatch(searchBooking());
+  
+  useEffect(()=>{
+    dispatch(searchBooking());
+  },[])
 
   useEffect(() => {
     setBook(booking);
   }, [booking]);
+  
+
 
   const handleOrder = (state: string) => {
     let newOrder;
