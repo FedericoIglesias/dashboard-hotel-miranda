@@ -1,7 +1,7 @@
 import { TableUSer } from "./table-user";
 import { NavLink } from "react-router-dom";
 import React, { CSSProperties, FC, useEffect, useState } from "react";
-import {  searchUser, searchUsers } from "../../features/userSlice";
+import {  searchUsers } from "../../features/userSlice";
 import { redStyle, grayStyle } from "./variablesUser";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IUser } from "../../types";
