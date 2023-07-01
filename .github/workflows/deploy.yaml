@@ -7,13 +7,15 @@ on:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    env:
+      CI: false
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
       - name: install dependencies
-        run: npm install
+        run: npm install --force
       - name: build project
         run: npm run build
       - name: Configure AWS Credentials
