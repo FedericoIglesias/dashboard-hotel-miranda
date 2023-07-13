@@ -31,31 +31,31 @@ export const NestedList: FC = (): JSX.Element => {
 
     return (
         <>
-            <Link to={"/dashboard-hotel-miranda/dashboard"} style={linkStyle} onClick={() => handleStyle(0)}>
+            <Link to={"/dashboard"} style={linkStyle} onClick={() => handleStyle(0)}>
                 <ListItemButton style={d} >
                     <DashboardIcon style={marRight} />
                     <ListItemText primary="Dashboard" />
                 </ListItemButton>
             </Link>
-            <Link to={'/dashboard-hotel-miranda/room'} style={linkStyle} onClick={() => handleStyle(1)}>
+            <Link to={'/room'} style={linkStyle} onClick={() => handleStyle(1)}>
                 <ListItemButton style={r} >
                     <BedIcon style={marRight} />
                     <ListItemText primary="Rooms" />
                 </ListItemButton>
             </Link>
-            <Link to={'/dashboard-hotel-miranda/booking'} style={linkStyle} onClick={() => handleStyle(2)}>
+            <Link to={'/booking'} style={linkStyle} onClick={() => handleStyle(2)}>
                 <ListItemButton style={b}>
                     <CalendarMonthIcon style={marRight} />
                     <ListItemText primary="Booking" />
                 </ListItemButton>
             </Link>
-            <Link to={'/dashboard-hotel-miranda/user'} style={linkStyle} onClick={() => handleStyle(3)}>
+            <Link to={'/user'} style={linkStyle} onClick={() => handleStyle(3)}>
                 <ListItemButton style={u}>
                     <PersonIcon style={marRight} />
                     <ListItemText primary="User" />
                 </ListItemButton>
             </Link>
-            <Link to={'/dashboard-hotel-miranda/contact'} style={linkStyle} onClick={() => handleStyle(4)}>
+            <Link to={'/contact'} style={linkStyle} onClick={() => handleStyle(4)}>
                 <ListItemButton style={c}>
                     <ImportContactsIcon style={marRight} />
                     <ListItemText primary="Contact" />
