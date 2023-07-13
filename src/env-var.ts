@@ -1,7 +1,7 @@
 export const route ={
-    user:'http://localhost:3100/users',
-    room:'http://localhost:3100/rooms',
-    booking:'http://localhost:3100/bookings',
-    contact:'http://localhost:3100/contacts',
-    login:'http://localhost:3100/login',
+    user:'https://g1cxlg7j66.execute-api.eu-west-3.amazonaws.com/latest/users',
+    room:'https://g1cxlg7j66.execute-api.eu-west-3.amazonaws.com/latest/rooms',
+    booking:'https://g1cxlg7j66.execute-api.eu-west-3.amazonaws.com/latest/bookings',
+    contact:'https://g1cxlg7j66.execute-api.eu-west-3.amazonaws.com/latest/contacts',
+    login:'https://g1cxlg7j66.execute-api.eu-west-3.amazonaws.com/latest/login',
 }
