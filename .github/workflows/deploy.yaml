@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - projectConectToApi
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
