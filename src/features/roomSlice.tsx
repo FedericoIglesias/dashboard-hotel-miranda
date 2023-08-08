@@ -54,7 +54,6 @@ export const deleteRoom: any = createAsyncThunk(
           authorization: `Bearer ${token.replace('"', "").replace('"', "")}`
         },
       });
-    
       return `The room whit ${_id}, was delete`;
     } catch (error) {
       alert(error);
