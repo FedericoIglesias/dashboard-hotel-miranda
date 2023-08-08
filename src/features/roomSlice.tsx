@@ -121,6 +121,7 @@ const roomSlice = createSlice({
       console.log("Loading");
     },
     [deleteRoom.fulfilled]: (state, action: PayloadAction<string>) => {
+
       return alert('The room was delte')
     },
     [deleteRoom.reject]: (state) => {

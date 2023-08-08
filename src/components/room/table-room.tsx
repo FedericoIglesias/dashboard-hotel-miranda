@@ -22,9 +22,12 @@ export const TableRoom: FC = (): JSX.Element => {
 
   let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
 
+    const deleteRooms = (id:number):IRoom[] => {
+      listRooms.filter(id => id !== listRooms._id)
+    }
+
   dispatch(getRooms());
-  useEffect(() => {
-  }, [listRooms]);
+  useEffect(() => {}, [listRooms]);
 
   const status = (status: string) =>
     status === "Available" ? styleAvai : styleBooked;
@@ -57,10 +60,12 @@ export const TableRoom: FC = (): JSX.Element => {
               </div>
               <p style={styleColumn}>{item.roomType}</p>
               <p style={styleColumn}>Floor A1</p>
-              <p style={{ width: "13%", fontSize: "10px" }}>{item.amenities.join(', ')}</p>
+              <p style={{ width: "13%", fontSize: "10px" }}>
+                {item.amenities.join(", ")}
+              </p>
               <p style={styleColumn}>${item.price}</p>
               <p style={status(item.status)}>{item.status}</p>
-              <OptionRoom id ={item._id}/>
+              <OptionRoom id={item._id} />
             </Row>
           );
         })}
