@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import React, { useEffect, useState, FC, useRef } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {
   Row,
@@ -19,13 +19,21 @@ export const TableRoom: FC = (): JSX.Element => {
   const listRooms: IRoom[] = useAppSelector<IRoom[]>(
     (store) => store.room.rooms
   );
+  let rooms: IRoom[]= listRooms
+  
+  
 
-  let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
-
-
-
-  dispatch(getRooms());
-  useEffect(() => {}, [listRooms]);
+  // let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
+  useEffect(() => {
+    dispatch(getRooms());
+  }, []);
+  
+  const removeRoom = (id:string) => {
+    rooms.filter(room => id === room._id)
+    alert(`delete id: ${id}`);
+  }
+  
+  
 
   const status = (status: string) =>
     status === "Available" ? styleAvai : styleBooked;
@@ -42,7 +50,7 @@ export const TableRoom: FC = (): JSX.Element => {
           <p style={styleColumn}>Status</p>
         </Row>
 
-        {rooms.map((item) => {
+        {rooms.slice(10 * np - 10, 10 * np).map((item) => {
           return (
             <Row key={item._id}>
               <div
@@ -63,7 +71,7 @@ export const TableRoom: FC = (): JSX.Element => {
               </p>
               <p style={styleColumn}>${item.price}</p>
               <p style={status(item.status)}>{item.status}</p>
-              <OptionRoom id={item._id} />
+              <OptionRoom id={item._id} removeRoom={removeRoom}/>
             </Row>
           );
         })}

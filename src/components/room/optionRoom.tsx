@@ -7,7 +7,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useAppDispatch } from '../../store/hooks';
 import { deleteRoom } from '../../features/roomSlice';
 
-export const  OptionRoom = ({id}): JSX.Element => {
+export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const dispatch = useAppDispatch()
@@ -19,7 +19,8 @@ export const  OptionRoom = ({id}): JSX.Element => {
   };
 
   const handleDelete = () =>{
-    dispatch(deleteRoom(id))
+    // dispatch(deleteRoom(id))
+    removeRoom(id)
     handleClose()
   }
 

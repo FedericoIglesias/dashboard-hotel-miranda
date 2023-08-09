@@ -11,7 +11,7 @@ export interface SendLogin {
   password: string;
 }
 export interface IRoom {
-  _id: number;
+  _id: string;
   photo: string[];
   numberRoom: number;
   roomType: TypeRoom;
