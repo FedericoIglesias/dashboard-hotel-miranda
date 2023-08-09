@@ -20,8 +20,6 @@ export const TableRoom: FC = (): JSX.Element => {
     (store) => store.room.rooms
   );
   let rooms: IRoom[]= listRooms
-  
-  
 
   // let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
   useEffect(() => {
