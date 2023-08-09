@@ -22,9 +22,7 @@ export const TableRoom: FC = (): JSX.Element => {
 
   let rooms: IRoom[] = listRooms.slice(10 * np - 10, 10 * np);
 
-    const deleteRooms = (id:number):IRoom[] => {
-      listRooms.filter(id => id !== listRooms._id)
-    }
+
 
   dispatch(getRooms());
   useEffect(() => {}, [listRooms]);

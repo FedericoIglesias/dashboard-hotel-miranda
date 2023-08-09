@@ -63,8 +63,6 @@ export const deleteRoom: any = createAsyncThunk(
 
 export const postRoom: any = createAsyncThunk("post/postRoom", async (data) => {
   try {
-    console.log(JSON.stringify(data));
-    
     const response = await fetch(`${route.room}`,{
       method: "POST",
       mode: "cors",
@@ -121,7 +119,7 @@ const roomSlice = createSlice({
       console.log("Loading");
     },
     [deleteRoom.fulfilled]: (state, action: PayloadAction<string>) => {
-
+      
       return alert('The room was delte')
     },
     [deleteRoom.reject]: (state) => {
