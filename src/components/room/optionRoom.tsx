@@ -19,8 +19,8 @@ export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
   };
 
   const handleDelete = () =>{
-    removeRoom(id)
     // dispatch(deleteRoom(id))
+    removeRoom(id)
     handleClose()
   }
 
