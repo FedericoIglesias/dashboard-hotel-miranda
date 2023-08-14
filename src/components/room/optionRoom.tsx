@@ -17,7 +17,6 @@ export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   
   const handleDelete = () =>{
     // dispatch(deleteRoom(id))
