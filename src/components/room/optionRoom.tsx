@@ -24,6 +24,7 @@ export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
     handleClose()
   }
 
+  
   return (
     <div>
       <Button
