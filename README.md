@@ -1,70 +1,186 @@
-# Getting Started with Create React App
+# Hotel Miranda Dashboard 🏨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and responsive hotel management dashboard built with React, TypeScript, and Redux Toolkit. This application provides a comprehensive interface for managing hotel operations including bookings, rooms, users, and customer contacts.
 
-## Available Scripts
+## 📸 Screenshots
 
-In the project directory, you can run:
+![Hotel Miranda Dashboard - Room Management](https://github.com/user-attachments/assets/your-screenshot-id)
+*Room Management Interface - View and manage all hotel rooms with detailed information*
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dashboard Overview**: Real-time statistics and metrics for hotel operations
+- **Room Management**: Complete CRUD operations for hotel rooms with amenities selection
+- **Booking System**: Manage reservations and booking details
+- **User Management**: Handle staff and customer user accounts
+- **Contact Management**: Track and respond to customer inquiries
+- **Authentication**: Secure login system with protected routes
+- **Responsive Design**: Modern UI built with Material-UI and styled-components
+- **State Management**: Centralized state management using Redux Toolkit
+- **Testing**: Comprehensive testing suite with Cypress E2E tests
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend**: React 18 with TypeScript
+- **State Management**: Redux Toolkit
+- **Routing**: React Router DOM v6
+- **UI Framework**: Material-UI (MUI)
+- **Styling**: Styled-components + Emotion
+- **Animations**: Animate.css
+- **Drag & Drop**: React DND
+- **Testing**: Jest, React Testing Library, Cypress
+- **Build Tool**: Create React App with Webpack
+- **Development**: TypeScript, ESLint
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Installation
 
-### `npm run build`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/FedericoIglesias/dashboard-hotel-miranda.git
+   cd dashboard-hotel-miranda
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Set up environment variables**
+   Create a `.env` file in the root directory and add your configuration:
+   ```env
+   REACT_APP_API_URL=your_api_url_here
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+The application will open at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📋 Available Scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner in interactive watch mode
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
+- `npm run deploy` - Deploys the application to GitHub Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏗️ Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── booking/        # Booking management components
+│   ├── contact/        # Contact management components
+│   ├── dashboard/      # Dashboard overview components
+│   ├── room/           # Room management components
+│   ├── root/           # Root layout components
+│   └── user/           # User management components
+├── context/            # React Context providers
+├── features/           # Redux slices (RTK)
+├── pages/              # Page components
+├── reducer/            # Redux reducers
+├── store/              # Redux store configuration
+├── assets/             # Static assets (images, icons)
+└── types.d.ts          # TypeScript type definitions
+```
 
-## Learn More
+## 🎯 Core Functionality
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Dashboard
+- Real-time hotel statistics
+- Key performance indicators
+- Quick overview of bookings and occupancy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Room Management
+- Add, edit, and delete rooms
+- Manage room amenities and features
+- Room availability tracking
+- Photo gallery management
 
-### Code Splitting
+### Booking System
+- Create and manage reservations
+- Booking calendar view
+- Guest information management
+- Payment and status tracking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### User Management
+- Staff account management
+- Customer profile management
+- Role-based access control
+- User authentication
 
-### Analyzing the Bundle Size
+### Contact Management
+- Customer inquiry tracking
+- Response management
+- Contact information database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔐 Authentication
 
-### Making a Progressive Web App
+The application includes a secure authentication system with:
+- Login/logout functionality
+- Protected routes for authenticated users
+- Context-based user state management
+- Persistent login sessions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧪 Testing
 
-### Advanced Configuration
+### Unit & Integration Tests
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### End-to-End Tests
+```bash
+npx cypress open
+```
 
-### Deployment
+The project includes comprehensive testing with:
+- Jest and React Testing Library for unit tests
+- Cypress for E2E testing
+- Component testing utilities
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🎨 UI/UX Features
 
-### `npm run build` fails to minify
+- **Modern Design**: Clean and intuitive interface
+- **Responsive Layout**: Works seamlessly on desktop and mobile
+- **Material Design**: Consistent UI components with Material-UI
+- **Smooth Animations**: Enhanced user experience with Animate.css
+- **Drag & Drop**: Interactive components for better usability
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📊 Data Management
+
+The application uses JSON files for development data:
+- `public/json/bookings.json` - Sample booking data
+- `public/json/contacts.json` - Sample contact data
+- `public/json/rooms.json` - Sample room data
+- `public/json/users.json` - Sample user data
+
+## 🌐 Deployment
+
+The project is configured for deployment to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is private and proprietary.
+
+## 📞 Support
+
+For support and questions, please contact the development team.
+
+---
+
+**Built with ❤️ for efficient hotel management**
