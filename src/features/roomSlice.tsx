@@ -30,7 +30,7 @@ export const getRooms: any = createAsyncThunk(
       const data = response.json();
       return data;
     } catch (error) {
-      alert(error + "\n We will show you rooms example");
+      // alert(error + "\n We will show you rooms example");
       return room_list;
     }
   }

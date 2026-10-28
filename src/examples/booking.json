@@ -1,0 +1,74 @@
+[
+  {
+    "_id": 1,
+    "name": "Carlos Mendoza",
+    "orderDate": 1791158400000,
+    "checkIn": 1791331200000,
+    "checkOut": 1791850000000,
+    "idRoom": 101,
+    "status": "Check In"
+  },
+  {
+    "_id": 2,
+    "name": "Ana Sofía Gómez",
+    "orderDate": 1790985600000,
+    "checkIn": 1791072000000,
+    "checkOut": 1791417600000,
+    "idRoom": 202,
+    "status": "In Progress"
+  },
+  {
+    "_id": 3,
+    "name": "Michael Smith",
+    "orderDate": 1790035200000,
+    "checkIn": 1790208000000,
+    "checkOut": 1790553600000,
+    "idRoom": 305,
+    "status": "Check Out"
+  },
+  {
+    "_id": 4,
+    "name": "Laura Fernández",
+    "orderDate": 1791244800000,
+    "checkIn": 1791590400000,
+    "checkOut": 1792108800000,
+    "idRoom": 501,
+    "status": "In Progress"
+  },
+  {
+    "_id": 5,
+    "name": "Kenji Sato",
+    "orderDate": 1790812800000,
+    "checkIn": 1790899200000,
+    "checkOut": 1791331200000,
+    "idRoom": 104,
+    "status": "Check In"
+  },
+  {
+    "_id": 6,
+    "name": "María Elena Ruiz",
+    "orderDate": 1789776000000,
+    "checkIn": 1789948800000,
+    "checkOut": 1790294400000,
+    "idRoom": 210,
+    "status": "Check Out"
+  },
+  {
+    "_id": 7,
+    "name": "David Hoffmann",
+    "orderDate": 1791331200000,
+    "checkIn": 1791936000000,
+    "checkOut": 1792540800000,
+    "idRoom": 401,
+    "status": "In Progress"
+  },
+  {
+    "_id": 8,
+    "name": "Lucía Morales",
+    "orderDate": 1791072000000,
+    "checkIn": 1791417600000,
+    "checkOut": 1791763200000,
+    "idRoom": 112,
+    "status": "Check In"
+  }
+]

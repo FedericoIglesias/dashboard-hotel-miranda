@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { route } from "../env-var";
 import { IBooking } from "../types";
+import booking_list from "../examples/booking.json"
 
 const initialState: IBooking[] = [];
 
@@ -24,7 +25,8 @@ export const searchBooking: any = createAsyncThunk(
       const data = await response.json();
       return data;
     } catch (error) {
-      alert(error);
+      // alert(error);
+      return booking_list;
     }
   }
 );
