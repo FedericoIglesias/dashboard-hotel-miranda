@@ -2,8 +2,8 @@ import { route } from "../env-var";
 import { InitState, SendLogin } from "../types";
 
 
-export const fetchLogin = async (data: SendLogin): Promise<InitState> =>{
-    try{
+export const fetchLogin = async (data: SendLogin): Promise<InitState> => {
+    try {
         const response = await fetch(route.login, {
             method: "POST",
             mode: "cors",
@@ -14,11 +14,11 @@ export const fetchLogin = async (data: SendLogin): Promise<InitState> =>{
             },
             body: JSON.stringify(data),
         })
-        
+
         const user = await response.json();
 
-        return  user;
-    } catch(e){
-        alert(e)
+        return user;
+    } catch (e) {
+        alert("Server is not working, we will show you a template")
     }
 }
