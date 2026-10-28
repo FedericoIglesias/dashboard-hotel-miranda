@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/FedericoIglesias/dashboard-hotel-miranda/static/css/main.57d0d644.css",
-    "main.js": "/FedericoIglesias/dashboard-hotel-miranda/static/js/main.cb482231.js",
+    "main.js": "/FedericoIglesias/dashboard-hotel-miranda/static/js/main.308b6dd0.js",
     "static/media/room3.jpg": "/FedericoIglesias/dashboard-hotel-miranda/static/media/room3.339d92d3f6d83e70427a.jpg",
     "static/media/logo.webp": "/FedericoIglesias/dashboard-hotel-miranda/static/media/logo.e39ed2c0eac3f6d16994.webp",
     "static/media/customer.webp": "/FedericoIglesias/dashboard-hotel-miranda/static/media/customer.7c6da94e5adbe3bf53b9.webp",
     "index.html": "/FedericoIglesias/dashboard-hotel-miranda/index.html",
     "main.57d0d644.css.map": "/FedericoIglesias/dashboard-hotel-miranda/static/css/main.57d0d644.css.map",
-    "main.cb482231.js.map": "/FedericoIglesias/dashboard-hotel-miranda/static/js/main.cb482231.js.map"
+    "main.308b6dd0.js.map": "/FedericoIglesias/dashboard-hotel-miranda/static/js/main.308b6dd0.js.map"
   },
   "entrypoints": [
     "static/css/main.57d0d644.css",
-    "static/js/main.cb482231.js"
+    "static/js/main.308b6dd0.js"
   ]
 }
