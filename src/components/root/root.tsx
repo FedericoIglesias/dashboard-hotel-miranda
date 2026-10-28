@@ -20,14 +20,14 @@ export const Root: FC = (): JSX.Element => {
                     <div style={{ display: 'flex', marginBottom: '20px' }}>
                         <img  alt="" src={imgLogo} style={{ width: '60px', marginRight: '10px' }} />
                         <div>
-                            <p style={title} >travl</p>
+                            <p style={title} >TravelBoard</p>
                             <p style={smallLetter} >Admin Dashboard</p>
                         </div>
                     </div>
                     <NestedList />
                     <Card />
-                    <p style={{ fontWeight: '700' }} >Travl Admin Dashboard</p>
-                    <p style={smallLetter} >© 2020 All Rights Reserved</p>
+                    <p style={{ fontWeight: '700' }} >Travel Admin Dashboard</p>
+                    <p style={smallLetter} >© 2021 All Rights Reserved</p>
                     <p style={smallLetter} >Made whit ♥ by Federico Dev</p>
                 </BoxNav>
             </Slide>
