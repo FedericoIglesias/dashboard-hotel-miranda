@@ -20,6 +20,7 @@ export const btnStyle = {
   padding: "10px",
   fontSize: "10px",
   borderRadius: "10px",
+  cursor: "pointer"
 };
 
 export const letterStyle = {

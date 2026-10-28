@@ -9,13 +9,13 @@ import { IContact } from "../../types";
 export const TableContact: FC = (): JSX.Element => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useAppDispatch();
-  const mail: IContact[] = useAppSelector<IContact[]>((state) => state.contact);
+  const mails: IContact[] = useAppSelector<IContact[]>((state) => state.contact);
 
-  const mails: IContact[] = mail.slice(10 * page - 10, 10 * page);
+  // const mail: IContact[] = []//mail.slice(10 * page - 10, 10 * page);
 
   dispatch(searchContacts());
 
-  useEffect(() => {}, [mail]);
+  // useEffect(() => {}, [mail]);
 
   const handleDelete = (item) => {
     dispatch(deleteContact(item._id));
@@ -31,7 +31,7 @@ export const TableContact: FC = (): JSX.Element => {
           <p style={{ width: "20%" }}>Coments</p>
           <p style={{ width: "10%" }}>Action</p>
         </Row>
-        {mails.map((item) => {
+        {mails.slice(10 * page - 10, 10 * page).map((item) => {
           return (
             <Row key={item._id}>
               <p style={{ width: "30%" }}>{item.email}</p>
@@ -39,11 +39,11 @@ export const TableContact: FC = (): JSX.Element => {
                 {new Date(item.date).toDateString()}
               </p>
               <p style={{ width: "20%" }}>{item.name}</p>
-              <p style={{ width: "20%" }}>
+              <div style={{ width: "20%", background: '#393939', cursor: 'pointer' }}>
                 <BasicModal />
-              </p>
+              </div>
               <button
-                style={{ width: "10%" }}
+                style={{ width: "10%", border: 'none', background: '#fff', cursor: 'pointer' }}
                 onClick={(item) => handleDelete(item)}
               >
                 <span style={btnStyle}>Delete</span>
@@ -51,7 +51,7 @@ export const TableContact: FC = (): JSX.Element => {
             </Row>
           );
         })}
-        <SelectPage array={mail} show={mails} setNp={setPage} />
+        <SelectPage array={mails} show={mails.slice(10 * page - 10, 10 * page).length} setNp={setPage} />
       </section>
     </>
   );

@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { IContact } from "../types";
 import { route } from "../env-var";
+import contact_list from "../examples/contact.json"
 
 const initialState: IContact[] = [];
 
@@ -17,10 +18,11 @@ export const searchContacts: any = createAsyncThunk(
           authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
         },
       });
-      const data = await response.json();
-      return data;
+      // const data = await response.json();
+      return contact_list;
     } catch (error) {
-      alert(error);
+      // alert(error);
+      return contact_list;
     }
   }
 );

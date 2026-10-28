@@ -1,0 +1,152 @@
+[
+  {
+    "_id": 1,
+    "name": "Carlos Mendoza",
+    "email": "carlos.mendoza@example.com",
+    "phone": "+34 600 123 456",
+    "date": 1791158400000,
+    "subject": "Consulta sobre reserva grupal",
+    "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hola, quisiera saber si ofrecen descuentos para grupos de 10 personas para el próximo mes de diciembre."
+  },
+  {
+    "_id": 2,
+    "name": "Ana Sofía Gómez",
+    "email": "ana.gomez@example.com",
+    "phone": "+34 611 234 567",
+    "date": 1791072000000,
+    "subject": "Modificación de check-in",
+    "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+    "comment": "Buenas tardes, mi vuelo se retrasó y llegaré más tarde de lo previsto, sobre las 23:00 hrs."
+  },
+  {
+    "_id": 3,
+    "name": "Michael Smith",
+    "email": "michael.smith@mail.com",
+    "phone": "+1 555 019 283",
+    "date": 1790985600000,
+    "subject": "Pregunta sobre amenities",
+    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hi, does the Deluxe room include access to the spa and indoor pool facilities?"
+  },
+  {
+    "_id": 4,
+    "name": "Laura Fernández",
+    "email": "laura.fdez@example.com",
+    "phone": "+34 622 345 678",
+    "date": 1790899200000,
+    "subject": "Factura a nombre de empresa",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hola, necesito que la factura de mi estancia salga a nombre de mi empresa. ¿Puedo enviarles los datos fiscales?"
+  },
+  {
+    "_id": 5,
+    "name": "Kenji Sato",
+    "email": "kenji.sato@domain.jp",
+    "phone": "+81 90 1234 5678",
+    "date": 1790812800000,
+    "subject": "Late check-out availability",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hello, is it possible to request a late check-out until 2:00 PM on my departure day?"
+  },
+  {
+    "_id": 6,
+    "name": "María Elena Ruiz",
+    "email": "maria.ruiz@example.com",
+    "phone": "+34 633 456 789",
+    "date": 1790726400000,
+    "subject": "Agradecimiento",
+    "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+    "comment": "Estimado equipo, quería agradecerles por la excelente atención durante nuestra estancia. ¡Volveremos seguro!"
+  },
+  {
+    "_id": 7,
+    "name": "David Hoffmann",
+    "email": "david.hoffmann@example.de",
+    "phone": "+49 151 23456789",
+    "date": 1790640000000,
+    "subject": "Reserva de estacionamiento",
+    "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
+    "comment": "Guten Tag, me gustaría saber si es necesario reservar con anticipación una plaza de aparcamiento subterráneo."
+  },
+  {
+    "_id": 8,
+    "name": "Lucía Morales",
+    "email": "lucia.morales@example.com",
+    "phone": "+34 644 567 890",
+    "date": 1790553600000,
+    "subject": "Política de mascotas",
+    "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hola, ¿aceptan perros pequeños en las habitaciones de tipo Doble? ¿Tiene algún costo extra por noche?"
+  },
+  {
+    "_id": 9,
+    "name": "Antoine Dupont",
+    "email": "antoine.dupont@mail.fr",
+    "phone": "+33 6 12 34 56 78",
+    "date": 1790467200000,
+    "subject": "Service de blanchisserie",
+    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+    "comment": "Bonjour, proposez-vous un service de blanchisserie express pour les costumes ?"
+  },
+  {
+    "_id": 10,
+    "name": "Sofia Rossi",
+    "email": "sofia.rossi@example.it",
+    "phone": "+39 320 123 4567",
+    "date": 1790380800000,
+    "subject": "Richiesta navetta aeroporto",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+    "comment": "Salve, vorrei prenotare il servizio navetta dall'aeroporto per il giorno del nostro arrivo."
+  },
+  {
+    "_id": 11,
+    "name": "Liam Johnson",
+    "email": "liam.j@example.co.uk",
+    "phone": "+44 7700 900077",
+    "date": 1790294400000,
+    "subject": "Dietary requirements",
+    "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hello, I have a severe gluten allergy. Are there gluten-free options available at the breakfast buffet?"
+  },
+  {
+    "_id": 12,
+    "name": "Valeria Silva",
+    "email": "valeria.silva@example.com",
+    "phone": "+34 655 789 012",
+    "date": 1790208000000,
+    "subject": "Cama adicional",
+    "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=300&q=80",
+    "comment": "Buenas tardes, ¿es posible añadir una cama supletoria para un niño de 7 años en la habitación Deluxe?"
+  },
+  {
+    "_id": 13,
+    "name": "Hiroshi Tanaka",
+    "email": "hiroshi.tanaka@domain.co.jp",
+    "phone": "+81 80 9876 5432",
+    "date": 1790121600000,
+    "subject": "Luggage storage",
+    "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hello, can we store our luggage at the reception after check-out until our evening flight?"
+  },
+  {
+    "_id": 14,
+    "name": "Camila Blanco",
+    "email": "camila.blanco@example.com",
+    "phone": "+34 666 890 123",
+    "date": 1790035200000,
+    "subject": "Celebración de aniversario",
+    "photo": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hola, nos hospedaremos por nuestro aniversario. ¿Tendrían alguna atención especial o detalle romántico disponible?"
+  },
+  {
+    "_id": 15,
+    "name": "Oliver Wright",
+    "email": "oliver.wright@example.com",
+    "phone": "+1 415 555 2671",
+    "date": 1789948800000,
+    "subject": "Gym opening hours",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    "comment": "Hi there, what are the opening hours for the fitness center and indoor swimming pool?"
+  }
+]
