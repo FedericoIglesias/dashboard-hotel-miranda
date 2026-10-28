@@ -1,9 +1,9 @@
-export enum StatusRoom  {
+export enum StatusRoom {
     Booked = 'Booked',
     Available = 'Available'
 }
 
-export enum TypeRoom  {
+export enum TypeRoom {
     SingleBed = 'Single Bed',
     DoubleBed = 'Double Bed',
     Deluxe = 'Deluxe'
@@ -18,4 +18,10 @@ export enum StatusBook {
 export enum StatusUser {
     Active = 'Active',
     Inactive = 'Inactive'
+}
+
+export enum TypeJob {
+    Cleaner = 'Cleaner',
+    Manager = 'Manager',
+    Receptionist = 'Receptionist'
 }

@@ -7,6 +7,7 @@ export const redStyle: CSSProperties = {
   fontSize: "12px",
   color: "#e23428",
   fontWeight: "700",
+  cursor: "pointer"
 };
 
 export const grayStyle: CSSProperties = {
@@ -15,10 +16,11 @@ export const grayStyle: CSSProperties = {
   fontSize: "12px",
   color: "gray",
   fontWeight: "700",
+  cursor: "pointer"
 };
 
 
-  export const Row = styled.div`
+export const Row = styled.div`
     display: flex;
     padding: 10px;
     background-color: white;
@@ -30,4 +32,3 @@ export const grayStyle: CSSProperties = {
     }
   `;
 
-  

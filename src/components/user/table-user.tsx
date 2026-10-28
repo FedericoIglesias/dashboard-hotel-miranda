@@ -8,13 +8,12 @@ import { StatusUser } from "../../enum";
 import { OptionUser } from "./optionUser";
 
 
-export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
+export const TableUSer: FC<any> = ({ template }): JSX.Element => {
 
   const [page, setPage] = useState<number>(1);
-  const user: IUser[] = template.slice(10 * page - 10, 10 * page);
 
 
-  useEffect(() => {}, [user]);
+  useEffect(() => { }, [template]);
 
 
   const ifStyle = (status: StatusUser): CSSProperties =>
@@ -33,7 +32,7 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
         return (
           <Row key={item.id}>
             <div style={{ width: "20%", display: "flex", fontSize: "10px" }}>
-              <img  alt="profile" src={item.photo} style={{ width: "25px" }} />
+              <img alt="profile" src={item.photo} style={{ width: "25px" }} />
               <div>
                 <p>{item.name}</p>
                 <p>{item._id}</p>
@@ -51,11 +50,11 @@ export const TableUSer:FC<any> = ({  template  }): JSX.Element => {
                 {item.status}
               </span>
             </p>
-            <OptionUser id={item._id}/>
+            <OptionUser id={item._id} />
           </Row>
         );
       })}
-      <SelectPage array={template} show={user} setNp={setPage} />
+      <SelectPage array={template} show={template.slice(10 * page - 10, 10 * page).length} setNp={setPage} />
     </section>
   );
 }

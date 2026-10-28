@@ -2,7 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { IUser } from "../types";
 import { route } from "../env-var";
-
+import user_list from "../examples/user.json"
 const initialState: IUser[] = [];
 
 const token = localStorage.getItem("token");
@@ -20,7 +20,8 @@ export const searchUsers: any = createAsyncThunk(
       const data = await response.json();
       return data;
     } catch (error) {
-      alert(error);
+      // alert(error);
+      return user_list
     }
   }
 );
@@ -40,9 +41,9 @@ export const deleteUser: any = createAsyncThunk(
   "delete/deleteUser",
   async (_id) => {
     try {
-      await fetch(`${route.user}/${_id}`,{
+      await fetch(`${route.user}/${_id}`, {
         method: 'DELETE',
-        headers:{
+        headers: {
           authorization: `Bearer ${token.replace('"', "").replace('"', "")}`
         }
       });

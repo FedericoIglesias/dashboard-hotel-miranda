@@ -1,4 +1,4 @@
-import { StatusBook, StatusRoom, StatusUser, TypeRoom } from "./enum";
+import { StatusBook, StatusRoom, StatusUser, TypeJob, TypeRoom } from "./enum";
 
 export interface InitState {
   token: string;
