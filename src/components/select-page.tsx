@@ -1,17 +1,19 @@
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 
-interface Iprops{
+interface Iprops {
     array: any;
     setNp: any;
-    show:  any
+    show: any
 }
 
-export const SelectPage : FC<Iprops> = ({ array, setNp, show }): JSX.Element => {
+export const SelectPage: FC<Iprops> = ({ array, setNp, show }): JSX.Element => {
 
-
+    console.log(show)
+    useEffect(() => {
+    }, [show])
     const secSelect = {
         display: 'flex',
         justifyContent: 'space-between',
@@ -25,7 +27,7 @@ export const SelectPage : FC<Iprops> = ({ array, setNp, show }): JSX.Element => 
         palette: {
             primary: {
                 main: '#135846',
-                
+
                 light: '#135846',
                 contrastText: '#135846',
             },
@@ -36,10 +38,10 @@ export const SelectPage : FC<Iprops> = ({ array, setNp, show }): JSX.Element => 
     return (
         <>
             <section style={secSelect}>
-                <p style={{ color: '#393939' }}>Showing {show.length} of {array.length} data</p>
+                <p style={{ color: '#393939' }}>Showing {show} of {array.length} data</p>
                 <Stack spacing={2} >
                     <ThemeProvider theme={theme}>
-                    <Pagination color='primary' style={{ margin: ' 10px auto', backgroundColor:'white' }} shape='rounded' count={Math.ceil(array.length / 10)} variant="outlined" onChange={(event, nPage) => setNp(nPage)} />
+                        <Pagination color='primary' style={{ margin: ' 10px auto', backgroundColor: 'white' }} shape='rounded' count={Math.ceil(array.length / 10)} variant="outlined" onChange={(event, nPage) => setNp(nPage)} />
                     </ThemeProvider>
                 </Stack>
             </section>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, FC, useRef } from "react";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {
   Row,
   styleAvai,
@@ -14,7 +13,7 @@ import { IRoom } from "../../types";
 import { OptionRoom } from "./optionRoom";
 
 export const TableRoom: FC = (): JSX.Element => {
-  const [np, setNp] = useState<number>(1);
+  const [np, setNp] = useState<number>(1);// set page number
   const dispatch = useAppDispatch();
   const listRooms: IRoom[] = useAppSelector<IRoom[]>(
     (store) => store.room.rooms
@@ -74,7 +73,7 @@ export const TableRoom: FC = (): JSX.Element => {
           );
         })}
 
-        <SelectPage array={listRooms} setNp={setNp} show={rooms} />
+        <SelectPage array={listRooms} setNp={setNp} show={rooms.slice(10 * np - 10, 10 * np).length} />
       </section>
     </>
   );
