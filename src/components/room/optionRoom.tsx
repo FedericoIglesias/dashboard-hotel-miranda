@@ -24,6 +24,10 @@ export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
     handleClose()
   }
 
+  const handleModify = () => {
+    handleClose()
+    alert("Room modified")
+  }
   
   return (
     <div>
@@ -52,7 +56,7 @@ export const  OptionRoom = ({id, removeRoom}): JSX.Element => {
         }}
       >
         <MenuItem onClick={handleDelete}>Delete</MenuItem>
-        <MenuItem onClick={handleClose}>Modify</MenuItem>
+        <MenuItem onClick={handleModify}>Modify</MenuItem>
       </Menu>
     </div>
   );

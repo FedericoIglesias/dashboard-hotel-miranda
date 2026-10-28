@@ -68,7 +68,7 @@ export const TableRoom: FC = (): JSX.Element => {
               </p>
               <p style={styleColumn}>${item.price}</p>
               <p style={status(item.status)}>{item.status}</p>
-              <OptionRoom id={item._id} removeRoom={removeRoom}/>
+              <OptionRoom id={item._id} removeRoom={removeRoom} />
             </Row>
           );
         })}

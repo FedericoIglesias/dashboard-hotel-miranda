@@ -10,7 +10,7 @@ export const Room: FC = (): JSX.Element => {
       <div style={{marginBottom: '10px'}}>
         <ButtonOrder >
           <NavLink
-            to={"/dashboard-hotel-miranda/new-room"}
+            to={"/new-room"}
             style={{ color: "white", textDecoration: "none" }}
           >
             +New Room
