@@ -39,7 +39,7 @@ export const Table: FC<any> = ({ book }): JSX.Element => {
           <p style={styleColumn}>Room Type</p>
           <p style={styleColumn}>Status</p>
         </Row>
-        {booking.map((item: IBooking) => {
+        {book.slice(10 * page - 10, 10 * page).map((item: IBooking) => {
           return (
             <Row key={item._id}>
               <NavLink
@@ -60,11 +60,11 @@ export const Table: FC<any> = ({ book }): JSX.Element => {
               <p style={styleColumn}>lorem</p>
               <p style={styleColumn}>{item.idRoom}</p>
               <p style={handleStatusColor(item.status)}>{item.status}</p>
-              <OptionBooking id={item._id}/>
+              <OptionBooking id={item._id} />
             </Row>
           );
         })}
-        <SelectPage array={book} setNp={setPage} show={booking} />
+        <SelectPage array={book} setNp={setPage} show={book.slice(10 * page - 10, 10 * page).length} />
       </section>
     </>
   );
