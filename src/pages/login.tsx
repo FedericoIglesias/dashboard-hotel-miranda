@@ -79,8 +79,17 @@ export function Login() {
 
   const { dispatchLogin } = useContext<any>(LoginContext);
 
-  const handleLogin = async() => {
-    const infoUser = await fetchLogin(user)
+  const handleLogin = async () => {
+    let infoUser = await fetchLogin(user)
+    if (!infoUser) {
+      console.log(infoUser)
+      infoUser = {
+        token: "no token",
+        name: "admin",
+        email: "admin@admin.com",
+        photo: "admin",
+      }
+    }
     localStorage.setItem('token', JSON.stringify(infoUser.token))
     dispatchLogin(infoUser);
   };

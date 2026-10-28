@@ -52,7 +52,6 @@ export const NewRoom: FC = (): JSX.Element => {
                 <select
                   name={TypeRoom.Deluxe}
                   id=""
-                  placeholder=""
                   onChange={(e) =>
                     setNewRoom({
                       ...newRoom,
