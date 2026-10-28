@@ -1,0 +1,234 @@
+[
+  {
+    "_id": "room_001",
+    "photo": [
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 101,
+    "roomType": "Single Bed",
+    "amenities": [
+      "Wi-Fi gratis",
+      "Aire acondicionado",
+      "TV de pantalla plana",
+      "Escritorio"
+    ],
+    "price": 75.00,
+    "offerPercent": 0,
+    "status": "Available"
+  },
+  {
+    "_id": "room_002",
+    "photo": [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 202,
+    "roomType": "Double Bed",
+    "amenities": [
+      "Wi-Fi de alta velocidad",
+      "Aire acondicionado",
+      "Minibar",
+      "Caja fuerte"
+    ],
+    "price": 120.00,
+    "offerPercent": 10,
+    "status": "Booked"
+  },
+  {
+    "_id": "room_003",
+    "photo": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 305,
+    "roomType": "Deluxe",
+    "amenities": [
+      "Wi-Fi",
+      "Jacuzzi privado",
+      "Vista al mar",
+      "Smart TV 65\"",
+      "Servicio a la habitación 24/7"
+    ],
+    "price": 250.00,
+    "offerPercent": 15,
+    "status": "Available"
+  },
+  {
+    "_id": "room_004",
+    "photo": [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 104,
+    "roomType": "Single Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Calefacción",
+      "Baño compartido"
+    ],
+    "price": 55.00,
+    "offerPercent": 5,
+    "status": "Booked"
+  },
+  {
+    "_id": "room_005",
+    "photo": [
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1595526051175-d855cc582f2c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 210,
+    "roomType": "Double Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Balcón privado",
+      "Cafetera Nespresso",
+      "TV por cable"
+    ],
+    "price": 145.00,
+    "offerPercent": 0,
+    "status": "Available"
+  },
+  {
+    "_id": "room_006",
+    "photo": [
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 401,
+    "roomType": "Deluxe",
+    "amenities": [
+      "Wi-Fi",
+      "Terraza panorámica",
+      "Piscina privada",
+      "Chimenea",
+      "Desayuno incluido"
+    ],
+    "price": 320.00,
+    "offerPercent": 20,
+    "status": "Available"
+  },
+  {
+    "_id": "room_007",
+    "photo": [
+      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 108,
+    "roomType": "Single Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Escritorio ergonómico",
+      "Ventilador de techo",
+      "Lámpara de lectura"
+    ],
+    "price": 65.00,
+    "offerPercent": 0,
+    "status": "Available"
+  },
+  {
+    "_id": "room_008",
+    "photo": [
+      "https://images.unsplash.com/photo-1568495248636-6432b97bd949?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7ede433c4ef0?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 215,
+    "roomType": "Double Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Cama King Size",
+      "Smart TV",
+      "Secador de pelo"
+    ],
+    "price": 135.00,
+    "offerPercent": 15,
+    "status": "Booked"
+  },
+  {
+    "_id": "room_009",
+    "photo": [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 502,
+    "roomType": "Deluxe",
+    "amenities": [
+      "Wi-Fi",
+      "Vista a la ciudad",
+      "Sala de estar independiente",
+      "Bañera de hidromasaje"
+    ],
+    "price": 290.00,
+    "offerPercent": 10,
+    "status": "Available"
+  },
+  {
+    "_id": "room_010",
+    "photo": [
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 112,
+    "roomType": "Single Bed",
+    "amenities": [
+      "Wi-Fi",
+      "TV por cable",
+      "Armario amplio"
+    ],
+    "price": 70.00,
+    "offerPercent": 0,
+    "status": "Booked"
+  },
+  {
+    "_id": "room_011",
+    "photo": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 220,
+    "roomType": "Double Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Camas gemelas convertibles",
+      "Escritorio",
+      "Cafetera"
+    ],
+    "price": 115.00,
+    "offerPercent": 5,
+    "status": "Available"
+  },
+  {
+    "_id": "room_012",
+    "photo": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 505,
+    "roomType": "Deluxe",
+    "amenities": [
+      "Wi-Fi de ultra velocidad",
+      "Amplia terraza",
+      "Bar privado",
+      "Cine en casa"
+    ],
+    "price": 350.00,
+    "offerPercent": 25,
+    "status": "Booked"
+  },
+  {
+    "_id": "room_013",
+    "photo": [
+      "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "numberRoom": 115,
+    "roomType": "Single Bed",
+    "amenities": [
+      "Wi-Fi",
+      "Vista al jardín",
+      "Smart TV",
+      "Sillón de lectura"
+    ],
+    "price": 80.00,
+    "offerPercent": 10,
+    "status": "Available"
+  }
+]

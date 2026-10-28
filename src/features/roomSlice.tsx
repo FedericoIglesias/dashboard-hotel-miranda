@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { IRoom } from "../types";
 import { route } from "../env-var";
+import room_list from "../examples/room.json"
 
 interface ObjRoom {
   rooms: IRoom[];
@@ -29,7 +30,8 @@ export const getRooms: any = createAsyncThunk(
       const data = response.json();
       return data;
     } catch (error) {
-      alert(error);
+      alert(error + "\n We will show you rooms example");
+      return room_list;
     }
   }
 );
@@ -48,9 +50,9 @@ export const deleteRoom: any = createAsyncThunk(
   "delete/deleteRoom",
   async (_id: string) => {
     try {
-      await fetch(`${route.room}/${_id}`,{
-        method:'DELETE',
-        headers:{
+      await fetch(`${route.room}/${_id}`, {
+        method: 'DELETE',
+        headers: {
           authorization: `Bearer ${token.replace('"', "").replace('"', "")}`
         },
       });
@@ -63,14 +65,14 @@ export const deleteRoom: any = createAsyncThunk(
 
 export const postRoom: any = createAsyncThunk("post/postRoom", async (data) => {
   try {
-    const response = await fetch(`${route.room}`,{
+    const response = await fetch(`${route.room}`, {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
       credentials: "same-origin",
       headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
+        "content-type": "application/json",
+        authorization: `Bearer ${token.replace('"', "").replace('"', "")}`,
       },
       body: JSON.stringify(data),
     });
