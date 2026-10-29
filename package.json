@@ -1,6 +1,6 @@
 {
   "name": "dashboard-hotel-miranda",
-  "homepage": "/",
+  "homepage": "https://FedericoIglesias.github.io/dashboard-hotel-miranda/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,6 +56,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^26.6.6"
+    "@types/node": "^26.6.6",
+    "gh-pages": "^6.3.0"
   }
 }

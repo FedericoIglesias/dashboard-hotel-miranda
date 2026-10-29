@@ -94,7 +94,7 @@ export const User: FC = (): JSX.Element => {
         </div>
         <ButtonOrder >
           <NavLink
-            to={"/new-user"}
+            to={"/dashboard-hotel-miranda/new-user"}
             style={{ color: "white", textDecoration: "none" }}
           >
             +New User
